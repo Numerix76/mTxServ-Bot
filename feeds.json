@@ -1,0 +1,134 @@
+[
+	{
+	  "url":"https://hytale.game/p/index.rss",
+	  "icon":"https://hytale.com/favicon.ico",
+	  "tags":["hytale"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://minecraft.fr/feed/",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/minecraft.png",
+	  "tags":["minecraft"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://gmod.facepunch.com/rss/blog",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/garry-s-mod.png",
+	  "tags":["gmod"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://rust.facepunch.com/rss/blog",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/rust.png",
+	  "tags":["rust"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://sandbox.facepunch.com/rss/news",
+	  "icon":null,
+	  "tags":["sandbox"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://survivetheark.com/index.php?/rss/3-ark-news.xml/",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/ark.png",
+	  "tags":["ark"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://ark-france.fr/rss/",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/ark.png",
+	  "tags":["ark"],
+	  "language": "fr"
+	},
+	{
+	  "url":"http://feeds2.feedburner.com/vakarm",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "tags":["csgo"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://blog.counter-strike.net/fr/index.php/feed/",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "tags":["csgo"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://blog.counter-strike.net/index.php/feed/",
+	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "tags":["csgo"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://www.mandatory.gg/news/feed/",
+	  "icon":null,
+	  "tags":["valorant"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.mandatory.gg/en/news/feed/",
+	  "icon":null,
+	  "tags":["valorant"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://feeds.win.gg/news/rss",
+	  "icon":null,
+	  "tags":["lol"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://www.over.gg/rss",
+	  "icon":null,
+	  "tags":["overwatch"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://fortniteinsider.com/feed/",
+	  "icon":null,
+	  "tags":["fortnite"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://fortnite.jeuxonline.info/rss/actualites/rss.xml",
+	  "icon":null,
+	  "tags":["fortnite"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.rocketbaguette.com/feed/",
+	  "icon":null,
+	  "tags":["rocketleague"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.abondance.com/feed",
+	  "icon":null,
+	  "tags":["web"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.commitstrip.com/fr/feed/",
+	  "icon":null,
+	  "tags":["web"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.commitstrip.com/feed/",
+	  "icon":null,
+	  "tags":["web"],
+	  "language": "en"
+	},
+	{
+	  "url":"https://www.ecranlarge.com/rss",
+	  "icon":null,
+	  "tags":["film"],
+	  "language": "fr"
+	},
+	{
+	  "url":"https://www.futura-sciences.com/rss/actualites.xml",
+	  "icon":null,
+	  "tags":["science"],
+	  "language": "fr"
+	}
+]

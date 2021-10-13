@@ -1,0 +1,23 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.2.0",
+    "dotenv": "^10.0.0",
+    "firebase-admin": "^9.12.0",
+    "get-urls": "^10.0.0",
+    "got": "^11.8.2",
+    "grabity": "^1.0.5",
+    "rss-parser": "^3.12.0",
+    "striptags": "^3.2.0",
+    "wokcommands": "^1.4.9"
+  }
+}

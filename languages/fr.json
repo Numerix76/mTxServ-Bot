@@ -1,0 +1,188 @@
+{
+	"partners": {
+		"list": ":people_holding_hands: Ils nous font confiance",
+		"numerix": "Numerix est un développeur et un helpeur. Il a publié différents addons et tutoriels. En voici quelques un :"
+	},
+	"social_links": {
+		"title": ":people_hugging: Rejoignez-nous sur les réseaux sociaux"
+	},
+	"fork_me": {
+		"title": "BOT",
+		"description": "Le code source de ce bot est disponible sur notre compte GitHub. Vous pouvez y contribuer librement pour ajouter de nouvelles fonctionnalités sur le bot discord.",
+		"how": "Comment contribuer?",
+		"configure": "Comment configurer le bot?",
+		"configure_explain": "Pour afficher toutes les commandes, utilisez `m!help`. Définissez la langue principale de votre serveur avec `m!bot-lang en` ou `m!bot-lang fr`.\n\nPour activer la commande `m!servers` qui affiche vos serveurs de jeux, utilisez `m!add-server` pour la configurer, dans un canal.\n\nLe bot peut publier de nouveaux articles en anglais ou/et français, sur vos jeux favoris, dans un canal spécifié. Pour le configurer, utilisez `m!feeds` dans un canal.",
+		"explain": "Nous serions très heureux de recevoir de l'aide de développeurs qui peuvent nous aider à réparer des bogues ou ajouter de nouvelles fonctionnalités."
+	},
+	"bot_stop": {
+		"confirm": ":octagonal_sign: Arrêt du bot.."
+	},
+	"bot_update": {
+		"confirm": ":up: Mise à jour du bot.."
+	},
+	"invite": {
+		"title": ":love_letter: Lien d'invitation",
+		"description": "Vous pouvez diffuser le lien d'invitation discord suivant pour inviter vos amis:",
+		"link": "Invitation"
+	},
+	"how_to": {
+		"search": "Recherche",
+		"no_result": ":no_entry_sign: Aucun résultat trouvé",
+		"check": "Consultez tous les tutoriels sur"
+	},
+	"gs_status": {
+		"invalid_format": ":no_entry_sign: Adresse invalide, le port est probablement manquant",
+		"offline": ":red_circle: Ce serveur est offline.",
+		"online": ":green_circle: Le serveur est online.",
+		"unknown": "Inconnu"
+	},
+	"help": {
+		"dm_closed": "Impossible de vous envoyer le DM d'aide. Vous avez probablement des DM désactivés.",
+		"sent_dm": "Liste des commandes envoyée en DM.",
+		"multiple_commands": "Plusieurs commandes ont été trouvées. Soyez plus précis."
+	},
+	"software_search": {
+		"search": "Recherche",
+		"no_result": ":no_entry_sign: Aucun résultat trouvé",
+		"check": "Consultez toutes les versions & modpacks sur"
+	},
+	"rules": {
+		"title": ":loudspeaker: Règlement",
+		"description": "Bienvenue sur le discord communautaire mTxServ. Cet espace est dédié à **l'entraide entre membres** de la communauté.\n\n:writing_hand:  Le **support officiel** est uniquement sur notre site internet, nous n'avons aucun moyen de vérifier l'identité d'un utilisateur ici -> <https://mtxserv.com/fr/support/list>. Aucune demande par message privé ne sera traitée, hormis dans les cas de divulgation d'informations sensibles/privées\n\n:writing_hand:  **Avant de poster une demande d'aide**, consultez channels **liens utiles**, **les messages épinglés** et **les tutoriaux** avant de poser vos questions (<https://mtxserv.com/fr/help>).\n\n:writing_hand:  **Pour toute demande d'aide**, postez dans le **channel adéquat** (défouloir __**n'est pas le channel adéquat!**__) avec toutes les infos utiles. Au minima l'host (GAME-XX-XX), la version du serveur et le log d'erreur dispo dans la console (en cas de crash). __***J'ai un problème***__ ne permet pas de vous aider!\n\n:writing_hand:  Ce Discord est un **espace communautaire**: la **convivialité est primordiale** envers les personnes qui prennent de leur temps pour vous aider.\n\n:writing_hand:  **Tout comportement irrespectueux** pourra être sanctionné d'un kick ou ban\n\n:writing_hand:  **La pub** est **UNIQUEMENT** autorisée dans les channels **#pub-serveurs** et **#videos-streams**. Toute pub en dehors de ces channels ou par message privée = ban\n\n:writing_hand:  Contenu inapproprié (addon leak, infos personnelles, images inappropriées, conversation privée, etc) = ban"
+	},
+	"stock": {
+		"title_game": ":bar_chart: Serveur de Jeu",
+		"title_vps_game": ":bar_chart: VPS GAME",
+		"title_vps": ":bar_chart: VPS SSD",
+		"state": "Etat des stocks :"
+	},
+	"support": {
+		"title": ":question: Contacter le support",
+		"description": "Notre équipe est à votre disposition pour toute demande d'aide ou de renseignement.",
+		"report": "Signaler un message",
+		"create": "Ouvrir un ticket",
+		"support": "Mes tickets",
+		"before": "Avant de nous contacter, consultez le centre d'aide!"
+	},
+	"explain": {
+		"title": ":question: Demander de l'aide",
+		"description": "Avant tout, postez **DANS LE CHANNEL APPROPRIE** !\n\n__Pour vous aider, **merci de bien préciser**__:",
+		"rule_1": "* **consultez les channels #lien-utiles** et tutoriaux du site (<https://mtxserv.com/fr/help>) avant de poster!",
+		"rule_2": "* votre host (game-fr-**XX**) et **votre jeu**",
+		"rule_3": "* de quelle offre disposez-vous (**nom**, **quantité de RAM**, etc)",
+		"rule_4": "* **décrivez** bien votre problème, et ce que vous utilisez (addons, plugins, mods, etc)",
+		"rule_5": "* **fournissez les messages d'erreurs**",
+		"rule_6": "* **soyez patient**, nous sommes sur un discord communautaire ;)"
+	},
+	"news": {
+		"title": ":newspaper: Dernièrs articles sur %about%"
+	},
+	"wiki": {
+		"search": "Recherche",
+		"no_result": ":no_entry_sign: Aucun résultat trouvé",
+		"check": "Aller sur le wiki: "
+	},
+	"cover": {
+		"error": "Impossible de créer l'image de cover",
+		"success": "Image générée",
+		"launch": "Génération de l'image..",
+		"error_message": ":no_entry_sign: Une erreur est survenue avec le générateur. Veuillez essayer de nouveau."
+	},
+	"login": {
+		"title": ":lock: Lier son compte avec mTxServ.com",
+		"description": "Pour lier votre compte *Discord* avec votre compte *mTxServ.com* afin de pouvoir bénéficier de toutes les fonctionnalitées, vous devez entrer vos paramètres API.\n\nPour récupérer votre `client_id`, `client_secret` et `api_key`, rendez-vous sur:",
+		"cancelled": "Operation canceled.",
+		"sent_dm": "Pour lier votre compte, envoyez la commande `login` en **DM** au bot.",
+		"already_connected": "Votre compte est déjà relié à votre compte mTxServ. Déconnectez-vous avec `m!logout`."
+	},
+	"logout": {
+		"success": "Déconnexion réussie",
+		"not_logged": "Votre compte n'est pas relié à mTxServ."
+	},
+	"me": {
+		"logged": "Votre compte `%name%` est lié à votre compte Discord.",
+		"not_logged": "Votre compte Discord n'est pas relié avec votre compte mTxServ.",
+		"username": "Utilisateur",
+		"cant_fetch": "Impossible de se connecter à votre compte mTxServ."
+	},
+	"dm": {
+		"closed": "Vos DMs ne sont pas ouvert!"
+	},
+	"suggest": {
+		"confirm": "Merci pour votre suggestion %name%! Nous apprécions tous les feedbacks.",
+		"update-succes": "Changement du status de la suggestion avec succès.",
+		"accepted": "accepté",
+		"refused": "refusé",
+		"implemented": "implémenté",
+		"by": "par",
+		"ask_reason": "Entrez une raison s'il vous plaît.",
+		"reason": "Raison"
+	},
+	"ark_version": {
+		"message": "La dernière version des **serveurs ARK** est là `%version%`."
+	},
+	"gca": {
+		"description": "Mappeur, modélisateur, graphiste, développeur ou même configurateur de serveur… Ce serveur est fait pour toi !"
+	},
+	"language": {
+		"updated": "La langue du bot est désormais `%lang%`."
+	},
+	"servers": {
+		"how_to": "Pour ajouter votre serveur, m!add-server",
+		"no_result": "Aucun serveur de jeu configuré",
+		"no_result_more": "__Pour ajouter votre serveur__, utilisez la commande `m!add-server`.\n__Vous devez avoir relié votre compte__ mTxServ avec `m!login`, pour vérifier utilisez `m!me`."
+	},
+	"server_add": {
+		"not_logged": "Pour ajouter votre serveur, __vous devez avoir relié votre compte__ mTxServ avec `m!login`, pour vérifier utilisez `m!me`.",
+		"no_result": "Vous n'avez aucun serveur de jeu.",
+		"sent_dm": "Pour ajouter un serveur, envoyez la commande `add-server` **en DM** au bot.",
+		"fetch": "Récupération de vos serveurs, veuillez patienter..",
+		"not_found": "Ce serveur n'existe pas.",
+		"which": "Quel serveur voulez-vous ajouter (ex: `1`) ?",
+		"added": "Le serveur a été ajouté, utilisez `m!servers` pour voir le statut!",
+		"permissions": "Vous devez être **administrateur** de ce serveur Discord pour utiliser cette commande."
+	},
+	"stats": {
+		"servers": "Je suis présent sur **%count% serveurs** :heart:"
+	},
+	"feeds": {
+		"title": "Vos feeds",
+		"description": "Pour recevoir **les news de vos jeux favoris __dans un channel spécifié__**, abonnez-vous aux listes avec `m!feed-add`, par exemple `m!feed-add minecraft IDDUCHANNEL` (__admin uniquement__).",
+		"follow": "**Suivi**",
+		"unfollow": "Non suivi"
+	},
+	"top-servers": {
+		"title": "Classement Serveurs %game%",
+		"no_result": "Aucun serveur dans le classement %game%.",
+		"view": ":mag: Voir",
+		"view_ranking": "Classement",
+		"players_ranking": ":video_game: Note des joueurs",
+		"rank": ":medal: Classement",
+		"view_more": "Voir la fiche serveur"
+	},
+	"plugin_search": {
+		"search": "Recherche",
+		"no_result": ":no_entry_sign: Aucun résultat trouvé",
+		"description": "Description :"
+	},
+	"achievement": {
+		"new": "Félicitation <@%userId%>, vous avez gagné le trophée **%role%**!"
+	},
+	"invite_ranking": {
+		"description": "**Invitez vos amis**, tentez de **gagner des lots** tous les mois !\nLe classement est remis à zéro et les gagnants annoncés **à la fin du mois**.",
+		"empty": "`Aucun membre dans le classement pour l'instant!`",
+		"headers": "**```Total   Join    Leave```**"
+	},
+	"gameserver" : {
+		"address" : "Addresss",
+		"players" : "Joueurs",
+		"game"    : "Jeu",
+		"map"     : "Carte",
+		"by"      : "par"
+	},
+	"gamesoftware" : {
+		"version" : "Dernière version",
+		"website" : "Site Offciel",
+		"howto"   : "Comment installer et mettre à jour"
+	}
+}
