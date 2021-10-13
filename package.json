@@ -18,6 +18,6 @@
     "grabity": "^1.0.5",
     "rss-parser": "^3.12.0",
     "striptags": "^3.2.0",
-    "wokcommands": "^1.4.9"
+    "wokcommands": "^1.5.3"
   }
 }
