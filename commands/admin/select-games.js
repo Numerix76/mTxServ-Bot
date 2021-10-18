@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const mTxServUtil = require('../../util/mTxServUtil');
 const { Permissions } = Discord;
-const path = require('path');
-const fs = require('fs');
 
 
 module.exports = {
@@ -38,8 +36,6 @@ module.exports = {
 			.setFooter('Choose your games / Choisissez vos jeux - mTxServ.com');
 
 		msg.delete()
-
-		console.log(embed)
 
 		msg.channel.send({
 			embeds: [embed]
