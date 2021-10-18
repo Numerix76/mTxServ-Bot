@@ -21,7 +21,7 @@ module.exports = {
 		mTxServUtil
 			.sayWarning(msg, lang['bot_update']['confirm'])
 			.then(() => {
-				const results = module.exports.exec('git pull');
+				const results = module.exports.exec('git pull && npm install --silent');
 
 				const embed = new Discord.MessageEmbed()
 					.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)
