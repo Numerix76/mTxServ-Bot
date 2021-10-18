@@ -125,7 +125,8 @@
 		"description": "Mappeur, modélisateur, graphiste, développeur ou même configurateur de serveur… Ce serveur est fait pour toi !"
 	},
 	"language": {
-		"updated": "Language has been change to `%lang%`."
+		"updated": "Language has been change to `%lang%`.",
+		"failed": "Failed to update language to `%lang%` because the bot does not support it"
 	},
 	"servers": {
 		"how_to": "To add your game server, m!add-server",

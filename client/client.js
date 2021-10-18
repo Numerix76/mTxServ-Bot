@@ -12,7 +12,8 @@ module.exports = class mTxServClient extends Discord.Client {
 
 		this.feedMonitor = new FeedMonitor(options.feeds);
 		this.inviteManager = new InviteManager();
-		this.ranker = new Ranker()
+		this.ranker = new Ranker();
+		this.inviteURL = options.inviteURL;
 
 		this.statusUpdater = new StatusUpdater(this, [
 		    { type: 'WATCHING', name: `${process.env.BOT_COMMAND_PREFIX}giveaway | Win prizes!`},

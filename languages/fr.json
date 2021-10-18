@@ -125,7 +125,8 @@
 		"description": "Mappeur, modélisateur, graphiste, développeur ou même configurateur de serveur… Ce serveur est fait pour toi !"
 	},
 	"language": {
-		"updated": "La langue du bot est désormais `%lang%`."
+		"updated": "La langue du bot est désormais `%lang%`.",
+		"failed": "La langue n'a pu être mise à jour à `%lang%` car celle-ci n'est pas supporté"
 	},
 	"servers": {
 		"how_to": "Pour ajouter votre serveur, m!add-server",
