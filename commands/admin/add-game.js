@@ -3,7 +3,6 @@ const mTxServUtil = require('../../util/mTxServUtil');
 const { Permissions } = Discord
 
 
-// /!\ Actuellement n'importe qui peut utiliser via slash
 module.exports = {
 	name: 'add-game',
 	aliases: ['add-role', 'ajouter-jeu'],
@@ -325,6 +324,6 @@ module.exports = {
 			})
 		});*/
 
-		return mTxServUtil.saySuccess(msg, `\`${game} ${emoji}\`` + ' role and channel added successfuly.')
+		mTxServUtil.saySuccess(msg, `\`${game} ${emoji}\`` + ' role and channel added successfuly.')
 	}
 };

@@ -25,7 +25,7 @@ module.exports = {
 
 		mTxServUtil.sendLogMessage(embed)
 
-		return mTxServUtil
+		mTxServUtil
 			.sayError(msg, lang['bot_stop']['confirm'])
 			.then(process.exit)	
 	}

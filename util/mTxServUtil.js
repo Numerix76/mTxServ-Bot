@@ -19,7 +19,7 @@ module.exports = class mTxServUtil {
 
 	static async resolveLangOfMessage(msg) {
 		if (msg.channel.type !== 'DM') {
-			return await mTxServUtil.getLangOfChannel(client, msg.channel)
+			return await mTxServUtil.getLangOfChannel(msg.channel)
 		}
 
 		return mTxServUtil.getLangOfMember(client, msg.member)
@@ -37,7 +37,7 @@ module.exports = class mTxServUtil {
 				return 'en';
 			}
 		}
-
+	
 		return await client.provider.get(channel.guild.id, 'language', process.env.DEFAULT_LANG)
 	}
 
