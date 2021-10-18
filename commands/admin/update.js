@@ -30,7 +30,8 @@ module.exports = {
 					.setDescription(`\`\`\`sh\n${results.std}\n\`\`\``)
 					.setTimestamp();
 
-				mTxServUtil.sendLogMessage(embed)
+				if ( msg.channel.id !== process.env.LOG_CHANNEL_ID)
+					mTxServUtil.sendLogMessage(embed)
 
 				msg.reply({
 					embeds : [embed]
