@@ -10,7 +10,7 @@ module.exports = {
 	ownerOnly: true,
 	permissions: ['SEND_MESSAGES'],
 	hidden: true,
-	slash: 'both',
+	slash: false,
 	
 	
 	callback: async ({ client, message, interaction }) => {

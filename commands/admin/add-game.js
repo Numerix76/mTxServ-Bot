@@ -13,7 +13,7 @@ module.exports = {
 	guildOnly: true,
 	permissions: ['ADMINISTRATOR'],
 	hidden: false,
-	slash: 'both',
+	slash: false,
 
 	expectedArgs: '<game> <color> <emoji> <other>',
 	expectedArgsTypes: ['STRING', 'STRING', 'STRING', 'BOOLEAN'],
