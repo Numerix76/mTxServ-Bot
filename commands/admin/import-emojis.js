@@ -8,7 +8,7 @@ module.exports = {
 	name: 'import-emojis',
 	aliases: ['add-role', 'ajouter-jeu'],
 	category: 'Admin',
-	description: 'Importe et synchronise les emojis du serveur discord où est executé la commande.',
+	description: 'Import et synchronised all emojis available with the bot.',
 	ownerOnly: true,
 	guildOnly: true,
 	permissions: ['SEND_MESSAGES', 'MANAGE_EMOJIS', 'USE_EXTERNAL_EMOJIS'],
