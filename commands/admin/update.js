@@ -10,7 +10,7 @@ module.exports = {
 	description: 'Update the bot.',
 	ownerOnly: true,
 	guildOnly: true,
-	permissions: ['SEND_MESSAGES', 'MANAGE_EMOJIS', 'USE_EXTERNAL_EMOJIS'],
+	permissions: ['SEND_MESSAGES'],
 	hidden: true,
 	slash: false,
 
