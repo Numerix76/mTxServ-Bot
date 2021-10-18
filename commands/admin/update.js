@@ -23,7 +23,6 @@ module.exports = {
 		mTxServUtil
 			.sayWarning(msg, lang['bot_update']['confirm'])
 			.then(() => {
-				//const results = module.exports.exec('git pull && yarn install --silent');
 				const results = module.exports.exec('git pull');
 
 				const embed = new Discord.MessageEmbed()
