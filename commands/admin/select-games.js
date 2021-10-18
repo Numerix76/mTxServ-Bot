@@ -1,6 +1,4 @@
 const Discord = require('discord.js');
-const mTxServUtil = require('../../util/mTxServUtil');
-const { Permissions } = Discord;
 
 
 module.exports = {

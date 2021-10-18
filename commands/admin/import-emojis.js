@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const mTxServUtil = require('../../util/mTxServUtil');
-const { Permissions } = Discord;
 const path = require('path');
 const fs = require('fs');
 

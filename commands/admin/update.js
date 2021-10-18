@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const mTxServUtil = require('../../util/mTxServUtil');
-const { Permissions } = Discord;
 const { execSync } = require('child_process');
-const { stripIndents } = require('common-tags');
 
 
 module.exports = {

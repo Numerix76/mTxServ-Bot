@@ -1,4 +1,3 @@
-const ICommand = require('wokcommands/dist/Command')
 const Discord = require('discord.js')
 const mTxServUtil = require('../../util/mTxServUtil.js')
 
