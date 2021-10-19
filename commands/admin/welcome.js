@@ -71,6 +71,8 @@ Notre bot est en open-source sur [GitHub](https://github.com/mTxServ/ElDictator)
 			embeds: [embed]
 		})
 
+		msg.delete()
+
 		langMsg.react('👌')
 	},
 };

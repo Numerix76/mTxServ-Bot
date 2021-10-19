@@ -29,6 +29,8 @@ module.exports = {
 			embeds: [embed]
 		})
 
+		msg.delete()
+		
 		langMsg.react('🇫🇷')
 		langMsg.react('🇺🇸')
 	}
