@@ -6,21 +6,21 @@ const moment = require('moment');
 require('moment-duration-format');
 
 module.exports = {
-	name: 'bot',
-	aliases: ['bot-status', 'info', 'bot-info', 'bot', 'fork', 'forkme', 'bot-invite'],
-	category: 'Bot',
-	description: 'Display bot infos.',
-	permissions: ['SEND_MESSAGES'],
-	slash: 'both',
+    name: 'bot',
+    aliases: ['bot-status', 'info', 'bot-info', 'bot', 'fork', 'forkme', 'bot-invite'],
+    category: 'Bot',
+    description: 'Display bot infos.',
+    permissions: ['SEND_MESSAGES'],
+    slash: 'both',
 
-	callback: async ({ client, message, interaction, args, instance }) => {
-		const msg = message || interaction;
-		
-		if (msg.channel.type === 'DM') return;
+    callback: async ({ client, message, interaction, args, instance }) => {
+        const msg = message || interaction;
+        
+        if (msg.channel.type === 'DM') return;
         
         const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`)
         const memberTotal = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)        
-       	const languageGuild = await client.provider.get(msg.guild.id, 'language', process.env.DEFAULT_LANG)
+        const languageGuild = await client.provider.get(msg.guild.id, 'language', process.env.DEFAULT_LANG)
 
         const embed = new Discord.MessageEmbed()
             .setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`, 'https://mtxserv.com')
@@ -68,9 +68,9 @@ module.exports = {
         msg.reply({
             embeds : [embed]
         });
-	},
+    },
 
-	parseDependencies() {
+    parseDependencies() {
         return Object.entries(dependencies).map(dep => {
             if (dep[1].startsWith('github:')) {
                 const repo = dep[1].replace('github:', '').split('/');

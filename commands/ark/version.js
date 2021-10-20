@@ -15,9 +15,9 @@ module.exports = {
 		const msg = message || interaction;
 		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`)
 
-        const api = new ARKApi()
-        const latestVersion = await api.latestVersion()
+		const api = new ARKApi()
+		const latestVersion = await api.latestVersion()
 
-        mTxServUtil.saySuccess(msg, lang['ark_version']['message'].replace('%version%', latestVersion))
+		mTxServUtil.saySuccess(msg, lang['ark_version']['message'].replace('%version%', latestVersion))
 	},
 };

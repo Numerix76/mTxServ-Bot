@@ -14,7 +14,7 @@ module.exports = {
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;
 		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`)
-        
+		
 		mTxServUtil.sayMessage(msg, lang['stats']['servers'].replace('%count%', formatNumber(client.guilds.cache.size)))
 	},
 };

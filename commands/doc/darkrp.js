@@ -12,29 +12,29 @@ module.exports = {
 
 	expectedArgs: '<query>',
 	expectedArgsTypes: ['STRING'],
-    
-    minArgs: 1,
-    maxArgs: 1,	
+	
+	minArgs: 1,
+	maxArgs: 1,	
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;
-        const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
+		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
 		const [query] = args
 
-        const api = new DarkRPApi();
-        const results = await api.search(query);
+		const api = new DarkRPApi();
+		const results = await api.search(query);
 
-        const embed = new Discord.MessageEmbed()
-            .setTimestamp()
-            .setTitle(`:mag: ${lang['wiki']['search']} *${query}*`)
-            .setColor('BLUE')
-        ;
+		const embed = new Discord.MessageEmbed()
+			.setTimestamp()
+			.setTitle(`:mag: ${lang['wiki']['search']} *${query}*`)
+			.setColor('BLUE')
+		;
 
-        if (!results.length) {
-            embed
-                .setColor('RED')
-                .addField(lang['wiki']['no_result'], `${lang['wiki']['check']} <https://darkrp.miraheze.org/>`);
-        }
+		if (!results.length) {
+			embed
+				.setColor('RED')
+				.addField(lang['wiki']['no_result'], `${lang['wiki']['check']} <https://darkrp.miraheze.org/>`);
+		}
 		else
 		{
 			results
@@ -44,8 +44,8 @@ module.exports = {
 			;
 		}
 
-        msg.reply({
-            embeds: [embed]
-        });
+		msg.reply({
+			embeds: [embed]
+		});
 	},
 };
