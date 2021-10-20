@@ -71,7 +71,7 @@ module.exports = class FeedMonitor {
 
 				const primaryTag = feed.tags[0]
 
-				for (const guild of client.guilds.cache.array()) {
+				for (const guild of client.guilds.cache.map(guild => guild)) {
 					const followAll       = await FeedMonitor.isFollowing(guild.id, primaryTag, 'all', false)
 					const followLocalized = await FeedMonitor.isFollowing(guild.id, primaryTag, feed.language, false)
 
