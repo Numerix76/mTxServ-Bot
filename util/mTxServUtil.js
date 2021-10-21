@@ -22,7 +22,7 @@ module.exports = class mTxServUtil {
 			return await mTxServUtil.getLangOfChannel(msg.channel)
 		}
 
-		return mTxServUtil.getLangOfMember(client, msg.member)
+		return mTxServUtil.getLangOfMember(msg.member)
 	}
 
 	static async getLangOfChannel(channel) {
@@ -82,29 +82,7 @@ module.exports = class mTxServUtil {
 		});
 	}
 
-	static sayAuthorSuccess(msg, title) {
-		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
-			.setColor('GREEN')
-		;
-
-		return msg.reply({
-			embeds : [embed]
-		});
-	}
-
 	static sayError(msg, title) {
-		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
-			.setColor('RED')
-		;
-
-		return msg.reply({
-			embeds : [embed]
-		});
-	}
-
-	static sayAuthorError(msg, title) {
 		const embed = new Discord.MessageEmbed()
 			.setDescription(title)
 			.setColor('RED')
@@ -126,17 +104,6 @@ module.exports = class mTxServUtil {
 		});
 	}
 
-	static askAuthorConfirmation(msg, title) {
-		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
-			.setColor('ORANGE')
-		;
-
-		return msg.reply({
-			embeds : [embed]
-		});
-	}
-
 	static ask(msg, title) {
 		const embed = new Discord.MessageEmbed()
 			.setDescription(title)
@@ -148,37 +115,22 @@ module.exports = class mTxServUtil {
 		});
 	}
 
-	static async askAuthor(msg, title) {
-		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
-			.setColor('ORANGE')
-		;
+	/*static async getInput(msg, inputMsg) {
+		await mTxServUtil.ask(msg, inputMsg)
 
-		return msg.reply({
-			embeds : [embed]
-		});
-	}
+		const author = msg.author || msg.user
 
-	static async getInput(msg, inputMsg, sendInChannel) {
-		if (!(sendInChannel||false)) {
-			await mTxServUtil.askAuthor(msg, inputMsg)
-		} else {
-			await mTxServUtil.ask(msg, inputMsg)
-		}
+		console.log("je suis la")
+		//const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === author.id, { time: 40000 });
+		//const userInput = collected.first()
 
-		const collected = await msg.channel.awaitMessages(m => m.author.id == msg.author.id, {max: 1, time: 40000});
-		const userInput = collected.first()
+		const filter = m => m.author.id === author.id
+		msg.channel.awaitMessages({ filter, time: 40_000, errors: ['time'] }).then( collected => console.log(collected.first()))
 
-		if (!userInput) {
-			if (!(sendInChannel||false)) {
-				return await mTxServUtil.sayAuthorError(msg, 'No answer after 40 seconds, operation canceled.')
-			} else {
-				return await mTxServUtil.sayError(msg, 'No answer after 40 seconds, operation canceled.')
-			}
-		}
+		return "no"
 
-		return userInput.content.trim()
-	}
+		//return userInput.content.trim()
+	}*/
 
 	static async sendLogMessage(embed)
 	{

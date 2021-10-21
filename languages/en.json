@@ -93,7 +93,12 @@
 		"sent_dm": "To link your Discord account with your mTxServ account, sent `login` in **DM** to the bot.",
 		"description": "To link your *Discord* account with your *mTxServ.com* account in order to be able to benefit from all functionalities, you must enter your API settings.\n\nGet your `client_id`, `client_secret` and `api_key`:",
 		"cancelled": "Operation canceled.",
-		"already_connected": "You are already logged to your mTxServ account. Logout with `m!logout`."
+		"already_connected": "You are already logged to your mTxServ account. Logout with `m!logout`.",
+		"confirmation": "Do you have your credentials ? (yes/no)",
+		"askCredential": "What is your `%credential%` ?",
+		"successfull": "Login successfull !",
+		"bad_credentials": "Your credentials are not correct, we can't log you on mTxServ.",
+		"timeout": "Delay for input exceeded."
 	},
 	"logout": {
 		"success": "Successfull disconnect",
@@ -141,7 +146,8 @@
 		"not_found": "Game server not found.",
 		"which": "Which server ID do you want to add (eg: `1`)?",
 		"added": "Game server added, use `m!servers` to view server status!",
-		"permissions": "You must be **administrator** of this discord server to use this command."
+		"permissions": "You must be **administrator** of this discord server to use this command.",
+		"timeout": "Delay for input exceeded."
 	},
 	"stats": {
 		"servers": "**%count% servers** are using me :heart:"
@@ -179,7 +185,8 @@
 		"players" : "Players",
 		"game"    : "Game",
 		"map"     : "Map",
-		"by"      : "by"
+		"by"      : "by",
+		"plugins" : "Plugins"
 	},
 	"gamesoftware" : {
 		"version" : "Latest version",

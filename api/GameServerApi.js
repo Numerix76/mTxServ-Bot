@@ -80,11 +80,11 @@ class GameServerApi {
 
 		if (results.params.joinlink) {
 			embed.setDescription(`\`${results.params.joinlink}\``);
-
 		}
 
 		if (results.params.plugins) {
 			const plugins = results.params.plugins.split(': ').join('; ').split('; ').map(plugin =>  `\`${plugin}\``).join(' ')
+
 			embed.addField(lang['gameserver']['plugins'], plugins.substring(0, 1023));
 		}
 

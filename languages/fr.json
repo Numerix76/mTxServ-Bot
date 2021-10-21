@@ -91,9 +91,14 @@
 	"login": {
 		"title": ":lock: Lier son compte avec mTxServ.com",
 		"description": "Pour lier votre compte *Discord* avec votre compte *mTxServ.com* afin de pouvoir bénéficier de toutes les fonctionnalitées, vous devez entrer vos paramètres API.\n\nPour récupérer votre `client_id`, `client_secret` et `api_key`, rendez-vous sur:",
-		"cancelled": "Operation canceled.",
+		"cancelled": "Commande annulé.",
 		"sent_dm": "Pour lier votre compte, envoyez la commande `login` en **DM** au bot.",
-		"already_connected": "Votre compte est déjà relié à votre compte mTxServ. Déconnectez-vous avec `m!logout`."
+		"already_connected": "Votre compte est déjà relié à votre compte mTxServ. Déconnectez-vous avec `m!logout`.",
+		"confirmation": "Avez-vous créé vos identifiants ? (oui/non)",
+		"askCredential": "Quel est votre `%credential%` ?",
+		"successfull": "Connexion avec succès !",
+		"bad_credentials": "Vos accès sonts invalides, impossible d'authentifier votre compte mTxServ.",
+		"timeout": "Temps de saisie dépassé"
 	},
 	"logout": {
 		"success": "Déconnexion réussie",
@@ -141,7 +146,8 @@
 		"not_found": "Ce serveur n'existe pas.",
 		"which": "Quel serveur voulez-vous ajouter (ex: `1`) ?",
 		"added": "Le serveur a été ajouté, utilisez `m!servers` pour voir le statut!",
-		"permissions": "Vous devez être **administrateur** de ce serveur Discord pour utiliser cette commande."
+		"permissions": "Vous devez être **administrateur** de ce serveur Discord pour utiliser cette commande.",
+		"timeout": "Temps de saisie dépassé"
 	},
 	"stats": {
 		"servers": "Je suis présent sur **%count% serveurs** :heart:"
@@ -179,7 +185,8 @@
 		"players" : "Joueurs",
 		"game"    : "Jeu",
 		"map"     : "Carte",
-		"by"      : "par"
+		"by"      : "par",
+		"plugins" : "Plugins"
 	},
 	"gamesoftware" : {
 		"version" : "Dernière version",
