@@ -222,5 +222,10 @@
 	},
 	"share-log": {
 		"failed": "Une erreur est survenue."
+	},
+	"workshop-dl": {
+		"invalid-url": "Impossible de récupérer l'ID de l'addon depuis cette URL",
+		"error-dl": "Impossible de télécharger l'addon depuis le workshop.\n**Seul les addons peuvent peuvent être téléchargé.**",
+		"success": "Vous pouvez télcharger l'addon [ici](%downloadLink%)."
 	}
 }

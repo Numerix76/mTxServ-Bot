@@ -222,5 +222,10 @@
 	},
 	"share-log": {
 		"failed": "An error occured."
+	},
+	"workshop-dl": {
+		"invalid-url": "Can't retrieve file ID from the URL",
+		"error-dl": "Can't download this addon from the workshop.\n**Only addons can be downloaded.**",
+		"success": "You can download this addon of STEAM Workshop [here](%downloadLink%)."
 	}
 }
