@@ -219,5 +219,8 @@
 	"pages": {
 		"previous": "Previous",
 		"next": "Next"
+	},
+	"share-log": {
+		"failed": "An error occured."
 	}
 }
