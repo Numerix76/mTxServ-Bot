@@ -17,6 +17,7 @@ module.exports = {
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message ||interaction
+		const lang = require(`../../languages/${args[0]}.json`);
 		const emojiDirectory = path.join(__dirname, '../../emojis')
 		console.log(`List emojis in directory '${emojiDirectory}'`)
 
@@ -31,12 +32,12 @@ module.exports = {
 				const isAlreadyAdded = msg.guild.emojis.cache.some(emoji => emoji.name === emojiName)
 
 				if (!isAlreadyAdded) {
-					console.log(`add emoji ${filePath}`)
+					console.log(`added emoji ${filePath}`)
 					msg.guild.emojis.create(filePath, emojiName).catch(console.log)
 				}
 			});
 		});
 
-		return mTxServUtil.saySuccess(msg, `Les emojis ont été importés et synchronisés.`)
+		return mTxServUtil.saySuccess(msg, lang["import-emojis"]["success"])
 	}
 };

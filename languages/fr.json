@@ -197,5 +197,20 @@
 		"version" : "Dernière version",
 		"website" : "Site Offciel",
 		"howto"   : "Comment installer et mettre à jour"
+	},
+	"select-games": {
+		"title": "🇫🇷 Selectionnez vos jeux",
+		"description": "Sélectionnez les jeux qui vous interessent **pour voir les channels dédiés**.",
+		"footer": "Choisissez vos jeux - mTxServ.com",
+		"select": "Choisissez vos roles"
+	},
+	"remove-games": {
+		"success": "Suppression avec succès de `%game%`. Vous pouvez maintenant supprimer les channels et les roles en lien avec le jeu."
+	},
+	"add-games": {
+		"success": "`%game% %emoji%` role et channel ajouté avec succès."
+	},
+	"import-emojis": {
+		"success": "Les emojis ont été importés et synchronisés."
 	}
 }

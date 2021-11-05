@@ -12,7 +12,7 @@ module.exports = {
 	guildOnly: true,
 	permissions: ['ADMINISTRATOR'],
 	hidden: false,
-	slash: false,
+	slash: 'both',
 
 	expectedArgs: '<game> <color> <emoji> <other>',
 	expectedArgsTypes: ['STRING', 'STRING', 'STRING', 'BOOLEAN'],
@@ -23,14 +23,15 @@ module.exports = {
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message ||interaction
+		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
 
 		const [game, color, emoji, other]  = args
 
 		const roleMod = '895391623419162674';
 		const roleFRPos = msg.guild.roles.cache.find(r => r.name === "FR").position
 
-		let roleFRID;
-		let roleENID;
+		let roleFRID = "";
+		let roleENID = "";
 
 		/*-----------------------*/
 		/* Création role FR      */
@@ -38,7 +39,7 @@ module.exports = {
 
 		await msg.guild.roles.create({
 			name: "[FR] " + game + " " + emoji,
-			color: color,
+			color: color.toUpperCase(),
 			permissions:
 			[
 				Permissions.FLAGS.ADD_REACTIONS,
@@ -66,7 +67,7 @@ module.exports = {
 
 		await msg.guild.roles.create({
 			name: "[EN] " + game + " " + emoji,
-			color: color,
+			color: color.toUpperCase(),
 			permissions:
 			[
 				Permissions.FLAGS.ADD_REACTIONS,
@@ -90,8 +91,8 @@ module.exports = {
 
 		if ( other === 'false' )
 		{
-			let catFRID;
-			let catENID;
+			let catFRID = "";
+			let catENID = "";
 
 			/*-----------------------*/
 			/* Création catégorie FR */
@@ -236,7 +237,7 @@ module.exports = {
 			/*-----------------------*/
 			/* Création channels FR  */
 			/*-----------------------*/
-			let chanFRID
+			let chanFRID = ""
 			const catOtherFR = '895390870176673822'
 			await msg.guild.channels.create(game.toLowerCase(), { type: 'GUILD_TEXT', })
 				.then( async channel => {
@@ -258,7 +259,7 @@ module.exports = {
 			/*-----------------------*/
 			/* Création channels EN  */
 			/*-----------------------*/
-			let chanENID
+			let chanENID = ""
 			const catOtherEN = '895390907426287616'
 			await msg.guild.channels.create(game.toLowerCase(), { type: 'GUILD_TEXT', })
 				.then( async channel => {
@@ -320,6 +321,118 @@ module.exports = {
 			})
 		});*/
 
-		return mTxServUtil.saySuccess(msg, `\`${game} ${emoji}\`` + ' role and channel added successfuly.')
+
+		/*------------------------------------------------*/
+		/* Ajout des roles dans les channels de sélection */
+		/*------------------------------------------------*/
+		const gamesChannelFR = await msg.guild.channels.cache.find(c => c.name === "selection-role")
+		const gamesChannelEN = await msg.guild.channels.cache.find(c => c.name === "select-role")
+		
+		let gamesMessageFR
+		await gamesChannelFR.messages.fetch(gamesChannelFR.lastMessageId).then(message => gamesMessageFR = message).catch(console.error)
+		
+		let gamesMessageEN
+		await gamesChannelEN.messages.fetch(gamesChannelEN.lastMessageId).then(message => gamesMessageEN = message).catch(console.error)
+
+		if (gamesMessageFR)
+		{
+			const lang = require(`../../languages/fr.json`);
+			let rowFR = gamesMessageFR.components?gamesMessageFR.components[0]:null
+
+			if (!rowFR) 
+			{
+				rowFR = new Discord.MessageActionRow()
+			}
+
+			const optionFR = [
+				{
+					label: game,
+					emoji: emoji,
+					value: roleFRID
+				}
+			]
+
+			let menuFR = rowFR.components[0]
+
+			if (menuFR)
+			{
+				menuFR.addOptions(optionFR)
+				menuFR.setMaxValues(menuFR.options.length)
+			}
+			else
+			{
+				rowFR.addComponents(
+					new Discord.MessageSelectMenu()
+					.setCustomId('games-roles')
+					.setMinValues(0)
+					.setMaxValues(1)
+					.setPlaceholder(lang["select-games"]["select"])
+					.addOptions(optionFR)
+				)
+			}
+
+			gamesMessageFR.edit({
+				components: [rowFR]
+			})
+		}
+		
+		
+		if (gamesMessageEN)
+		{
+			const lang = require(`../../languages/en.json`);
+			let rowEN = gamesMessageEN.components?gamesMessageEN.components[0]:null
+	
+			if (!rowEN) 
+			{
+				rowEN = new Discord.MessageActionRow()
+			}
+			
+			const optionEN = [
+				{
+					label: game,
+					emoji: emoji,
+					value: roleENID
+				}
+			]
+	
+			
+			let menuEN = rowEN.components[0]
+	
+			if (menuEN)
+			{
+				menuEN.addOptions(optionEN)
+				menuEN.setMaxValues(menuEN.options.length)
+			}
+			else
+			{
+				rowEN.addComponents(
+					new Discord.MessageSelectMenu()
+					.setCustomId('games-roles')
+					.setMinValues(0)
+					.setMaxValues(1)
+					.setPlaceholder(lang["select-games"]["select"])
+					.addOptions(optionEN)
+				)
+			}
+
+			gamesMessageEN.edit({
+				components: [rowEN]
+			})
+		}
+		
+
+		const games = await client.provider.get(msg.guild.id, 'games', [])
+
+		games.push({
+			name: game,
+			emoji: emoji,
+			others: other,
+			roleFRID: roleFRID,
+			roleENID: roleENID
+		})
+
+		await client.provider.set(msg.guild.id, 'games', games)
+
+		return mTxServUtil.saySuccess(msg, lang["add-games"]["succes"].replace("%game%", game).replace("%emoji%", emoji))
 	}
 };

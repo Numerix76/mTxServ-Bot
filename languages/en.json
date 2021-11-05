@@ -197,5 +197,20 @@
 		"version" : "Latest version",
 		"website" : "Offcial website",
 		"howto"   : "How-To Install & Update"
+	},
+	"select-games": {
+		"title": "🇺🇸 Select your games",
+		"description": "Select the games that interest you **to see related channels**.",
+		"footer": "Choose your games - mTxServ.com",
+		"select": "Choose your roles"
+	},
+	"remove-games": {
+		"success": "`%game%` successfuly removed. You can now delete all channels and roles related to the game."
+	},
+	"add-games": {
+		"success": "`%game% %emoji%` role and channel added successfuly."
+	},
+	"import-emojis": {
+		"success": "The emojis have been imported and synchronised."
 	}
 }
