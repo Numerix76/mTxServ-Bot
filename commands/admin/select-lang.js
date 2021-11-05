@@ -12,6 +12,37 @@ module.exports = {
 	hidden: true,
 	slash: false,
 
+	init: (client) => {
+		client.on('interactionCreate', interaction => {
+			if (!interaction.isSelectMenu()) {
+				return
+			}
+
+			const { customId, values, member } = interaction
+
+			if (customId == 'lang-roles' && member instanceof Discord.GuildMember)
+			{
+				const component = interaction.component
+				const removed = component.options.filter((option) => {
+					return !values.includes(option.value)
+				})
+
+				for (const id of removed) {
+					member.roles.remove(id.value)
+				}
+
+				for (const id of values) {
+					member.roles.add(id)
+				}
+
+				interaction.reply({
+					content:'Your roles has been updated! / Vos roles sont à jours !',
+					ephemeral: true
+				})
+			}
+		})
+	},
+
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction
 
@@ -25,13 +56,35 @@ module.exports = {
 			.addField(`${iconEn} Welcome on mTxServ!`, `Do you speak English? **Click :flag_us:** to see english sections.`)
 			.setFooter('Choose your language / Choisissez votre langue - mTxServ.com');
 
-		const langMsg = await msg.channel.send({
-			embeds: [embed]
+		let row = new Discord.MessageActionRow()
+
+		const option = [
+			{
+				label: 'Français',
+				value: msg.guild.roles.cache.find(r => r.name === "FR").id,
+				emoji: '🇫🇷'
+			},
+			{
+				label: 'English',
+				value: msg.guild.roles.cache.find(r => r.name === "EN").id,
+				emoji: '🇺🇸'
+			}
+		]
+
+		row.addComponents(
+			new Discord.MessageSelectMenu()
+			.setCustomId('lang-roles')
+			.setMinValues(0)
+			.setMaxValues(option.length)
+			.setPlaceholder('Choose your language / Choisissez votre langue')
+			.addOptions(option)
+		)
+
+		await msg.channel.send({
+			embeds: [embed],
+			components: [row]
 		})
 
 		msg.delete()
-		
-		langMsg.react('🇫🇷')
-		langMsg.react('🇺🇸')
 	}
 };

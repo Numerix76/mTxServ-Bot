@@ -32,7 +32,7 @@ module.exports = {
 
 				if (!isAlreadyAdded) {
 					console.log(`add emoji ${filePath}`)
-					msg.guild.emojis.create(filePath, emojiName)
+					msg.guild.emojis.create(filePath, emojiName).catch(console.log)
 				}
 			});
 		});
