@@ -54,7 +54,7 @@ const paginationEmbed = async (msg, interaction, pages, timeout = 120000) => {
 	})
 
 	collector.on('end', () => {
-		if (!curPage.deleted) {
+		if (interaction || !curPage.deleted) {
 			mTxServUtil.editResponse(curPage, interaction, {
 				components: []
 			});
