@@ -65,11 +65,10 @@ module.exports = {
 					})
 			}
 
-			msg.reply({
-				embeds: [embed]
-			});
+			return embed
 		} catch (error) {
 			console.error(error)
+			return mTxServUtil.sayError(msg, lang['wiki']['search_failed'])
 		}
 	},
 };

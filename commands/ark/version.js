@@ -18,6 +18,6 @@ module.exports = {
 		const api = new ARKApi()
 		const latestVersion = await api.latestVersion()
 
-		mTxServUtil.saySuccess(msg, lang['ark_version']['message'].replace('%version%', latestVersion))
+		return mTxServUtil.saySuccess(msg, lang['ark_version']['message'].replace('%version%', latestVersion))
 	},
 };

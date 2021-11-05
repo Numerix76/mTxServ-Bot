@@ -8,7 +8,7 @@ module.exports = {
 	ownerOnly: true,
 	guildOnly: true,
 	permissions: ['SEND_MESSAGES'],
-	hidden: true,
+	hidden: false,
 	slash: false,
 
 	callback: async ({ client, message, interaction, args }) => {
@@ -67,12 +67,12 @@ Notre bot est en open-source sur [GitHub](https://github.com/mTxServ/ElDictator)
 ・<#767487492571004960>`)
 			.setFooter('Bienvenue sur mTxServ !');
 		
-		const langMsg = await msg.channel.send({
+		msg.channel.send({
 			embeds: [embed]
+		}).then((message) => {
+			msg.delete()
+
+			message.react('👌')
 		})
-
-		msg.delete()
-
-		langMsg.react('👌')
 	},
 };

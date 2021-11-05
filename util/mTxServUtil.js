@@ -153,4 +153,12 @@ module.exports = class mTxServUtil {
 				})
 		}
 	}
+
+	static async editResponse(message, interaction, options)
+	{
+		if ( interaction )
+			interaction.editReply(options)
+		else
+			message.edit(options);
+	}
 };

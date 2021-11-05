@@ -11,8 +11,8 @@ module.exports = {
 	ownerOnly: true,
 	guildOnly: true,
 	permissions: ['SEND_MESSAGES'],
-	hidden: true,
-	slash: false,
+	hidden: false,
+	slash: 'both',
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;
@@ -20,7 +20,7 @@ module.exports = {
 
 		msg.reply({
 			embeds: [mTxServUtil.sayWarning(msg, lang['bot_update']['confirm'])]
-		}).then(() => {
+		}).then((message) => {
 			const results = module.exports.exec('git pull && npm install --silent');
 
 			const embed = new Discord.MessageEmbed()
@@ -33,9 +33,7 @@ module.exports = {
 			if ( msg.channel.id !== process.env.LOG_CHANNEL_ID)
 				mTxServUtil.sendLogMessage(embed)
 
-			msg.editReply({
-				embeds : [embed]
-			});
+			mTxServUtil.editResponse(message, interaction, {embeds : [embed]})
 		})
 	},
 

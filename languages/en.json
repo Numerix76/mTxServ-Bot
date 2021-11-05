@@ -80,7 +80,8 @@
 	"wiki": {
 		"search": "Search",
 		"no_result": ":no_entry_sign: No result found",
-		"check": "Go to the wiki: "
+		"check": "Go to the wiki: ",
+		"search_failed": "Failed to make the search."
 	},
 	"cover": {
 		"error": "Cant create cover",
@@ -145,9 +146,13 @@
 		"fetch": "Retrieving game servers, please wait..",
 		"not_found": "Game server not found.",
 		"which": "Which server ID do you want to add (eg: `1`)?",
-		"added": "Game server added, use `m!servers` to view server status!",
+		"added": "Game(s) server(s) added, use `m!servers` to view server status!",
 		"permissions": "You must be **administrator** of this discord server to use this command.",
-		"timeout": "Delay for input exceeded."
+		"timeout": "Delay for input exceeded.",
+		"title_select": "Add server(s) you want",
+		"description_select": "Selected server(s) will be available with the `m!servers` command.",
+		"select": "Select server(s)",
+		"interaction_end": "If you want to add an other server please, use the command again."
 	},
 	"stats": {
 		"servers": "**%count% servers** are using me :heart:"

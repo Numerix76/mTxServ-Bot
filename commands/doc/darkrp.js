@@ -44,8 +44,6 @@ module.exports = {
 			;
 		}
 
-		msg.reply({
-			embeds: [embed]
-		});
+		return embed
 	},
 };

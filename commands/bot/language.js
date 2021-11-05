@@ -6,9 +6,10 @@ module.exports = {
 	name: 'bot-lang',
 	aliases: ['bot-language'],
 	category: 'Bot',
+	guildOnly: true,
 	description: 'Display bot infos.',
 	permissions: ['ADMINISTRATOR'],
-	slash: false,
+	slash: 'both',
 
 	expectedArgs: '<language>',
 	expectedArgsTypes: ['STRING'],
@@ -26,11 +27,11 @@ module.exports = {
 		{
 			lang = require(`../../languages/${language}.json`)
 			client.provider.set(msg.guild.id, 'language', language)
-			mTxServUtil.saySuccess(msg, lang['language']['updated'].replace('%lang%', language))
+			return mTxServUtil.saySuccess(msg, lang['language']['updated'].replace('%lang%', language))
 		}
 		catch (error)
 		{
-			mTxServUtil.sayError(msg, lang['language']['failed'].replace('%lang%', language))
+			return mTxServUtil.sayError(msg, lang['language']['failed'].replace('%lang%', language))
 		}
 	},
 };

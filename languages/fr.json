@@ -80,7 +80,8 @@
 	"wiki": {
 		"search": "Recherche",
 		"no_result": ":no_entry_sign: Aucun résultat trouvé",
-		"check": "Aller sur le wiki: "
+		"check": "Aller sur le wiki: ",
+		"search_failed": "La recherche n'a pu aboutir."
 	},
 	"cover": {
 		"error": "Impossible de créer l'image de cover",
@@ -145,9 +146,13 @@
 		"fetch": "Récupération de vos serveurs, veuillez patienter..",
 		"not_found": "Ce serveur n'existe pas.",
 		"which": "Quel serveur voulez-vous ajouter (ex: `1`) ?",
-		"added": "Le serveur a été ajouté, utilisez `m!servers` pour voir le statut!",
+		"added": "Le(s) serveur(s) a/ont été ajouté, utilisez `m!servers` pour voir le statut!",
 		"permissions": "Vous devez être **administrateur** de ce serveur Discord pour utiliser cette commande.",
-		"timeout": "Temps de saisie dépassé"
+		"timeout": "Temps de saisie dépassé",
+		"title_select": "Ajouter le(s) serveur(s) que vous voulez",
+		"description_select": "Le(s) serveur(s) sélectionné seront disponible dans la commande `m!servers`.",
+		"select": "Selectionner le(s) serveur(s)",
+		"interaction_end": "Si vous voulez ajouter un autre serveur, utilisez à nouveau la commande."
 	},
 	"stats": {
 		"servers": "Je suis présent sur **%count% serveurs** :heart:"

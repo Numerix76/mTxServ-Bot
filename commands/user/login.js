@@ -24,11 +24,7 @@ module.exports = {
 				.setColor('GREEN')
 			;
 
-			msg.reply({
-				embeds: [embed]
-			});
-
-			return
+			return embed		
 		}
 		
 
@@ -38,11 +34,7 @@ module.exports = {
 				.setColor('BLUE')
 			;
 
-			msg.reply({
-				embeds: [embed]
-			});
-
-			return
+			return embed
 		}
 
 		const embed = new Discord.MessageEmbed()
@@ -57,7 +49,9 @@ module.exports = {
 			embeds: [embed]
 		})
 
-		mTxServUtil.ask(msg, lang['login']['confirmation']);
+		msg.channel.send({
+			embeds: [mTxServUtil.ask(msg, lang['login']['confirmation'])]
+		})
 
 		const filter = m => m.author.id === author.id
 		const collector = msg.channel.createMessageCollector({
@@ -68,7 +62,9 @@ module.exports = {
 		
 		collector.on('collect', message => { 
 			if (message.content !== 'yes' && message.content !== 'oui') {
-				mTxServUtil.sayError(msg, lang['login']['cancelled'])
+				msg.channel.send({
+					embeds: [mTxServUtil.sayError(msg, lang['login']['cancelled'])]
+				})
 			}
 			else
 			{
@@ -78,8 +74,11 @@ module.exports = {
 
 		collector.on('end', collected => {
 			if (collected.size === 0)
-				mTxServUtil.sayError(msg, lang['login']['cancelled'])
+			msg.channel.send({
+				embeds: [mTxServUtil.sayError(msg, lang['login']['cancelled'])]
+			})
 		})
+
 	},
 
 	getCredentials: (msg, author, lang, api) => {
@@ -87,7 +86,10 @@ module.exports = {
 		let numQuestion = 0
 
 		const filter = m => m.author.id === author.id
-		mTxServUtil.ask(msg, lang["login"]["askCredential"].replace("%credential%", question[numQuestion++]));
+		msg.channel.send({
+			embeds: [mTxServUtil.ask(msg, lang["login"]["askCredential"].replace("%credential%", question[numQuestion++]))]
+		})
+
 		const collectCredentials = msg.channel.createMessageCollector({
 			filter, 
 			time: 40_000*3,
@@ -98,7 +100,9 @@ module.exports = {
 
 		collectCredentials.on('collect', message => {
 			if ( numQuestion !== 3 )
-				mTxServUtil.ask(msg, lang["login"]["askCredential"].replace("%credential%", question[numQuestion++]));
+				msg.channel.send({
+					embeds: [mTxServUtil.ask(msg, lang["login"]["askCredential"].replace("%credential%", question[numQuestion++]))]
+				})
 		})
 
 		collectCredentials.on('end', async collected => {
@@ -107,18 +111,28 @@ module.exports = {
 				collected = collected.first(3)
 
 				try {
-					await api.login(collected[0].content, ollected[1].content, collected[2].content);
-					api.setCredential(author.id, credentials)
+					await api.login(collected[0].content, collected[1].content, collected[2].content);
+					api.setCredential(author.id, {
+						clientId: collected[0].content,
+						clientSecret: collected[1].content,
+						apiKey: collected[2].content
+					})
 		
-					mTxServUtil.saySuccess(msg, lang["login"]["successfull"])
+					msg.channel.send({
+						embeds: [mTxServUtil.saySuccess(msg, lang["login"]["successfull"])]
+					})
 				} catch (err) {
 					console.error(err)
-					mTxServUtil.sayError(msg, lang["login"]["bad_credentials"])
+					msg.channel.send({
+						embeds: [mTxServUtil.sayError(msg, lang["login"]["bad_credentials"])]
+					})
 				}
 			}
 			else
 			{
-				mTxServUtil.sayError(msg, lang["login"]["timeout"])
+				msg.channel.send({
+					embeds: [mTxServUtil.sayError(msg, lang["login"]["timeout"])]
+				})
 			}
 		})
 	}

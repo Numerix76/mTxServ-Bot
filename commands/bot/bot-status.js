@@ -9,14 +9,13 @@ module.exports = {
     name: 'bot',
     aliases: ['bot-status', 'info', 'bot-info', 'bot', 'fork', 'forkme', 'bot-invite'],
     category: 'Bot',
+    guildOnly: true,
     description: 'Display bot infos.',
     permissions: ['SEND_MESSAGES'],
     slash: 'both',
 
     callback: async ({ client, message, interaction, args, instance }) => {
         const msg = message || interaction;
-        
-        if (msg.channel.type === 'DM') return;
         
         const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`)
         const memberTotal = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)        
@@ -65,9 +64,7 @@ module.exports = {
             if(first !== second && first.length !== 0) embed.addField(`❯ Dependencies (${count})`, first.join(', '));
         }
 
-        msg.reply({
-            embeds : [embed]
-        });
+        return embed
     },
 
     parseDependencies() {
