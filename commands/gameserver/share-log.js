@@ -31,8 +31,6 @@ module.exports = {
 			return mTxServUtil.sayError(msg, lang["share-log"]["failed"])
 		}
 
-		msg.delete()
-
 		return mTxServUtil.saySuccess(msg, result.url)
 	}
 };
