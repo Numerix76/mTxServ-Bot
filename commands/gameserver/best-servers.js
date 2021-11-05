@@ -112,6 +112,6 @@ module.exports = {
             return embed
         }
 
-        paginationEmbed(msg, pages);
+        paginationEmbed(msg, interaction, pages);
 	}
 };

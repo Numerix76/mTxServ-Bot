@@ -215,5 +215,9 @@
 	},
 	"import-emojis": {
 		"success": "The emojis have been imported and synchronised."
+	},
+	"pages": {
+		"previous": "Previous",
+		"next": "Next"
 	}
 }
