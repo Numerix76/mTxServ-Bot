@@ -26,8 +26,6 @@ module.exports = {
 
 			const { customId, values, member } = interaction
 
-			console.log(interaction)
-
 			if (customId == 'games-roles' && member instanceof Discord.GuildMember)
 			{
 				const component = interaction.component

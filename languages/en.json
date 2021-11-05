@@ -154,6 +154,9 @@
 		"select": "Select server(s)",
 		"interaction_end": "If you want to add an other server please, use the command again."
 	},
+	"clear-servers": {
+		"success": "Successfull removed all servers"
+	},
 	"stats": {
 		"servers": "**%count% servers** are using me :heart:"
 	},
