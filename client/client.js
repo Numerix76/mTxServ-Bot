@@ -16,9 +16,9 @@ module.exports = class mTxServClient extends Discord.Client {
 		this.inviteURL = options.inviteURL;
 
 		this.statusUpdater = new StatusUpdater(this, [
-		    { type: 'WATCHING', name: `${process.env.BOT_COMMAND_PREFIX}giveaway | Win prizes!`},
-		    { type: 'PLAYING', name: `${process.env.BOT_COMMAND_PREFIX}help | mTxServ.com`},
-		    { type: 'PLAYING', name: 'Server by mTxServ.com' },
+			{ type: 'WATCHING', name: `${process.env.BOT_COMMAND_PREFIX}giveaway | Win prizes!`},
+			{ type: 'PLAYING', name: `${process.env.BOT_COMMAND_PREFIX}help | mTxServ.com`},
+			{ type: 'PLAYING', name: 'Server by mTxServ.com' },
 		])
 
 		this.mainGuilds = options.mainGuilds
