@@ -45,7 +45,7 @@ module.exports = {
 			.addField('api key', `<https://mtxserv.com/fr/mon-compte/api>`)
 		;
 
-		await msg.channel.send({
+		await msg.reply({
 			embeds: [embed]
 		})
 
