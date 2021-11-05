@@ -8,8 +8,8 @@ module.exports = {
 	description: 'Stop the discord bot.',
 	ownerOnly: true,
 	permissions: ['SEND_MESSAGES'],
-	hidden: true,
-	slash: false,
+	hidden: false,
+	slash: 'both',
 	
 	
 	callback: async ({ client, message, interaction }) => {
@@ -24,8 +24,8 @@ module.exports = {
 
 		mTxServUtil.sendLogMessage(embed)
 
-		mTxServUtil
-			.sayError(msg, lang['bot_stop']['confirm'])
-			.then(process.exit)	
+		msg.reply({
+			embeds: [mTxServUtil.sayError(msg, lang['bot_stop']['confirm'])]
+		}).then(process.exit)
 	}
 }

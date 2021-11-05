@@ -9,11 +9,11 @@ module.exports = {
 	aliases: ['add-role', 'ajouter-jeu'],
 	category: 'Admin',
 	description: 'Import et synchronised all emojis available with the bot.',
-	ownerOnly: true,
+	ownerOnly: false,
 	guildOnly: true,
 	permissions: ['SEND_MESSAGES', 'MANAGE_EMOJIS', 'USE_EXTERNAL_EMOJIS'],
-	hidden: true,
-	slash: false,
+	hidden: false,
+	slash: 'both',
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message ||interaction
@@ -37,6 +37,6 @@ module.exports = {
 			});
 		});
 
-		mTxServUtil.saySuccess(msg, `Les emojis ont été importés et synchronisés.`)
+		return mTxServUtil.saySuccess(msg, `Les emojis ont été importés et synchronisés.`)
 	}
 };

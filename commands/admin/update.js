@@ -18,25 +18,25 @@ module.exports = {
 		const msg = message || interaction;
 		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
 
-		mTxServUtil
-			.sayWarning(msg, lang['bot_update']['confirm'])
-			.then(() => {
-				const results = module.exports.exec('git pull && npm install --silent');
+		msg.reply({
+			embeds: [mTxServUtil.sayWarning(msg, lang['bot_update']['confirm'])]
+		}).then(() => {
+			const results = module.exports.exec('git pull && npm install --silent');
 
-				const embed = new Discord.MessageEmbed()
-					.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)
-					.setColor(results.err ? 'RED' : 'GREEN')
-					.setTitle(`:up: Updating bot..`)
-					.setDescription(`\`\`\`sh\n${results.std}\n\`\`\``)
-					.setTimestamp();
+			const embed = new Discord.MessageEmbed()
+				.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)
+				.setColor(results.err ? 'RED' : 'GREEN')
+				.setTitle(`:up: Updating bot..`)
+				.setDescription(`\`\`\`sh\n${results.std}\n\`\`\``)
+				.setTimestamp();
 
-				if ( msg.channel.id !== process.env.LOG_CHANNEL_ID)
-					mTxServUtil.sendLogMessage(embed)
+			if ( msg.channel.id !== process.env.LOG_CHANNEL_ID)
+				mTxServUtil.sendLogMessage(embed)
 
-				msg.reply({
-					embeds : [embed]
-				});
-			})
+			msg.editReply({
+				embeds : [embed]
+			});
+		})
 	},
 
 	exec(command) {

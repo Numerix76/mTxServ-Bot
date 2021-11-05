@@ -25,10 +25,6 @@ module.exports = {
 		const msg = message ||interaction
 
 		const [game, color, emoji, other]  = args
-		
-		if ( msg.channel.type === 'DM' ) {
-			return msg.reply(`This command is only available is server`)
-		}
 
 		const roleMod = '895391623419162674';
 		const roleFRPos = msg.guild.roles.cache.find(r => r.name === "FR").position
@@ -324,6 +320,6 @@ module.exports = {
 			})
 		});*/
 
-		mTxServUtil.saySuccess(msg, `\`${game} ${emoji}\`` + ' role and channel added successfuly.')
+		return mTxServUtil.saySuccess(msg, `\`${game} ${emoji}\`` + ' role and channel added successfuly.')
 	}
 };

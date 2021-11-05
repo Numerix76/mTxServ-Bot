@@ -49,70 +49,82 @@ module.exports = class mTxServUtil {
 		return member.roles.cache.some(role => role.name === 'FR') ? 'fr' : 'en';
 	}
 
-	static sayMessage(msg, title) {
+	static sayMessage(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('BLUE')
 		;
 
-		return msg.reply({
+		return embed;
+		
+		/*msg.reply({
 			embeds: [embed]
-		});
+		});*/
 	}
 
-	static sayWarning(msg, title) {
+	static sayWarning(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('ORANGE')
 		;
 
-		return msg.reply({
-			embeds : [embed]
-		});
+		return embed;
+		
+		/*msg.reply({
+			embeds: [embed]
+		});*/
 	}
 
-	static saySuccess(msg, title) {
+	static saySuccess(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('GREEN')
 		;
 
-		return msg.reply({
-			embeds : [embed]
-		});
+		return embed;
+		
+		/*msg.reply({
+			embeds: [embed]
+		});*/
 	}
 
-	static sayError(msg, title) {
+	static sayError(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('RED')
 		;
 
-		return msg.reply({
-			embeds : [embed]
-		});
+		return embed;
+		
+		/*msg.reply({
+			embeds: [embed]
+		});*/
 	}
 
-	static askConfirmation(msg, title) {
+	static askConfirmation(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('ORANGE')
 		;
 
-		return msg.reply({
-			embeds : [embed]
-		});
+		return embed;
+		
+		/*msg.reply({
+			embeds: [embed]
+		});*/
 	}
 
-	static ask(msg, title) {
+	static ask(msg, content) {
 		const embed = new Discord.MessageEmbed()
-			.setDescription(title)
+			.setDescription(content)
 			.setColor('ORANGE')
 		;
 
-		return msg.reply({
-			embeds : [embed]
-		});
+		return embed;
+		
+		/*msg.reply({
+			embeds: [embed]
+		});*/
 	}
 
 	/*static async getInput(msg, inputMsg) {

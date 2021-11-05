@@ -85,7 +85,7 @@ module.exports = {
 		collector.on('collect', async message => { 
 			const serverKey = message.content-1
 
-			if (typeof invoices[serverKey] === 'undefined') {
+			if (typeof list[serverKey] === 'undefined') {
 				mTxServUtil.sayError(msg, lang['server_add']['not_found'])
 				return
 			}
