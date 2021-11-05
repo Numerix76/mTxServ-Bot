@@ -14,9 +14,9 @@ module.exports = {
 
 	expectedArgs: '<lang>',
 	expectedArgsTypes: ['STRING'],
-    
-    minArgs: 1,
-    maxArgs: 1,	
+
+	minArgs: 1,
+	maxArgs: 1,	
 
 	init: (client) => {
 		client.on('interactionCreate', interaction => {
@@ -64,7 +64,7 @@ module.exports = {
 			.addField(lang["select-games"]["title"], lang["select-games"]["description"])
 			.setFooter(lang["select-games"]["footer"])
 
-	
+
 		if (games.length > 0)
 		{
 			const row = new Discord.MessageActionRow()

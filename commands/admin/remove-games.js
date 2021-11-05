@@ -16,10 +16,10 @@ module.exports = {
 
 	expectedArgs: '<game>',
 	expectedArgsTypes: ['STRING'],
-    
-    minArgs: 1,
-    maxArgs: 1,	
-	
+
+	minArgs: 1,
+	maxArgs: 1,	
+
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message ||interaction
@@ -94,7 +94,7 @@ module.exports = {
 						.setOptions(optionFR)
 					)
 				}
-	
+
 				gamesMessageFR.edit({
 					components: [rowFR]
 				})
@@ -106,7 +106,7 @@ module.exports = {
 		{
 			const lang = require(`../../languages/en.json`);
 			let rowEN = gamesMessageEN.components?gamesMessageEN.components[0]:null
-	
+
 			if (!rowEN) 
 			{
 				rowEN = new Discord.MessageActionRow()
@@ -122,9 +122,9 @@ module.exports = {
 					value: game.roleENID
 				})
 			}
-	
+
 			let menuEN = rowEN.components[0]
-	
+
 			if (games.length === 0)
 			{
 				gamesMessageEN.edit({

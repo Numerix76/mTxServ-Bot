@@ -12,9 +12,9 @@ module.exports = {
 
 	expectedArgs: '<query>',
 	expectedArgsTypes: ['STRING'],
-    
-    minArgs: 1,
-    maxArgs: 1,	
+
+	minArgs: 1,
+	maxArgs: 1,	
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;

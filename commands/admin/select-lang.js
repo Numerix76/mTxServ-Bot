@@ -47,7 +47,7 @@ module.exports = {
 		const msg = message || interaction
 
 		const iconFr = msg.guild.emojis.cache.find(emoji => emoji.name === 'fr') || ":flag_fr:";
-        const iconEn = msg.guild.emojis.cache.find(emoji => emoji.name === 'en') || ":flag_us:";
+		const iconEn = msg.guild.emojis.cache.find(emoji => emoji.name === 'en') || ":flag_us:";
 		
 		const embed = new Discord.MessageEmbed()
 			.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)

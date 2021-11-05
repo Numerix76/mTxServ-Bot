@@ -56,10 +56,6 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
 
 	static sayWarning(msg, content) {
@@ -69,10 +65,6 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
 
 	static saySuccess(msg, content) {
@@ -82,10 +74,6 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
 
 	static sayError(msg, content) {
@@ -95,10 +83,6 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
 
 	static askConfirmation(msg, content) {
@@ -108,10 +92,6 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
 
 	static ask(msg, content) {
@@ -121,28 +101,7 @@ module.exports = class mTxServUtil {
 		;
 
 		return embed;
-		
-		/*msg.reply({
-			embeds: [embed]
-		});*/
 	}
-
-	/*static async getInput(msg, inputMsg) {
-		await mTxServUtil.ask(msg, inputMsg)
-
-		const author = msg.author || msg.user
-
-		console.log("je suis la")
-		//const collector = new Discord.MessageCollector(msg.channel, m => m.author.id === author.id, { time: 40000 });
-		//const userInput = collected.first()
-
-		const filter = m => m.author.id === author.id
-		msg.channel.awaitMessages({ filter, time: 40_000, errors: ['time'] }).then( collected => console.log(collected.first()))
-
-		return "no"
-
-		//return userInput.content.trim()
-	}*/
 
 	static async sendLogMessage(embed)
 	{
