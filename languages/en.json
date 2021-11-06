@@ -163,7 +163,7 @@
 	},
 	"feeds": {
 		"title": "Your feeds",
-		"description": "To receive **news from your favorite games __in a specified channel__**, subscribe to the lists with `m!feed-add`, for example `m!feed-add minecraft IDOfChannel` (__admin only__).",
+		"description": "To receive **news from your favorite games __in a specified channel__**, subscribe to the lists with `m!feed-add`, for example `m!feed-add minecraft Channel` (__admin only__).",
 		"follow": "**Follow**",
 		"unfollow": "Unfollowed"
 	},
