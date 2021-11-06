@@ -28,7 +28,8 @@
 	"how_to": {
 		"search": "Recherche",
 		"no_result": ":no_entry_sign: Aucun résultat trouvé",
-		"check": "Consultez tous les tutoriels sur"
+		"check": "Consultez tous les tutoriels sur",
+		"invalid_locale": "Vous n'avez pas saisie un langage valide"
 	},
 	"gs_status": {
 		"invalid_format": ":no_entry_sign: Adresse invalide, le port est probablement manquant",
