@@ -227,5 +227,10 @@
 		"invalid-url": "Can't retrieve file ID from the URL",
 		"error-dl": "Can't download this addon from the workshop.\n**Only addons can be downloaded.**",
 		"success": "You can download this addon of STEAM Workshop [here](%downloadLink%)."
+	},
+	"mc-achivement": {
+		"no_icon": "This icon doesn't exist.\n\n**Availables icons:** %icons%",
+		"success": "Achievement successful generated",
+		"error": "An error occured:\n`%errMessage%`"
 	}
 }

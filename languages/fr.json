@@ -227,5 +227,10 @@
 		"invalid-url": "Impossible de récupérer l'ID de l'addon depuis cette URL",
 		"error-dl": "Impossible de télécharger l'addon depuis le workshop.\n**Seul les addons peuvent peuvent être téléchargé.**",
 		"success": "Vous pouvez télcharger l'addon [ici](%downloadLink%)."
+	},
+	"mc-achivement": {
+		"no_icon": "Cette icone n'existe pas.\n\n**Liste des icones disponibles:**%icons%",
+		"success": "Achievement généré avec succès",
+		"error": "Une erreur est survenue :\n`%errMessage%`"
 	}
 }
