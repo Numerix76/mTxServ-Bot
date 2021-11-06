@@ -29,4 +29,8 @@ module.exports = class mTxServClient extends Discord.Client {
 	isMainGuild(guildId) {
 		return this.mainGuilds.indexOf(guildId) !== -1
 	}
+
+	isOwner(author) {
+		return clientWOK?.botOwner.indexOf(author.id) !== -1
+	}
 };

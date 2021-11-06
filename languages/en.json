@@ -54,7 +54,8 @@
 		"title_game": ":bar_chart: Game Server",
 		"title_vps_game": ":bar_chart: GAME VPS",
 		"title_vps": ":bar_chart: SSD VPS",
-		"state": "Stock Levels:"
+		"state": "Stock Levels:",
+		"error": "Error with the choice. Please enter `game`, `vps-game` or `vps`"
 	},
 	"support": {
 		"title": ":question: How to contact support",
