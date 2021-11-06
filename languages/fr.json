@@ -240,5 +240,8 @@
 		"invalid_channel": "Vous n'avez pas saisie un channel valide",
 		"invalid_locale": "Vous n'avez pas saisie un langage valide",
 		"success": "Les nouveaux articles à propos de **%game%** en **%locale%** seront envoyés dans **%channel%**."
+	},
+	"feed_remove": {
+		"success": "Le jeu **%game%** n'est plus suivie."
 	}
 }

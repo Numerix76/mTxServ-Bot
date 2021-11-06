@@ -240,5 +240,8 @@
 		"invalid_channel": "The channel is invalid",
 		"invalid_locale": "The locale is invalid",
 		"success": "New articles about **%game%** in **%locale%** will be post in channel **%channel%**."
+	},
+	"feed_remove": {
+		"success": "Game **%game%** unfollowed."
 	}
 }
