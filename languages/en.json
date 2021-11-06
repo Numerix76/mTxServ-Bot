@@ -178,7 +178,8 @@
 	"plugin_search": {
 		"search": "Search",
 		"no_result": ":no_entry_sign: No result found",
-		"description": "Description :"
+		"description": "Description :",
+		"check": "Go one the website: "
 	},
 	"achievement": {
 		"new": "Congratulations <@%userId%>, you have now the achievement **%role%**!"
