@@ -14,12 +14,11 @@ module.exports = {
 	expectedArgsTypes: ['STRING'],
 
 	minArgs: 1,
-	maxArgs: 1,	
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;
 		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
-		const [query] = args
+		const query = args.join(" ")
 
 		const api = new HostingerApi()
 		const results = await api.search(query)
