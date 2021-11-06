@@ -234,5 +234,11 @@
 		"no_icon": "This icon doesn't exist.\n\n**Availables icons:** %icons%",
 		"success": "Achievement successful generated",
 		"error": "An error occured:\n`%errMessage%`"
+	},
+	"feed_add": {
+		"invalid_game": "The game is invalid",
+		"invalid_channel": "The channel is invalid",
+		"invalid_locale": "The locale is invalid",
+		"success": "New articles about **%game%** in **%locale%** will be post in channel **%channel%**."
 	}
 }

@@ -234,5 +234,11 @@
 		"no_icon": "Cette icone n'existe pas.\n\n**Liste des icones disponibles:**%icons%",
 		"success": "Achievement généré avec succès",
 		"error": "Une erreur est survenue :\n`%errMessage%`"
+	},
+	"feed_add": {
+		"invalid_game": "Vous n'avez pas saisie un jeu valide",
+		"invalid_channel": "Vous n'avez pas saisie un channel valide",
+		"invalid_locale": "Vous n'avez pas saisie un langage valide",
+		"success": "Les nouveaux articles à propos de **%game%** en **%locale%** seront envoyés dans **%channel%**."
 	}
 }
