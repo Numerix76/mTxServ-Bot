@@ -74,7 +74,7 @@ module.exports = {
 				option.push({
 					label: game.name,
 					emoji: game.emoji,
-					value: args[0] === "fr"?game.roleFRID:game.roleENID
+					value: game.role
 				})
 			}
 

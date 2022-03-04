@@ -13,7 +13,7 @@ module.exports = {
 
 		setInterval(async () => {
 		    try {
-		        await client.feedMonitor.process()
+		        client.feedMonitor.process()
 		    } catch (err) {
 		        console.error(err);
 		    }

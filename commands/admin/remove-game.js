@@ -38,120 +38,61 @@ module.exports = {
 		/*----------------------------------------------*/
 		/* MAJ des roles dans les channels de sélection */
 		/*----------------------------------------------*/
-		const gamesChannelFR = await msg.guild.channels.cache.find(c => c.name === "selection-role")
-		const gamesChannelEN = await msg.guild.channels.cache.find(c => c.name === "select-role")
+		const gamesChannel = await msg.guild.channels.cache.find(c => c.name === "select-role")
 		
-		let gamesMessageFR
-		await gamesChannelFR.messages.fetch(gamesChannelFR.lastMessageId).then(message => gamesMessageFR = message).catch(console.error)
+		let gamesMessage
+		await gamesChannel.messages.fetch(gamesChannel.lastMessageId).then(message => gamesMessage = message).catch(console.error)
 		
-		let gamesMessageEN
-		await gamesChannelEN.messages.fetch(gamesChannelEN.lastMessageId).then(message => gamesMessageEN = message).catch(console.error)
-
-		if (gamesMessageFR)
-		{
-			const lang = require(`../../languages/fr.json`);
-			let rowFR = gamesMessageFR.components?gamesMessageFR.components[0]:null
-
-			if (!rowFR) 
-			{
-				rowFR = new Discord.MessageActionRow()
-			}
-
-			const optionFR = []
-				
-			for(const game of games)
-			{
-				optionFR.push({
-					label: game.name,
-					emoji: game.emoji,
-					value: game.roleFRID
-				})
-			}
-
-			let menuFR = rowFR.components[0]
-
-			if (games.length === 0)
-			{
-				gamesMessageFR.edit({
-					components: []
-				})
-			}
-			else
-			{
-				if (menuFR)
-				{
-					menuFR.setOptions(optionFR)
-					menuFR.setMaxValues(menuFR.options.length)
-				}
-				else
-				{
-					rowFR.addComponents(
-						new Discord.MessageSelectMenu()
-						.setCustomId('games-roles')
-						.setMinValues(0)
-						.setMaxValues(1)
-						.setPlaceholder(lang["select-games"]["select"])
-						.setOptions(optionFR)
-					)
-				}
-
-				gamesMessageFR.edit({
-					components: [rowFR]
-				})
-			}	
-		}
-		
-		
-		if (gamesMessageEN)
+		if (gamesMessage)
 		{
 			const lang = require(`../../languages/en.json`);
-			let rowEN = gamesMessageEN.components?gamesMessageEN.components[0]:null
+			let row = gamesMessage.components?gamesMessage.components[0]:null
 
-			if (!rowEN) 
+			if (!row) 
 			{
-				rowEN = new Discord.MessageActionRow()
+				row = new Discord.MessageActionRow()
 			}
 			
-			const optionEN = []
+			const options = []
 				
 			for(const game of games)
 			{
-				optionEN.push({
+				options.push({
 					label: game.name,
 					emoji: game.emoji,
-					value: game.roleENID
+					value: game.role
 				})
 			}
 
-			let menuEN = rowEN.components[0]
+			let menu = row.components[0]
 
 			if (games.length === 0)
 			{
-				gamesMessageEN.edit({
+				gamesMessage.edit({
 					components: []
 				})
 			}
 			else
 			{
-				if (menuEN)
+				if (menu)
 				{
-					menuEN.setOptions(optionEN)
-					menuEN.setMaxValues(menuEN.options.length)
+					menu.setOptions(options)
+					menu.setMaxValues(menu.options.length)
 				}
 				else
 				{
-					rowEN.addComponents(
+					row.addComponents(
 						new Discord.MessageSelectMenu()
 						.setCustomId('games-roles')
 						.setMinValues(0)
 						.setMaxValues(1)
 						.setPlaceholder(lang["select-games"]["select"])
-						.setOptions(optionEN)
+						.setOptions(options)
 					)
 				}
 
-				gamesMessageEN.edit({
-					components: [rowEN]
+				gamesMessage.edit({
+					components: [row]
 				})
 			}
 		}
