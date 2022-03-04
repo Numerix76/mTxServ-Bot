@@ -45,7 +45,8 @@
 	"software_search": {
 		"search": "Search",
 		"no_result": ":no_entry_sign: No result found",
-		"check": "See all our versions & modpacks on"
+		"check": "See all our versions & modpacks on",
+		"invalid_api": "The API doesn't exist."
 	},
 	"rules": {
 		"title": ":loudspeaker: Rules",
