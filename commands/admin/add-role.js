@@ -142,5 +142,26 @@ module.exports = {
 		await client.provider.set(msg.guild.id, 'games', games)
 
 		return mTxServUtil.saySuccess(msg, lang["add-games"]["success"].replace("%game%", game).replace("%emoji%", emoji))
-	}
+	},
+
+	// init: async (client, instance) => {
+	// 	//console.log( await instance.slashCommands.get().filter(function(a) {return a.name === module.exports.name}))
+
+	// 	const commands = await instance.slashCommands.get()
+	// 	let commande;
+	// 	for(const command of commands)
+	// 		if (command[1].name === module.exports.name)
+	// 			commande = command[1];
+
+	// 	const permissions = [
+	// 		{
+	// 			id: '311931325240180736',
+	// 			type: 'USER',
+	// 			permission: false,
+	// 		},
+	// 	];
+		
+	// 	await commande.permissions.add({guild:"894204482580279306", permissions });	
+	// }
+
 };
