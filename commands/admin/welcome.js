@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'welcome',
-	aliases: ['update-bot'],
+	aliases: [],
 	category: 'Admin',
 	description: 'Send welcome message',
 	ownerOnly: true,

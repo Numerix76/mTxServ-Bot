@@ -5,7 +5,7 @@ const { Permissions } = Discord
 
 module.exports = {
 	name: 'add-game',
-	aliases: ['add-role', 'ajouter-jeu'],
+	aliases: ['ajouter-jeu'],
 	category: 'Admin',
 	description: 'Add a new game on the discord.',
 	ownerOnly: true,
@@ -433,6 +433,6 @@ module.exports = {
 
 		await client.provider.set(msg.guild.id, 'games', games)
 
-		return mTxServUtil.saySuccess(msg, lang["add-games"]["succes"].replace("%game%", game).replace("%emoji%", emoji))
+		return mTxServUtil.saySuccess(msg, lang["add-games"]["success"].replace("%game%", game).replace("%emoji%", emoji))
 	}
 };

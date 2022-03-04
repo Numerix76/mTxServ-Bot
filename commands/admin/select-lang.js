@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'select-lang',
-	aliases: ['add-role', 'ajouter-jeu'],
+	aliases: [],
 	category: 'Admin',
 	description: 'Send select language message',
 	ownerOnly: true,

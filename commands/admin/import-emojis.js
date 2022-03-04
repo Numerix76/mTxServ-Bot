@@ -6,7 +6,7 @@ const fs = require('fs');
 
 module.exports = {
 	name: 'import-emojis',
-	aliases: ['add-role', 'ajouter-jeu'],
+	aliases: [],
 	category: 'Admin',
 	description: 'Import et synchronised all emojis available with the bot.',
 	ownerOnly: false,

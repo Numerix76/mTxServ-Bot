@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 
 module.exports = {
 	name: 'select-games',
-	aliases: ['add-role', 'ajouter-jeu'],
+	aliases: [],
 	category: 'Admin',
 	description: 'Send select games message',
 	ownerOnly: true,
@@ -16,7 +16,7 @@ module.exports = {
 	expectedArgsTypes: ['STRING'],
 
 	minArgs: 1,
-	maxArgs: 1,	
+	maxArgs: 1,
 
 	init: (client) => {
 		client.on('interactionCreate', interaction => {

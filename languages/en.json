@@ -214,7 +214,8 @@
 		"success": "`%game%` successfuly removed. You can now delete all channels and roles related to the game."
 	},
 	"add-games": {
-		"success": "`%game% %emoji%` role and channel added successfuly."
+		"success": "`%game% %emoji%` role and channel added successfuly.",
+		"role_exist": "One of the role ID already exist"
 	},
 	"import-emojis": {
 		"success": "The emojis have been imported and synchronised."
