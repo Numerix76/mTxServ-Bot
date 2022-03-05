@@ -35,7 +35,8 @@
 		"invalid_format": ":no_entry_sign: Invalid address, port is probably missing",
 		"offline": ":red_circle: This game server is offline.",
 		"online": ":green_circle: This game server is online.",
-		"unknown": "Unknown"
+		"unknown": "Unknown",
+		"game_not_exist": "The game choosen doesn't exist"
 	},
 	"help": {
 		"dm_closed": "Unable to send you the help DM. You probably have DMs disabled.",
