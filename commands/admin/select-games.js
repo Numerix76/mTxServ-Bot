@@ -11,12 +11,6 @@ module.exports = {
 	hidden: false,
 	slash: false,
 
-	// expectedArgs: '<lang>',
-	// expectedArgsTypes: ['STRING'],
-
-	// minArgs: 1,
-	// maxArgs: 1,
-
 	init: async (client) => {
 		client.on('interactionCreate', async (interaction) => {
 			if (!interaction.isSelectMenu()) {
