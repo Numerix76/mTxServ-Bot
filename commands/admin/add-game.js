@@ -39,7 +39,7 @@ module.exports = {
 		let gamesMessage
 		const currentConfig = await client.provider.get(msg.guild.id, 'select-games', {})
 		const gamesChannel = await msg.guild.channels.cache.get(currentConfig.channel)
-		await gamesChannel.messages.fetch(currentConfig.message).then(message => gamesMessage = message).catch(console.error)
+		await gamesChannel?.messages.fetch(currentConfig.message).then(message => gamesMessage = message).catch(console.error)
 
 		if ( !gamesMessage ) {
             return mTxServUtil.sayError(msg, `The select-games channel or message doesn't exist. Use \`m!select-games\` in a channel to configure it.`)
