@@ -46,7 +46,6 @@ module.exports = class mTxServUtil {
 			return process.env.DEFAULT_LANG;
 		}
 
-		console.log(await client.provider.get(member.guild.id, 'language', process.env.DEFAULT_LANG))
 		if ( member.guild.roles.cache.some(role => (role.name === 'FR' || role.name === 'EN')) )
 			return member.roles.cache.some(role => role.name === 'FR') ? 'fr' : 'en';
 		else
