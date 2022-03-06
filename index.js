@@ -29,7 +29,7 @@ client.on('ready', () => {
 	const clientWOK = global.clientWOK = new WOKCommands(client, {
 		commandsDir: path.join(__dirname, 'commands'),
 		showWarns: true,
-		testServers: process.env.BOT_SERVER_TEST_ID.split(','),
+		testServers: process.env.MAIN_GUILDS.split(','),
 		botOwners: process.env.BOT_OWNER_ID.split(',')
 	})
 	.setDefaultPrefix(process.env.BOT_COMMAND_PREFIX)

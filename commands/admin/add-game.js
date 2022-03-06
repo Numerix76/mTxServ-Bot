@@ -7,7 +7,7 @@ module.exports = {
 	aliases: [],
 	category: 'Admin',
 	description: 'Add a new role to the selector on the discord.',
-	ownerOnly: true,
+	testOnly: true,
 	guildOnly: true,
 	permissions: ['ADMINISTRATOR'],
 	hidden: false,

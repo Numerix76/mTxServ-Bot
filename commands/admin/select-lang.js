@@ -6,9 +6,9 @@ module.exports = {
 	aliases: [],
 	category: 'Admin',
 	description: 'Send select language message',
-	ownerOnly: true,
+	testOnly: true,
 	guildOnly: true,
-	permissions: ['SEND_MESSAGES'],
+	permissions: ['ADMINISTRATOR'],
 	hidden: true,
 	slash: false,
 

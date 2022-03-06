@@ -6,6 +6,7 @@ module.exports = {
 	aliases: [],
 	category: 'Admin',
 	description: 'Send select games message',
+	testOnly: true,
 	guildOnly: true,
 	permissions: ['ADMINISTRATOR'],
 	hidden: false,

@@ -8,7 +8,7 @@ module.exports = {
 	aliases: ['remove-role', 'retirer-jeu'],
 	category: 'Admin',
 	description: 'Remove a game from the discord.',
-	ownerOnly: true,
+	testOnly: true,
 	guildOnly: true,
 	permissions: ['ADMINISTRATOR'],
 	hidden: false,

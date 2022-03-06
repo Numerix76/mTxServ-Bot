@@ -6,8 +6,6 @@ module.exports = {
     aliases: ['steam-dl'],
 	category: 'Game server',
 	description: 'Get a link to download a STEAM Workshop addon.',
-	ownerOnly: true,
-	guildOnly: true,
 	permissions: ['SEND_MESSAGES'],
 	hidden: false,
 	slash: 'both',

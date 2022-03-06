@@ -4,9 +4,8 @@ module.exports = {
 	name: 'roles',
 	category: 'Admin',
 	description: 'Show roles stats.',
-	ownerOnly: true,
 	guildOnly: true,
-	permissions: ['SEND_MESSAGES'],
+	permissions: ['ADMINISTRATOR'],
 	hidden: false,
 	slash: 'both',
 

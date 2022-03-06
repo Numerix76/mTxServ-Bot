@@ -9,7 +9,6 @@ module.exports = {
 	category: 'Admin',
 	description: 'Update the bot.',
 	ownerOnly: true,
-	guildOnly: true,
 	permissions: ['SEND_MESSAGES'],
 	hidden: false,
 	slash: 'both',

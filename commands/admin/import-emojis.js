@@ -9,7 +9,6 @@ module.exports = {
 	aliases: [],
 	category: 'Admin',
 	description: 'Import et synchronised all emojis available with the bot.',
-	ownerOnly: false,
 	guildOnly: true,
 	permissions: ['SEND_MESSAGES', 'MANAGE_EMOJIS', 'USE_EXTERNAL_EMOJIS'],
 	hidden: false,

@@ -9,6 +9,7 @@ module.exports = {
 	permissions: ['ADMINISTRATOR'],
 	slash: false,
 	guildOnly: true,
+	testOnly: true,
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction;

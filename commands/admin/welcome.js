@@ -5,9 +5,9 @@ module.exports = {
 	aliases: [],
 	category: 'Admin',
 	description: 'Send welcome message',
-	ownerOnly: true,
+	testOnly: true,
 	guildOnly: true,
-	permissions: ['SEND_MESSAGES'],
+	permissions: ['ADMINISTRATOR'],
 	hidden: false,
 	slash: false,
 
