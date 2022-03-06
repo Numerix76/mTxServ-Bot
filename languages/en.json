@@ -126,7 +126,8 @@
 		"implemented": "implemented",
 		"by": "by",
 		"ask_reason": "Please enter a reason.",
-		"reason": "Reason"
+		"reason": "Reason",
+		"update-noaccess": "You are not authorized to do that"
 	},
 	"ark_version": {
 		"message": "The latest version of **ARK servers** is `%version%`."

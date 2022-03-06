@@ -18,11 +18,11 @@ module.exports = class mTxServUtil {
 	}
 
 	static async resolveLangOfMessage(msg) {
-		if (msg.channel.type !== 'DM') {
-			return await mTxServUtil.getLangOfChannel(msg.channel)
-		}
+		// if (msg.channel.type !== 'DM') {
+		// 	return await mTxServUtil.getLangOfChannel(msg.channel)
+		// }
 
-		return mTxServUtil.getLangOfMember(msg.member)
+		return await mTxServUtil.getLangOfMember(msg.member)
 	}
 
 	static async getLangOfChannel(channel) {
@@ -41,12 +41,16 @@ module.exports = class mTxServUtil {
 		return await client.provider.get(channel.guild.id, 'language', process.env.DEFAULT_LANG)
 	}
 
-	static getLangOfMember(member) {
+	static async getLangOfMember(member) {
 		if (!member) {
 			return process.env.DEFAULT_LANG;
 		}
 
-		return member.roles.cache.some(role => role.name === 'FR') ? 'fr' : 'en';
+		console.log(await client.provider.get(member.guild.id, 'language', process.env.DEFAULT_LANG))
+		if ( member.guild.roles.cache.some(role => (role.name === 'FR' || role.name === 'EN')) )
+			return member.roles.cache.some(role => role.name === 'FR') ? 'fr' : 'en';
+		else
+			return await client.provider.get(member.guild.id, 'language', process.env.DEFAULT_LANG)
 	}
 
 	static sayMessage(msg, content) {

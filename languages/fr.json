@@ -126,7 +126,8 @@
 		"implemented": "implémenté",
 		"by": "par",
 		"ask_reason": "Entrez une raison s'il vous plaît.",
-		"reason": "Raison"
+		"reason": "Raison",
+		"update-noaccess": "Vous n'êtes pas autorisé à faire cela."
 	},
 	"ark_version": {
 		"message": "La dernière version des **serveurs ARK** est là `%version%`."
