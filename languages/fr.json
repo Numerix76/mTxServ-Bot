@@ -249,5 +249,20 @@
 	},
 	"feed_remove": {
 		"success": "Le jeu **%game%** n'est plus suivie."
+	},
+	"convert": {
+		"invalid_format": "Le format saisie n'est pas pris en charge.",
+		"conversion_of": "Conversion de : %url%",
+		"cant_connect": "Impossible de se connecter au serveur. Merci de réessayer plus tard.",
+		"lost_connection": "Connexion perdu avec le serveur. Merci de réessayer plus tard.",
+		"no_live": "Impossible de convertir un fichier en direct.",
+		"title": "Titre",
+		"created_by": "Créé par",
+		"duration": "Durée",
+		"download": "Téléchargement",
+		"conversion": "Conversion",
+		"download_link": "Lien de téléchargement",
+		"error": "Erreur",
+		"logs": "Logs"
 	}
 }

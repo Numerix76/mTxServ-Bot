@@ -249,5 +249,20 @@
 	},
 	"feed_remove": {
 		"success": "Game **%game%** unfollowed."
+	},
+	"convert": {
+		"invalid_format": "The format you entered is not supported.",
+		"conversion_of": "Conversion of : %url%",
+		"cant_connect": "Can't connect to the server backend. Please retry later.",
+		"lost_connection": "Lost connection with the server backend. Please retry later.",
+		"no_live": "Can't download a live file.",
+		"title": "Title",
+		"created_by": "Created by",
+		"duration": "Duration",
+		"download": "Download",
+		"conversion": "Conversion",
+		"download_link": "Link to download",
+		"error": "Error",
+		"logs": "Logs"
 	}
 }
