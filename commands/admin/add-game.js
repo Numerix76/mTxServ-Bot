@@ -24,7 +24,8 @@ module.exports = {
 		const msg = message ||interaction
 		const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
 
-		const [game, emoji, role] = args
+		const [game, emoji] = args
+		const role = (message?message.mentions.roles.first().id : interaction.options.getRole("role").id)
 
 		const games = await client.provider.get(msg.guild.id, 'games', [])
 
@@ -35,54 +36,51 @@ module.exports = {
 		/*------------------------------------------------*/
 		/* Ajout des roles dans les channels de sélection */
 		/*------------------------------------------------*/
-		const gamesChannel = await msg.guild.channels.cache.find(c => c.name === "select-role")
-		
 		let gamesMessage
-		await gamesChannel.messages.fetch(gamesChannel.lastMessageId).then(message => gamesMessage = message).catch(console.error)
-		
-		
-		if (gamesMessage)
-		{
-			const lang = require(`../../languages/en.json`);
-			let row = gamesMessage.components?gamesMessage.components[0]:null
-	
-			if (!row) 
-			{
-				row = new Discord.MessageActionRow()
-			}
-			
-			const optionEN = [
-				{
-					label: game,
-					emoji: emoji,
-					value: role
-				}
-			]
-	
-			
-			let menu = row.components[0]
-	
-			if (menu)
-			{
-				menu.addOptions(optionEN)
-				menu.setMaxValues(menu.options.length)
-			}
-			else
-			{
-				row.addComponents(
-					new Discord.MessageSelectMenu()
-					.setCustomId('games-roles')
-					.setMinValues(0)
-					.setMaxValues(1)
-					.setPlaceholder(lang["select-games"]["select"])
-					.addOptions(optionEN)
-				)
-			}
+		const currentConfig = await client.provider.get(msg.guild.id, 'select-games', {})
+		const gamesChannel = await msg.guild.channels.cache.get(currentConfig.channel)
+		await gamesChannel.messages.fetch(currentConfig.message).then(message => gamesMessage = message).catch(console.error)
 
-			gamesMessage.edit({
-				components: [row]
-			})
+		if ( !gamesMessage ) {
+            return mTxServUtil.sayError(msg, `The select-games channel or message doesn't exist. Use \`m!select-games\` in a channel to configure it.`)
+		}		
+		
+
+		let row = gamesMessage.components?gamesMessage.components[0]:null
+		if (!row)
+			row = new Discord.MessageActionRow()
+		
+		const optionEN = [
+			{
+				label: game,
+				emoji: emoji,
+				value: role
+			}
+		]
+
+		
+		let menu = row.components[0]
+
+		if (menu)
+		{
+			menu.addOptions(optionEN)
+			menu.setMaxValues(menu.options.length)
 		}
+		else
+		{
+			row.addComponents(
+				new Discord.MessageSelectMenu()
+				.setCustomId('games-roles')
+				.setMinValues(0)
+				.setMaxValues(1)
+				.setPlaceholder(lang["select-games"]["select"])
+				.addOptions(optionEN)
+			)
+		}
+
+		gamesMessage.edit({
+			components: [row]
+		})
 
 		games.push({
 			name: game,

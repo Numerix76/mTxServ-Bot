@@ -38,63 +38,60 @@ module.exports = {
 		/*----------------------------------------------*/
 		/* MAJ des roles dans les channels de sélection */
 		/*----------------------------------------------*/
-		const gamesChannel = await msg.guild.channels.cache.find(c => c.name === "select-role")
-		
 		let gamesMessage
-		await gamesChannel.messages.fetch(gamesChannel.lastMessageId).then(message => gamesMessage = message).catch(console.error)
+		const currentConfig = await client.provider.get(msg.guild.id, 'select-games', {})
+		const gamesChannel = await msg.guild.channels.cache.get(currentConfig.channel)
+		await gamesChannel.messages.fetch(currentConfig.message).then(message => gamesMessage = message).catch(console.error)
+
+		if ( !gamesMessage ) {
+            return mTxServUtil.sayError(msg, `The select-games channel or message doesn't exist. Use \`m!select-games\` in a channel to configure it.`)
+		}
 		
-		if (gamesMessage)
-		{
-			const lang = require(`../../languages/en.json`);
-			let row = gamesMessage.components?gamesMessage.components[0]:null
-
-			if (!row) 
-			{
-				row = new Discord.MessageActionRow()
-			}
+		let row = gamesMessage.components?gamesMessage.components[0]:null
+		if (!row) 
+			row = new Discord.MessageActionRow()
+		
+		const options = []
 			
-			const options = []
-				
-			for(const game of games)
-			{
-				options.push({
-					label: game.name,
-					emoji: game.emoji,
-					value: game.role
-				})
-			}
+		for(const game of games)
+		{
+			options.push({
+				label: game.name,
+				emoji: game.emoji,
+				value: game.role
+			})
+		}
 
-			let menu = row.components[0]
+		let menu = row.components[0]
 
-			if (games.length === 0)
+		if (games.length === 0)
+		{
+			gamesMessage.edit({
+				components: []
+			})
+		}
+		else
+		{
+			if (menu)
 			{
-				gamesMessage.edit({
-					components: []
-				})
+				menu.setOptions(options)
+				menu.setMaxValues(menu.options.length)
 			}
 			else
 			{
-				if (menu)
-				{
-					menu.setOptions(options)
-					menu.setMaxValues(menu.options.length)
-				}
-				else
-				{
-					row.addComponents(
-						new Discord.MessageSelectMenu()
-						.setCustomId('games-roles')
-						.setMinValues(0)
-						.setMaxValues(1)
-						.setPlaceholder(lang["select-games"]["select"])
-						.setOptions(options)
-					)
-				}
-
-				gamesMessage.edit({
-					components: [row]
-				})
+				row.addComponents(
+					new Discord.MessageSelectMenu()
+					.setCustomId('games-roles')
+					.setMinValues(0)
+					.setMaxValues(1)
+					.setPlaceholder(lang["select-games"]["select"])
+					.setOptions(options)
+				)
 			}
+
+			gamesMessage.edit({
+				components: [row]
+			})
 		}
 
 		return mTxServUtil.saySuccess(msg, lang["remove-games"]["success"].replace("%game%", game))

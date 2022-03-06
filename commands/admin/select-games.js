@@ -60,6 +60,7 @@ module.exports = {
 			.setFooter(`${langEN["select-games"]["footer"]} / ${langFR["select-games"]["footer"]} - mTxServ.com`)
 
 
+		let selectMsg;
 		if (games.length > 0)
 		{
 			const row = new Discord.MessageActionRow()
@@ -84,17 +85,19 @@ module.exports = {
 				.addOptions(option)
 			)
 
-			await msg.channel.send({
+			selectMsg = await msg.channel.send({
 				embeds: [embed],
 				components: [row]
 			})
 		}
 		else
 		{
-			await msg.channel.send({
+			selectMsg = await msg.channel.send({
 				embeds: [embed],
 			})
 		}
+
+		client.provider.set(msg.guild.id, 'select-games', {channel: msg.channel.id, message: selectMsg.id})
 
 		msg.delete()
 	}
