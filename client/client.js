@@ -3,6 +3,7 @@ const InviteManager = require('../services/InviteManager')
 const StatusUpdater = require('../services/StatusUpdater')
 const Ranker = require('../services/Ranker')
 const FirebaseProvider = require('../provider/FirebaseProvider')
+const StatusMonitor = require('../services/StatusMonitor')
 
 const Discord = require('discord.js')
 
@@ -12,6 +13,7 @@ module.exports = class mTxServClient extends Discord.Client {
 
 		this.feedMonitor = new FeedMonitor(options.feeds);
 		this.inviteManager = new InviteManager();
+		this.statusMonitor = new StatusMonitor(options.statusURL);
 		this.ranker = new Ranker();
 		this.inviteURL = options.inviteURL;
 

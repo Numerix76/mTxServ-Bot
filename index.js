@@ -20,7 +20,8 @@ const client = global.client = new Client({
 	partials: ["CHANNEL"],
 	mainGuilds: process.env.MAIN_GUILDS.split(','),
 	feeds: require('./feeds.json'),
-	inviteURL : process.env.BOT_INVITE_URL
+	inviteURL: process.env.BOT_INVITE_URL,
+	statusURL: process.env.STATUS_URL
 })
 
 const isDev = global.isDev = process.argv.includes('-dev')
