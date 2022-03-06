@@ -117,18 +117,24 @@ module.exports = {
 
 				await client.provider.set(msg.guild.id, 'servers', gameServers)
 			}
-
-			i.reply({
-				embeds: [mTxServUtil.saySuccess(msg, lang['server_add']['added'])],
-			})
 		})
 
 		collector.on('end', collected => {
-			mTxServUtil.editResponse(replyMsg, interaction, {
-				content: lang['server_add']['interaction_end'], 
-				embeds: [],
-				components: []
-			})
+			if (collected.size === 0)
+			{
+				mTxServUtil.editResponse(replyMsg, interaction, {
+					embeds: [mTxServUtil.sayError(msg, lang['server_add']['timeout'])],
+					components: []
+				})
+			}
+			else
+			{
+				mTxServUtil.editResponse(replyMsg, interaction, {
+					content: lang['server_add']['interaction_end'], 
+					embeds: [mTxServUtil.saySuccess(msg, lang['server_add']['added'])],
+					components: []
+				})
+			}
 		})
 	},
 };
