@@ -1,25 +1,24 @@
 const Discord = require('discord.js');
-
+const mTxServUtil = require('../../util/mTxServUtil.js')
 
 module.exports = {
 	name: 'select-games',
 	aliases: [],
 	category: 'Admin',
 	description: 'Send select games message',
-	ownerOnly: true,
 	guildOnly: true,
-	permissions: ['SEND_MESSAGES'],
+	permissions: ['ADMINISTRATOR'],
 	hidden: false,
 	slash: false,
 
-	expectedArgs: '<lang>',
-	expectedArgsTypes: ['STRING'],
+	// expectedArgs: '<lang>',
+	// expectedArgsTypes: ['STRING'],
 
-	minArgs: 1,
-	maxArgs: 1,
+	// minArgs: 1,
+	// maxArgs: 1,
 
-	init: (client) => {
-		client.on('interactionCreate', interaction => {
+	init: async (client) => {
+		client.on('interactionCreate', async (interaction) => {
 			if (!interaction.isSelectMenu()) {
 				return
 			}
@@ -28,6 +27,7 @@ module.exports = {
 
 			if (customId == 'games-roles' && member instanceof Discord.GuildMember)
 			{
+				const lang = require(`../../languages/${await mTxServUtil.getLangOfMember(member)}.json`);
 				const component = interaction.component
 				const removed = component.options.filter((option) => {
 					return !values.includes(option.value)
@@ -42,7 +42,7 @@ module.exports = {
 				}
 
 				interaction.reply({
-					content:'Your roles has been updated! / Vos roles sont à jours !',
+					content: lang["select-games"]["roles-update"],
 					ephemeral: true
 				})
 			}
@@ -51,7 +51,8 @@ module.exports = {
 
 	callback: async ({ client, message, interaction, args }) => {
 		const msg = message || interaction
-		const lang = require(`../../languages/${args[0]}.json`);
+		const langEN = require(`../../languages/en.json`);
+		const langFR = require(`../../languages/fr.json`);
 
 
 		const games = await client.provider.get(msg.guild.id, 'games', {})
@@ -59,8 +60,9 @@ module.exports = {
 		const embed = new Discord.MessageEmbed()
 			.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)
 			.setColor('ORANGE')
-			.addField(lang["select-games"]["title"], lang["select-games"]["description"])
-			.setFooter(lang["select-games"]["footer"])
+			.addField(langEN["select-games"]["title"], langEN["select-games"]["description"])
+			.addField(langFR["select-games"]["title"], langFR["select-games"]["description"])
+			.setFooter(`${langEN["select-games"]["footer"]} / ${langFR["select-games"]["footer"]} - mTxServ.com`)
 
 
 		if (games.length > 0)
@@ -83,7 +85,7 @@ module.exports = {
 				.setCustomId('games-roles')
 				.setMinValues(0)
 				.setMaxValues(games.length)
-				.setPlaceholder(lang["select-games"]["select"])
+				.setPlaceholder(`${langEN["select-games"]["select"]} / ${langFR["select-games"]["select"]}`)
 				.addOptions(option)
 			)
 

@@ -25,7 +25,7 @@ module.exports = {
 			const { customId, values, member, message } = interaction
 			if (customId.indexOf('suggest_') !== -1 && member instanceof Discord.GuildMember)
 			{
-				const lang = require(`../../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`);
+				const lang = require(`../../languages/${await mTxServUtil.getLangOfMember(member)}.json`);
 
 				if (!member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
 				{

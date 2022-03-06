@@ -210,8 +210,9 @@
 	"select-games": {
 		"title": "🇺🇸 Select your games",
 		"description": "Select the games that interest you **to see related channels**.",
-		"footer": "Choose your games - mTxServ.com",
-		"select": "Choose your roles"
+		"footer": "Choose your games",
+		"select": "Choose your roles",
+		"roles-update": "Your roles has been updated!"
 	},
 	"remove-games": {
 		"success": "`%game%` successfuly removed. You can now delete all channels and roles related to the game."
