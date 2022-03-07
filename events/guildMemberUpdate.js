@@ -2,6 +2,8 @@ const mTxServUtil = require('../util/mTxServUtil.js')
 
 module.exports = {
 	run: async (oldMember, newMember) => {
+		return;
+		
 		if (newMember.user.bot) {
 			return
 		}
