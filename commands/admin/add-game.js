@@ -43,7 +43,7 @@ module.exports = {
 
 		if ( !gamesMessage ) {
             return mTxServUtil.sayError(msg, `The select-games channel or message doesn't exist. Use \`m!select-games\` in a channel to configure it.`)
-		}		
+		}
 		
 
 		let row = gamesMessage.components?gamesMessage.components[0]:null

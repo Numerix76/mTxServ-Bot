@@ -39,7 +39,11 @@ module.exports = {
 		const invoices = await api.call(oauth['access_token'], 'invoices')
 
 		if (!invoices.length) {
-			return mTxServUtil.sayError(msg, lang['server_add']['no_result'])
+			mTxServUtil.editResponse(replyMsg, interaction, {
+				embeds: [mTxServUtil.sayError(msg, lang['server_add']['no_result'])]
+			});
+
+			return
 		}
 
 		const gsApi = new GameServerApi()

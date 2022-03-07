@@ -54,33 +54,33 @@ module.exports = {
             },
             {
                 icon: ':flag_gb:',
-                hasGameStock: false,
+                hasGameStock: true,
                 hasVpsGameStock: true,
-                hasVpsStock: false
+                hasVpsStock: true
             },
             {
                 icon: ':flag_de:',
-                hasGameStock: false,
-                hasVpsGameStock: false,
-                hasVpsStock: false
+                hasGameStock: true,
+                hasVpsGameStock: true,
+                hasVpsStock: true
             },
             {
                 icon: ':flag_pl:',
-                hasGameStock: false,
-                hasVpsGameStock: false,
-                hasVpsStock: false
+                hasGameStock: true,
+                hasVpsGameStock: true,
+                hasVpsStock: true
             },
             {
                 icon: ':flag_ca:',
                 hasGameStock: true,
                 hasVpsGameStock: true,
-                hasVpsStock: false
+                hasVpsStock: true
             },
             {
                 icon: ':flag_us:',
                 hasGameStock: true,
                 hasVpsGameStock: true,
-                hasVpsStock: false
+                hasVpsStock: true
             },
         ];
 

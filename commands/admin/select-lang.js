@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const mTxServUtil = require('../../util/mTxServUtil.js')
 
 module.exports = {
 	name: 'select-lang',
@@ -12,8 +12,8 @@ module.exports = {
 	hidden: true,
 	slash: false,
 
-	init: (client) => {
-		client.on('interactionCreate', interaction => {
+	init: async (client) => {
+		client.on('interactionCreate', async (interaction) => {
 			if (!interaction.isSelectMenu()) {
 				return
 			}
@@ -22,6 +22,7 @@ module.exports = {
 
 			if (customId == 'lang-roles' && member instanceof Discord.GuildMember)
 			{
+				const lang = require(`../../languages/${await mTxServUtil.getLangOfMember(member)}.json`);
 				const component = interaction.component
 				const removed = component.options.filter((option) => {
 					return !values.includes(option.value)
@@ -36,7 +37,7 @@ module.exports = {
 				}
 
 				interaction.reply({
-					content:'Your roles has been updated! / Vos roles sont à jours !',
+					content: lang["select-games"]["roles-update"],
 					ephemeral: true
 				})
 			}
