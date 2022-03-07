@@ -14,24 +14,11 @@ module.exports = {
 		setInterval(async () => {
 		    try {
 		        client.feedMonitor.process()
+				client.statusMonitor.process()
 		    } catch (err) {
 		        console.error(err);
 		    }
 		}, 1000 * 60 * 10);
-
-		try {
-			client.statusMonitor.process()
-		} catch (err) {
-			console.error(err);
-		}
-
-		// setInterval(async () => {
-		//     try {
-		//         client.statusMonitor.process()
-		//     } catch (err) {
-		//         console.error(err);
-		//     }
-		// }, 1000 * 60 * 5);
 		
 		const embed = new Discord.MessageEmbed()
 			.setAuthor(`${client.user.tag}`, `${client.user.displayAvatarURL()}`)
