@@ -5,7 +5,7 @@ const { MessageActionRow, MessageButton, Permissions } = require("discord.js");
 module.exports = {
 	name: 'suggest',
     aliases: [],
-	category: 'suggest',
+	category: 'Suggest',
 	description: 'Submit a feedback',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

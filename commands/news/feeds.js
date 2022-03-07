@@ -5,7 +5,7 @@ const FeedMonitor = require('../../services/FeedMonitor');
 module.exports = {
 	name: 'feeds',
 	aliases: ['feed', 'news'],
-	category: 'mTxServ',
+	category: 'News',
 	description: 'Display feeds list.',
 	permissions: ['ADMINISTRATOR'],
 	slash: 'both',

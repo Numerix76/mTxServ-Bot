@@ -5,7 +5,7 @@ const HowToApi = require('../../api/HowToApi')
 module.exports = {
 	name: 'howto',
     aliases: ['search', 'tuto'],
-	category: 'mTxServ',
+	category: 'Documentation',
 	description: 'Search a tutorial.',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

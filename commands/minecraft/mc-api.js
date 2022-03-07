@@ -5,7 +5,7 @@ const GameSoftwareApi = require('../../api/GameSoftwareApi');
 module.exports = {
 	name: 'mc-api',
     aliases: [],
-	category: 'minecraft',
+	category: 'Minecraft',
 	description: 'Show information about a minecraft api.',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

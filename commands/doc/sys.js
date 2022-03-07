@@ -5,7 +5,7 @@ const HostingerApi = require('../../api/HostingerApi')
 module.exports = {
 	name: 'sys',
 	aliases: ['system', 'vps-howto', 'howto-vps', 'vps'],
-	category: 'Gmod',
+	category: 'Documentation',
 	description: 'Search administration system guide.',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

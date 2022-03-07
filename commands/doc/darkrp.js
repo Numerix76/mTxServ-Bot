@@ -5,7 +5,7 @@ const DarkRPApi = require('../../api/DarkRPApi')
 module.exports = {
 	name: 'darkrp',
 	aliases: ['darkrp-wiki'],
-	category: 'Gmod',
+	category: 'Documentation',
 	description: 'Search on DarkRP official wiki.',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

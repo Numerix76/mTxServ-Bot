@@ -34,6 +34,58 @@ client.on('ready', () => {
 		botOwners: process.env.BOT_OWNER_ID.split(',')
 	})
 	.setDefaultPrefix(process.env.BOT_COMMAND_PREFIX)
+	.setCategorySettings([
+		{
+			name: 'Admin',
+			emoji: '👮',
+			hidden: true
+		},
+		{
+			name: 'Ark',
+			emoji: '🦕'
+		},
+		{
+			name: 'Configuration',
+			emoji: '🚧',
+			hidden: true
+		},
+		{
+			name: 'Bot',
+			emoji: '🤖',
+		},
+		{
+			name: 'Documentation',
+			emoji: '📃'
+		},
+		{
+			name: 'Game server',
+			emoji: '🎮'
+		},
+		{
+			name: 'Minecraft',
+			emoji: '⛏️'
+		},
+		{
+			name: 'mTxServ',
+			emoji: ':mtx:530431090117050398'
+		},
+		{
+			name: 'News',
+			emoji: '📰'
+		},
+		{
+			name: 'Suggest',
+			emoji: '💡'
+		},
+		{
+			name: 'User',
+			emoji: '🙎'
+		},
+		{
+			name: 'Util',
+			emoji: '👀'
+		}
+	])
 })
 
 

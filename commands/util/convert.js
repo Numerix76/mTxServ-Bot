@@ -5,7 +5,7 @@ const ConverterApi = require('../../api/ConverterApi.js')
 module.exports = {
 	name: 'convert',
     aliases: [],
-	category: 'util',
+	category: 'Util',
 	description: 'Convert Youtube Videos or SoundCloud Music to a format',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

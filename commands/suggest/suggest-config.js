@@ -5,7 +5,7 @@ const mTxServUtil = require('../../util/mTxServUtil');
 module.exports = {
 	name: 'suggest-config',
     aliases: [],
-	category: 'suggest',
+	category: 'Suggest',
 	description: 'Set suggests channels.',
 	permissions: ['ADMINISTRATOR'],
 	slash: 'both',

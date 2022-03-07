@@ -5,7 +5,7 @@ const mTxServUtil = require('../../util/mTxServUtil');
 module.exports = {
 	name: 'feed-remove',
     aliases: ['remove-feed', 'delete-feed', 'feed-delete'],
-	category: 'mTxServ',
+	category: 'News',
 	description: 'Unsubscribe to a feed.',
 	permissions: ['ADMINISTRATOR'],
 	slash: 'both',

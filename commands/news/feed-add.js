@@ -5,7 +5,7 @@ const mTxServUtil = require('../../util/mTxServUtil');
 module.exports = {
 	name: 'feed-add',
     aliases: ['add-feed'],
-	category: 'mTxServ',
+	category: 'News',
 	description: 'Subscribe to a feed.',
 	permissions: ['ADMINISTRATOR'],
 	slash: 'both',

@@ -6,7 +6,7 @@ const puppeteer = require('puppeteer');
 module.exports = {
 	name: 'glua',
 	aliases: ['gmod-wiki'],
-	category: 'Gmod',
+	category: 'Documentation',
 	description: 'Search on GMod official wiki.',
 	permissions: ['SEND_MESSAGES'],
 	slash: 'both',

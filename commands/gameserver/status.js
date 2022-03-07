@@ -6,7 +6,7 @@ const GameServerApi = require('../../api/GameServerApi')
 module.exports = {
 	name: 'status',
 	aliases: [],
-	category: 'status',
+	category: 'Game server',
 	description: 'Check if a game server is online or offline.',
 	permissions: ['SEND_MESSAGES'],
 	hidden: false,
