@@ -18,16 +18,6 @@ module.exports = {
 		if ( msg.member.displayName ) {
 			client.ranker.processMessage(msg)
 		}
-
-
-		if (   -1 !== msg.content.indexOf('m!img')
-			|| -1 !== msg.content.indexOf('m!url')
-			|| -1 !== msg.content.indexOf('m!cat')
-			|| -1 !== msg.content.indexOf('m!dog')
-		) {
-			return;
-		}
-
 		
 		/*--------------------*/
 		/* mTxServ user role  */
