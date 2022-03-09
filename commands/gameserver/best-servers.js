@@ -28,14 +28,34 @@ module.exports = {
 		  type: 'STRING',
 		  choices: [
 				{
-					name: "Gmod",
-					value: "gmod"
-				},
-			 	{
 					name: "Minecraft",
 					value: "minecraft"
 				},
-		  ]
+				{
+					name: "Garry's Mod",
+					value: "gmod"
+				},
+				{
+					name: "Ark",
+					value: "ark"
+				},
+				{
+					name: "Rust",
+					value: "rust"
+				},
+				{
+					name: "Onset",
+					value: "onset"
+				},
+				{
+					name: "Arma 3",
+					value: "arma3"
+				},
+				{
+					name: "Valheim",
+					value: "valheim"
+				},
+			]
 		},
 	],
 
@@ -48,6 +68,11 @@ module.exports = {
 		let [game] = args
 
 		game = GameApi.translateGameSlug(game.toLowerCase())
+
+		const games = ['minecraft', 'gmod', 'ark', 'rust', 'onset', 'arma3', 'valheim'];
+
+		if (games.indexOf(game) === -1)
+				return mTxServUtil.sayError(msg, lang["gs_status"]["game_not_exist"]);
 
 		const api = new GameApi()
 		const results = await api.getRankingOfGame(game)
