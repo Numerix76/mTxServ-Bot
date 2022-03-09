@@ -67,13 +67,13 @@ module.exports = {
 
 		let [game] = args
 
-		game = GameApi.translateGameSlug(game.toLowerCase())
-
 		const games = ['minecraft', 'gmod', 'ark', 'rust', 'onset', 'arma3', 'valheim'];
-
+		
 		if (games.indexOf(game) === -1)
-				return mTxServUtil.sayError(msg, lang["gs_status"]["game_not_exist"]);
+			return mTxServUtil.sayError(msg, lang["gs_status"]["game_not_exist"]);
 
+		game = GameApi.translateGameSlug(game.toLowerCase())
+		
 		const api = new GameApi()
 		const results = await api.getRankingOfGame(game)
 
