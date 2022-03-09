@@ -88,7 +88,7 @@ module.exports = {
 				.setFooter(baseUrl.replace('https://', ''))
 				.addField(lang['top-servers']['view'], `[${lang['top-servers']['view_more']}](${gameServer.top_url})`)
 				.addField(`:chart_with_upwards_trend: ${lang['top-servers']['view_ranking']}`, `[${lang['top-servers']['view_ranking']} ${game}](${gameServer.ranking_url})`, true)
-				.addField(lang['top-servers']['rank'], gameServer.rank, true)
+				.addField(lang['top-servers']['rank'], `${gameServer.rank}`, true)
 			;
 
 			if (gameServer.banner_url) {
@@ -101,7 +101,7 @@ module.exports = {
 					rating = rating + ':star:';
 				}
 
-				gsEmbed.addField(lang['top-servers']['players_ranking'], rating, true)
+				gsEmbed.addField(lang['top-servers']['players_ranking'], `${rating}`, true)
 			}
 
 			pages.push(gsEmbed)
