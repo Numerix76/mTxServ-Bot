@@ -29,7 +29,7 @@ module.exports = {
 			.addField('❯ Home', `[mTxServ.com](https://mtxserv.com)`, true)
 			.addField('❯ Discord', `[Join us](${client.inviteURL})`, true)
 			.addField('❯ Invite Bot', '[Invite the bot](https://discord.com/oauth2/authorize?client_id=535435520394657794&permissions=912577&scope=bot)', true)
-			.addField('❯ Source Code', '[mTxServ/ElDictator](https://github.com/mTxServ/ElDictator)', true)
+			.addField('❯ Source Code', '[Numerix76/Bot-mTxServ-V2](https://github.com/Numerix76/Bot-mTxServ-V2)', true)
 			.addField('❯ Uptime', moment.duration(client.uptime).format('hh:mm:ss', { trim: false }), true)
 			.addField('❯ Language', `:flag_${languageGuild == 'en' ? 'us' : languageGuild}:`, true)
 			.addField('❯ Memory Usage', `${Math.round(process.memoryUsage().heapUsed / 1024 / 1024)}MB`, true)
@@ -38,11 +38,11 @@ module.exports = {
 			.setFooter(`${formatNumber(instance._commandHandler.commands.length)} commands - by mTxServ.com`)
 		;
 
-		const suggestsConfig = await client.provider.get(msg.guild.id, 'suggest-config', {})
-		const suggestFr = suggestsConfig['fr'] ? `:flag_fr: <#${suggestsConfig['fr']}>` : ':flag_fr: __not configured__'
-		const suggestEn = suggestsConfig['en'] ? `:flag_us: <#${suggestsConfig['en']}>` : ':flag_us: __not configured__'
+		const suggestsConfig = await client.provider.get(msg.guild.id, 'suggest-config', "")
+		const suggest = suggestsConfig ? `<#${suggestsConfig}>` : '__not configured__'
 
-		embed.addField(`❯ Feedbacks`, `\`m!suggest-set-channel\` to configure.\n・${suggestFr}\n・${suggestEn}`, true)
+		embed.addField(`❯ Feedbacks`, `\`m!suggest-config\` to configure.\n・${suggest}`, true)
+		embed.addField('❯ Credits', '・Seb\n・Numerix', true)
 
 		if(module.exports.parseDependencies().length < 1024) {
 			embed.addField('❯ Dependencies', module.exports.parseDependencies());
