@@ -72,12 +72,6 @@
 	  "language": "fr"
 	},
 	{
-	  "url":"https://feeds.win.gg/news/rss",
-	  "icon":null,
-	  "tags":["lol"],
-	  "language": "en"
-	},
-	{
 	  "url":"https://www.over.gg/rss",
 	  "icon":null,
 	  "tags":["overwatch"],
