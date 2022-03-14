@@ -43,6 +43,8 @@ module.exports = class FeedMonitor {
 
 	async addDataFrom(url, embed)
 	{
+		mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "J'arrive bien ici.") )
+
 		let res = await got(url, {
 			responseType: 'json'
 		})
