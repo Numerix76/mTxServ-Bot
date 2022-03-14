@@ -12,12 +12,12 @@ module.exports = {
 		setInterval(() => client.statusUpdater.updateStatus(), 1000 * 60)
 
 		setInterval(async () => {
-		    try {
+		    //try {
 		        client.feedMonitor.process()
 				client.statusMonitor.process()
-		    } catch (err) {
-		        console.error(err);
-		    }
+		    //} catch (err) {
+		        //console.error(err);
+		    //}
 		}, 1000 * 60 * 10);
 		
 		const embed = new Discord.MessageEmbed()
