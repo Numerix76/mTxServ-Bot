@@ -98,8 +98,9 @@ module.exports = class FeedMonitor {
 		if( !guild.me.permissionsIn(channel).has(Permissions.FLAGS.SEND_MESSAGES) ) {
 			return
 		}
-		
-		client.channels.cache.get(channel).send({ embeds: [article] })	
+
+		if ( typeof client.channels.cache.get(channel).send === "function" )
+			client.channels.cache.get(channel).send({ embeds: [article] })	
 	}
 
 	static async isFollowing(guildId, game, language, defaultValue) {
