@@ -28,7 +28,7 @@ module.exports = class FeedMonitor {
 			const statusMessage = await statusChannel?.messages.cache.get(currentConfig.message)
 			//await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
 
-			if ( guild[0] === "894204482580279306" )
+			if ( guild[0] === "894204482580279306" || guild[0] === "529605510219956233" )
 				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
 
 			if (!statusMessage)
