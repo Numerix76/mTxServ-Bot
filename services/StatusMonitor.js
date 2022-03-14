@@ -21,11 +21,15 @@ module.exports = class FeedMonitor {
 
 		for (const guild of client.guilds.cache)
 		{
-			let statusMessage
+			//let statusMessage
 		
 			const currentConfig = await client.provider.get('status', guild[0], "")
 			const statusChannel = await guild[1].channels.cache.get(currentConfig.channel)
-			await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
+			const statusMessage = await statusChannel?.messages.cache.get(currentConfig.channel)
+			//await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
+
+			if ( guild[0] === "894204482580279306" )
+				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `${currentConfig}`) )
 
 			if (!statusMessage)
 				return;
