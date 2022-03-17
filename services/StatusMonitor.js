@@ -29,7 +29,7 @@ module.exports = class FeedMonitor {
 			//await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
 
 			//if ( guild.id === "894658407330639875" || guild.id === "529605510219956233" )
-				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
+				//mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
 
 			if (!statusMessage) continue;
 
