@@ -44,7 +44,7 @@ module.exports = class FeedMonitor {
 
 		if (!res || !res.body)
 		{
-			mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "An error occured whil retrieving status data.") )
+			mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "An error occured while retrieving status data.") )
 			return;
 		}
 
