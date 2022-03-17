@@ -20,6 +20,8 @@ module.exports = class FeedMonitor {
 
 		for (const feed of this.feeds) {
 			const results = await this.rssFeeder.get(feed.url)
+			if (!results) continue;
+			
 			const articles = Object.values(results.items)
 
 			for (const article of articles) {
@@ -36,6 +38,9 @@ module.exports = class FeedMonitor {
 
 		for (const feed of this.feeds) {
 			const results = await this.rssFeeder.get(feed.url)
+
+			if (!results) continue;
+
 			const articles = Object.values(results.items)
 
 			for (const article of articles) {
