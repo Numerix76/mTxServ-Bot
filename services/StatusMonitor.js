@@ -31,8 +31,7 @@ module.exports = class FeedMonitor {
 			//if ( guild.id === "894658407330639875" || guild.id === "529605510219956233" )
 				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
 
-			if (!statusMessage)
-				return;
+			if (!statusMessage) continue;
 
 			statusMessage.edit({
 				content:null,
