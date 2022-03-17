@@ -28,7 +28,7 @@ module.exports = class FeedMonitor {
 			const statusMessage = await statusChannel?.messages.cache.get(currentConfig.message)
 			//await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
 
-			if ( guild.id === "894658407330639875" || guild.id === "529605510219956233" )
+			//if ( guild.id === "894658407330639875" || guild.id === "529605510219956233" )
 				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
 
 			if (!statusMessage)
@@ -43,7 +43,7 @@ module.exports = class FeedMonitor {
 
 	async addDataFrom(url, embed)
 	{
-		mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "J'arrive bien ici.") )
+		//mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "J'arrive bien ici.") )
 
 		let res = await got(url, {
 			responseType: 'json'
