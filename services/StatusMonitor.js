@@ -9,7 +9,9 @@ module.exports = class FeedMonitor {
 
 	async process() {	
 		const embed = new Discord.MessageEmbed()
-			.setTitle("All servers that seem to have a problem")	
+			.setTitle("All servers that seem to have a problem")
+			.setTimestamp()
+
 		const urlPartialOutage = `${this.url}components?sort=status&order=desc&status=3`;
 		const urlMajorOutage = `${this.url}components?sort=status&order=desc&status=4`;
 
@@ -20,16 +22,10 @@ module.exports = class FeedMonitor {
 			embed.setDescription("No servers have problems")
 
 		for (const guild of client.guilds.cache.map(guild => guild))
-		{
-			//let statusMessage
-		
+		{	
 			const currentConfig = await client.provider.get('status', guild.id, "")
 			const statusChannel = await guild.channels.cache.get(currentConfig.channel)
 			const statusMessage = await statusChannel?.messages.cache.get(currentConfig.message)
-			//await statusChannel?.messages.fetch(currentConfig.message).then(message => statusMessage = message).catch(console.error)
-
-			if ( guild.id === "894658407330639875" || guild.id === "529605510219956233" )
-				mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, `url = ${this.url} channel = ${currentConfig.channel} message = ${currentConfig.message}`) )
 
 			if (!statusMessage) continue;
 
@@ -42,8 +38,6 @@ module.exports = class FeedMonitor {
 
 	async addDataFrom(url, embed)
 	{
-		//mTxServUtil.sendLogMessage( mTxServUtil.sayError(null, "J'arrive bien ici.") )
-
 		let res = await got(url, {
 			responseType: 'json'
 		})
