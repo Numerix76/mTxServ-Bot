@@ -28,7 +28,7 @@ module.exports = {
 			.addField(lang['fork_me']['how'], lang['fork_me']['description'])
 			.addField('❯ Home', `[mTxServ.com](https://mtxserv.com)`, true)
 			.addField('❯ Discord', `[Join us](${client.inviteURL})`, true)
-			.addField('❯ Invite Bot', '[Invite the bot](https://discord.com/oauth2/authorize?client_id=535435520394657794&permissions=912577&scope=bot)', true)
+			.addField('❯ Invite Bot', '[Invite the bot](https://discord.com/oauth2/authorize?client_id=535435520394657794&permissions=8&scope=bot%20applications.commands)', true)
 			.addField('❯ Source Code', '[Numerix76/Bot-mTxServ-V2](https://github.com/Numerix76/Bot-mTxServ-V2)', true)
 			.addField('❯ Uptime', moment.duration(client.uptime).format('hh:mm:ss', { trim: false }), true)
 			.addField('❯ Language', `:flag_${languageGuild == 'en' ? 'us' : languageGuild}:`, true)
