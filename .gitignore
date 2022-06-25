@@ -6,3 +6,4 @@ node_modules/
 *.db
 firebase-account.json
 *.code-workspace
+config.json
