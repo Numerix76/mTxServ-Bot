@@ -1,30 +1,16 @@
 {
-  "name": "bot",
+  "name": "mtxserv-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.0.0-dev.1654949087-96053ba",
+    "sheweny": "^4.0.0-dev.11"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "discord.js": "^13.2.0",
-    "dotenv": "^10.0.0",
-    "firebase-admin": "^10.0.2",
-    "flexsearch": "^0.7.21",
-    "get-urls": "^10.0.0",
-    "got": "^11.8.2",
-    "grabity": "^1.0.5",
-    "mc-achievements": "^1.2.0",
-    "moment": "^2.29.1",
-    "moment-duration-format": "^2.3.2",
-    "puppeteer": "^13.4.1",
-    "rss-parser": "^3.12.0",
-    "striptags": "^3.2.0",
-    "wokcommands": "^1.5.3",
-    "ws": "^8.5.0"
-  }
+  "license": "ISC"
 }
