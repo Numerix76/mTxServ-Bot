@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "^14.0.0-dev.1654949087-96053ba",
+    "firebase-admin": "^11.0.0",
     "sheweny": "^4.0.0-dev.11"
   },
   "keywords": [],
