@@ -2,6 +2,8 @@ const { mTxServClient } = require("./client.js");
 const config = require("../config.json");
 const { IntentsBitField } = require("discord.js");
 
+global.isDev = process.argv.includes('-dev')
+
 const client = global.client = new mTxServClient({
   intents: [
     IntentsBitField.Flags.Guilds, 
@@ -12,6 +14,7 @@ const client = global.client = new mTxServClient({
   admins: config.BOT_OWNER_ID,
   language: config.DEFAULT_LANG,
   logChannel: config.LOG_CHANNEL_ID,
+  feeds: require("../feeds.json"),
   managers: {
     commands: {
       directory: "./commands",
@@ -46,7 +49,7 @@ const client = global.client = new mTxServClient({
       directory: "./inhibitors",
     },
   },
-  mode : "development", // Change to production for production bot
+  mode : isDev ? "development" : "production", // Change to production for production bot
 });
 
 client.login(config.BOT_TOKEN);

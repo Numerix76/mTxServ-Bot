@@ -1,12 +1,13 @@
 const { ShewenyClient } = require("sheweny");
 const FirebaseProvider = require('./provider/FirebaseProvider');
+const FeedMonitor = require("./services/FeedMonitor");
 
 class mTxServClient extends ShewenyClient {
 	constructor(options, clientOptions)
 	{
 		super(options, clientOptions);
 
-		// this.feeds = new FeedMonitor(options.feeds);
+		this.feedMonitor = new FeedMonitor(options.feeds);
 		// this.statusMonitor = new StatusMonitor(options.statusURL);
 		// this.ranker = new Ranker();
 
@@ -20,8 +21,6 @@ class mTxServClient extends ShewenyClient {
 
 		this.language = options.language || "en";
 		this.logChannel = options.logChannel || "";
-
-		console.log("J'arrive ici");
 	}
 }
 
