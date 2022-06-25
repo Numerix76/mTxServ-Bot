@@ -2,7 +2,7 @@ const { mTxServClient } = require("./client.js");
 const config = require("../config.json");
 const { IntentsBitField } = require("discord.js");
 
-const client = new mTxServClient({
+const client = global.client = new mTxServClient({
   intents: [
     IntentsBitField.Flags.Guilds, 
     IntentsBitField.Flags.GuildMessages,
@@ -10,6 +10,8 @@ const client = new mTxServClient({
     IntentsBitField.Flags.DirectMessageReactions
   ],
   admins: config.BOT_OWNER_ID,
+  language: config.DEFAULT_LANG,
+  logChannel: config.LOG_CHANNEL_ID,
   managers: {
     commands: {
       directory: "./commands",

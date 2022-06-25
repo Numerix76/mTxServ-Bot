@@ -18,6 +18,9 @@ class mTxServClient extends ShewenyClient {
 
 		this.provider = new FirebaseProvider();
 
+		this.language = options.language || "en";
+		this.logChannel = options.logChannel || "";
+
 		console.log("J'arrive ici");
 	}
 }
