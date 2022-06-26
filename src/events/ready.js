@@ -15,14 +15,15 @@ module.exports = class ReadyEvent extends Event {
 		console.log(`Logged in as ${this.client.user.tag}! (${this.client.user.id})`);
 
 		this.client.feedMonitor.warmup()
+		this.client.statusMonitor.process()
 		this.client.statusUpdater.updateStatus()
 
 		setInterval(() => this.client.statusUpdater.updateStatus(), 1000 * 60)
 
 		setInterval(async () => {
-			//this.client.statusMonitor.process()
+			this.client.statusMonitor.process()
 			this.client.feedMonitor.process()
-		}, 1000 * 60 * 10);
+		}, 1000 * 60 * 1);
 	
 		const embed = new EmbedBuilder()
 			.setAuthor({

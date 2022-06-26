@@ -3,6 +3,7 @@ const { ShewenyClient } = require("sheweny");
 const FirebaseProvider = require('./provider/FirebaseProvider');
 const FeedMonitor = require("./services/FeedMonitor");
 const Ranker = require("./services/Ranker");
+const StatusMonitor = require("./services/StatusMonitor");
 const StatusUpdater = require("./services/StatusUpdater");
 
 class mTxServClient extends ShewenyClient {
@@ -11,7 +12,7 @@ class mTxServClient extends ShewenyClient {
 		super(options, clientOptions);
 
 		this.feedMonitor = new FeedMonitor(options.feeds);
-		// this.statusMonitor = new StatusMonitor(options.statusURL);
+		this.statusMonitor = new StatusMonitor(options.statusURL);
 		this.ranker = new Ranker();
 
 		this.statusUpdater = new StatusUpdater(this, [
