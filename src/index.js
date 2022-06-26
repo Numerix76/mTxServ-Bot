@@ -15,6 +15,7 @@ const client = global.client = new mTxServClient({
 	language: config.DEFAULT_LANG,
 	logChannel: config.LOG_CHANNEL_ID,
 	feeds: require("../feeds.json"),
+	mainGuilds: config.MAIN_GUILDS,
 	managers: {
 		commands: {
 			directory: "./commands",

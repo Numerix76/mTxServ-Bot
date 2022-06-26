@@ -7,7 +7,6 @@ module.exports = class UserMissingPermissionsEvent extends Event {
 	constructor(client) {
 		super(client, Constants.COMMAND_EVENTS.userMissingPerm, {
 			description: "User missing permissions",
-			once: true,
 			emitter: client.managers.commands,
 		});
 	}
