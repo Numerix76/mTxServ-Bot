@@ -1,18 +1,19 @@
 const { Command } = require("sheweny");
 
 module.exports = class PingCommand extends Command {
-  constructor(client) {
-    super(client, {
-      name: "ping",
-      description: "Ping Pong",
-      type: "SLASH_COMMAND",
-      category: "Misc",
-      cooldown: 3,
-    });
-  }
+	constructor(client) {
+		super(client, {
+			name: "ping",
+			description: "Ping Pong",
+			type: "SLASH_COMMAND",
+			category: "Misc",
+			cooldown: 3,
+			adminsOnly: true
+		});
+	}
 
-  async execute(interaction) {
-    await interaction.reply({ content: "Pong" });
-  }
+	async execute(interaction) {
+		await interaction.reply({ content: "Pong" });
+	}
 };
 
