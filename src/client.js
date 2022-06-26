@@ -1,7 +1,9 @@
+const { ActivityType } = require("discord.js");
 const { ShewenyClient } = require("sheweny");
 const FirebaseProvider = require('./provider/FirebaseProvider');
 const FeedMonitor = require("./services/FeedMonitor");
 const Ranker = require("./services/Ranker");
+const StatusUpdater = require("./services/StatusUpdater");
 
 class mTxServClient extends ShewenyClient {
 	constructor(options, clientOptions)
@@ -12,11 +14,11 @@ class mTxServClient extends ShewenyClient {
 		// this.statusMonitor = new StatusMonitor(options.statusURL);
 		this.ranker = new Ranker();
 
-		// this.statusUpdater = new StatusUpdater(this, [
-		// 	{ type: 'WATCHING', name: `${process.env.BOT_COMMAND_PREFIX}giveaway | Win prizes!`},
-		// 	{ type: 'PLAYING', name: `${process.env.BOT_COMMAND_PREFIX}help | mTxServ.com`},
-		// 	{ type: 'PLAYING', name: 'Server by mTxServ.com' },
-		// ])
+		this.statusUpdater = new StatusUpdater(this, [
+			{ type: ActivityType.Watching, name: `${options.managers.commands.prefix}giveaway | Win prizes!`},
+			{ type: ActivityType.Playing , name: `${options.managers.commands.prefix}help | mTxServ.com`},
+			{ type: ActivityType.Playing , name: 'Server by mTxServ.com' },
+		])
 
 		this.provider = new FirebaseProvider();
 

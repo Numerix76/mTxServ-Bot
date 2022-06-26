@@ -15,9 +15,9 @@ module.exports = class ReadyEvent extends Event {
 		console.log(`Logged in as ${this.client.user.tag}! (${this.client.user.id})`);
 
 		this.client.feedMonitor.warmup()
-		//this.client.statusUpdater.updateStatus()
+		this.client.statusUpdater.updateStatus()
 
-		//setInterval(() => this.client.statusUpdater.updateStatus(), 1000 * 60)
+		setInterval(() => this.client.statusUpdater.updateStatus(), 1000 * 60)
 
 		setInterval(async () => {
 			//this.client.statusMonitor.process()
