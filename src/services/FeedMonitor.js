@@ -74,7 +74,7 @@ module.exports = class FeedMonitor {
 
 				embed.setDescription(`${content}\n${article.link}`)
 
-				const primaryTag = feed.language instanceof Array ? feed.tags[0] : feed.tags
+				const primaryTag = feed.tags instanceof Array ? feed.tags[0] : feed.tags
 
 				for (const guild of client.guilds.cache.map(guild => guild)) {
 					const followAll = await FeedMonitor.isFollowing(guild.id, primaryTag, 'all', false)
