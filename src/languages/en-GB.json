@@ -28,5 +28,8 @@
 	},
 	"role-selector": {
 		"roles-update": "Your roles has been updated!"
+	},
+	"stop-bot": {
+		"success": "octagonal_sign: Stopping the bot..."
 	}
 }
