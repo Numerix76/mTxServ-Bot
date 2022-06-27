@@ -6,7 +6,8 @@
 			"invalid_emoji": "Vous avez saisie un emoji non valide."
 		},
 		"remove": {
-			"success": "Suppression avec succès de `%game%`. Vous pouvez maintenant supprimer les channels et les roles en lien avec le jeu."
+			"success": "Suppression avec succès de `%game%`. Vous pouvez maintenant supprimer les channels et les roles en lien avec le jeu.",
+			"invalid_name": "Le nom que vous avez saisie n'existe pas."
 		},
 		"create": {
 			"success": "Création de la sélection de jeu réussi."

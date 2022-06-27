@@ -6,7 +6,8 @@
 			"invalid_emoji": "You gived an invalid emoji"
 		},
 		"remove": {
-			"success": "`%game%` successfuly removed. You can now delete all channels and roles related to the game."
+			"success": "`%game%` successfuly removed. You can now delete all channels and roles related to the game.",
+			"invalid_name": "The name that you gived doesn't not exist."
 		},
 		"create": {
 			"success": "Successfuly created the game selector."

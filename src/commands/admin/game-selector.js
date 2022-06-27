@@ -1,5 +1,5 @@
 const { Command, Constants } = require("sheweny");
-const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder, SelectMenuComponent, EmbedBuilder, Colors } = require("discord.js");
+const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder, EmbedBuilder, Colors } = require("discord.js");
 const mTxServUtil = require("../../util/mTxServUtil");
 
 module.exports = class AddGameCommand extends Command {
@@ -88,7 +88,8 @@ module.exports = class AddGameCommand extends Command {
 							descriptionLocalizations: {
 								'fr': 'Le jeu à retirer'
 							},
-							required: true
+							required: true,
+							autocomplete: true
 						}
 					]
 				},
@@ -110,14 +111,23 @@ module.exports = class AddGameCommand extends Command {
 	execute(interaction) {
 		switch(interaction.options.getSubcommand())
 		{
-			case 'add': this.addGame(interaction); break;
+			case 'add'   : this.addGame(interaction); break;
 			case 'remove': this.removeGame(interaction); break;
 			case 'create': this.create(interaction); break;
 		}
 	}
 
+	async onAutocomplete(interaction) {
+		const focusedOption = interaction.options.getFocused(true);
+	
+		const games = await client.provider.get(interaction.guild.id, 'games', []);
+	
+		const filtered = games.filter((game) => game.name.startsWith(focusedOption.value));
+		interaction.respond(filtered.map((game) => ({ name: game.name, value: game.name })));
+	}
+
 	async addGame(interaction) {	
-		const game  = interaction.options.get("game").value;
+		const name  = interaction.options.get("game").value;
 		const emoji = interaction.options.get("emoji").value;
 		const role  = interaction.options.getRole("role").id;
 		
@@ -142,10 +152,18 @@ module.exports = class AddGameCommand extends Command {
 
 				return;
 			}
+
+			if (game.name === name)
+			{
+				const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","add","name_already_exist"]));
+				await interaction.reply({ embeds: [response] });
+
+				return;
+			}
 		}
 
 		games.push({
-			name: game,
+			name: name,
 			emoji: emoji,
 			role: role
 		})
@@ -163,7 +181,7 @@ module.exports = class AddGameCommand extends Command {
 		
 		if ( this.updateSelection(interaction, options) )
 		{
-			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","add","success"], {"%game%": game, "%emoji%": emoji}));
+			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","add","success"], {"%game%": name, "%emoji%": emoji}));
 			
 			await interaction.reply({ embeds: [response] });
 			
@@ -181,15 +199,24 @@ module.exports = class AddGameCommand extends Command {
 	{
 		const game = interaction.options.get("game").value;
 
-		let games = await client.provider.get(interaction.guild.id, 'games', [])
+		const oldGames = await client.provider.get(interaction.guild.id, 'games', [])
 
-		games = games.filter((item) => {
+		const newGames = oldGames.filter((item) => {
 			return item.name !== game
 		})
 
+		if ( oldGames.length === newGames.length )
+		{
+			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","remove", "invalid_name"])); 
+			
+			await interaction.reply({ embeds: [response] });
+
+			return;
+		}
+
 		const options = new Array();
 
-		for(const game of games)
+		for(const game of newGames)
 		{
 			options.push({
 				label: game.name,
@@ -203,7 +230,7 @@ module.exports = class AddGameCommand extends Command {
 			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","remove","success"], {"%game%": game}));
 
 			await interaction.reply({ embeds: [response] });
-			await client.provider.set(interaction.guild.id, 'games', games);
+			await client.provider.set(interaction.guild.id, 'games', newGames);
 		}
 		else
 		{
