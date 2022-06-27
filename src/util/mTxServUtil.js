@@ -1,3 +1,6 @@
+const { EmbedBuilder, Colors } = require("discord.js");
+const fs = require("fs");
+
 module.exports = class mTxServUtil {
 	/*static onError(error, message, args, fromPattern, result) { // eslint-disable-line no-unused-vars
 		console.error(error);
@@ -14,6 +17,42 @@ module.exports = class mTxServUtil {
 
 		mTxServUtil.sendLogMessage(embed)
 	}*/
+
+	static translate(interaction, arrPath, replace)
+	{
+		let translated;
+		
+		translated = mTxServUtil.translateTo(interaction.locale, arrPath, replace);
+
+		if ( translated )
+			return translated;
+
+		translated = mTxServUtil.translateTo(client.defaultLanguage, arrPath, replace);
+
+		if ( translated )
+			return translated;
+
+		return arrPath.join(" > ");
+	}
+
+	static translateTo(language, arrPath, replace) {
+		let phrase = client.languages[language];
+		for (let i = 0; i < arrPath.length; i++) {
+			if ( !phrase )
+				break;
+
+			phrase = phrase[ arrPath[i] ];
+		}
+
+		if ( !phrase || !replace )
+			return phrase;
+
+		for (const [key, value] of Object.entries(replace)) {
+			phrase = phrase.replace(key, value);
+		}
+
+		return phrase;
+	}
 
 	static async resolveLangOfMessage(msg) {
 		return await mTxServUtil.getLangOfMember(msg.member)
@@ -46,41 +85,41 @@ module.exports = class mTxServUtil {
 			return await client.provider.get(member.guild.id, 'language', client.language)
 	}
 
-	/*static sayMessage(msg, content) {
-		const embed = new Discord.MessageEmbed()
+	static sayMessage(msg, content) {
+		const embed = new EmbedBuilder()
 			.setDescription(content)
-			.setColor('BLUE')
+			.setColor(Colors.Blue)
 		;
 
 		return embed;
-	}*/
+	}
 
-	/*static sayWarning(msg, content) {
-		const embed = new Discord.MessageEmbed()
+	static sayWarning(msg, content) {
+		const embed = new EmbedBuilder()
 			.setDescription(content)
-			.setColor('ORANGE')
+			.setColor(Colors.Orange)
 		;
 
 		return embed;
-	}*/
+	}
 
-	/*static saySuccess(msg, content) {
-		const embed = new Discord.MessageEmbed()
+	static saySuccess(msg, content) {
+		const embed = new EmbedBuilder()
 			.setDescription(content)
-			.setColor('GREEN')
+			.setColor(Colors.Green)
 		;
 
 		return embed;
-	}*/
+	}
 
-	/*static sayError(msg, content) {
-		const embed = new Discord.MessageEmbed()
+	static sayError(msg, content) {
+		const embed = new EmbedBuilder()
 			.setDescription(content)
-			.setColor('RED')
+			.setColor(Colors.Red)
 		;
 
 		return embed;
-	}*/
+	}
 
 	/*static askConfirmation(msg, content) {
 		const embed = new Discord.MessageEmbed()

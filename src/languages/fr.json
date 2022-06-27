@@ -1,0 +1,17 @@
+{
+	"game-selector": {
+		"add": {
+			"success": "`%game%` %emoji% role ajouté avec succès.",
+			"role_already_exist": "Un des rôles existe déjà.",
+			"invalid_emoji": "Vous avez saisie un emoji non valide."
+		},
+		"remove": {
+			"success": "Suppression avec succès de `%game%`. Vous pouvez maintenant supprimer les channels et les roles en lien avec le jeu."
+		},
+		"create": {
+			"success": "Création de la sélection de jeu réussi."
+		},
+		"missing_message": "Le channel ou le message n'existe pas. Utilisez `/game-selector create` dans un channel pour le configurer.",
+		"roles-update": "Vos rôles sont à jours !"
+	}
+}
