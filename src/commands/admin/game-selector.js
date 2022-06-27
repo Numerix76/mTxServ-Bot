@@ -16,6 +16,7 @@ module.exports = class AddGameCommand extends Command {
 			category: "Admin",
 			userPermissions: ["Administrator"],
 			channel: Constants.COMMAND_CHANNEL.guild,
+			adminsOnly: true,
 			options: [
 				{
 					type: ApplicationCommandOptionType.Subcommand,
