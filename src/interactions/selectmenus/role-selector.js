@@ -3,7 +3,7 @@ const mTxServUtil = require("../../util/mTxServUtil");
 	
 module.exports = class SelectTest extends SelectMenu {
 	constructor(client) {
-		super(client, ["game-selector"]);
+		super(client, ["game-selector", "lang-selector"]);
 	}
 	
 	async execute(interaction) {
@@ -22,7 +22,7 @@ module.exports = class SelectTest extends SelectMenu {
 			member.roles.add(id)
 		}
 
-		const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector", "roles-update"]));
+		const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["role-selector", "success"]));
 		await interaction.reply({
 			embeds: [response],
 			ephemeral: true

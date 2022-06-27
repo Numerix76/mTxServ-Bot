@@ -12,8 +12,7 @@
 		"create": {
 			"success": "Successfuly created the game selector."
 		},
-		"missing_message": "The channel or message doesn't exist. Use `/game-selector create` in a channel to configure it.",
-		"roles-update": "Your roles has been updated!"
+		"missing_message": "The channel or message doesn't exist. Use `/game-selector create` in a channel to configure it."		
 	},
 	"commands": {
 		"no_perms": "You don't have the right permissions to execute %command%. (%perms%)."
@@ -23,5 +22,11 @@
 	},
 	"import-emojis": {
 		"success": "The emojis have been imported and synchronised."
+	},
+	"lang-selector": {
+		"success": "Successfuly created the language selector."
+	},
+	"role-selector": {
+		"roles-update": "Your roles has been updated!"
 	}
 }

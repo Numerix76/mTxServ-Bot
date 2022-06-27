@@ -2,7 +2,7 @@ const { Command, Constants } = require("sheweny");
 const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder, EmbedBuilder, Colors } = require("discord.js");
 const mTxServUtil = require("../../util/mTxServUtil");
 
-module.exports = class AddGameCommand extends Command {
+module.exports = class GameSelectorCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: "game-selector",
