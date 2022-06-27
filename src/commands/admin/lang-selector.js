@@ -1,7 +1,5 @@
 const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
-const path = require('path');
-const fs = require('fs');
 const { EmbedBuilder, Colors, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
 
 module.exports = class LangSelectorCommand extends Command {
