@@ -31,5 +31,10 @@
 	},
 	"stop-bot": {
 		"success": "octagonal_sign: Stopping the bot..."
+	},
+	"update-bot": {
+		"confirm": ":up: Updating the bot...",
+		"success": "The bot is up to date.",
+		"fail": "Failed to update the bot."
 	}
 }
