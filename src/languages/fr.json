@@ -17,5 +17,11 @@
 	},
 	"commands": {
 		"no_perms": "Vous n'avez pas les permissions suffisantes pour exécuter la commande %command%. (%perms%)."
+	},
+	"create-status": {
+		"success": "Ajout du statut avec succès"
+	},
+	"import-emojis": {
+		"success": "Les émojis ont été importés et synchronisés."
 	}
 }
