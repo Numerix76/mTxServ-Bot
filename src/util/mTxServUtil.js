@@ -1,5 +1,4 @@
 const { EmbedBuilder, Colors } = require("discord.js");
-const fs = require("fs");
 
 module.exports = class mTxServUtil {
 	/*static onError(error, message, args, fromPattern, result) { // eslint-disable-line no-unused-vars
@@ -54,7 +53,7 @@ module.exports = class mTxServUtil {
 		return phrase;
 	}
 
-	static async resolveLangOfMessage(msg) {
+	/*static async resolveLangOfMessage(msg) {
 		return await mTxServUtil.getLangOfMember(msg.member)
 	}
 
@@ -83,7 +82,7 @@ module.exports = class mTxServUtil {
 			return member.roles.cache.some(role => role.name === 'FR') ? 'fr' : 'en';
 		else
 			return await client.provider.get(member.guild.id, 'language', client.language)
-	}
+	}*/
 
 	static sayMessage(msg, content) {
 		const embed = new EmbedBuilder()

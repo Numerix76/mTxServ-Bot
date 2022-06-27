@@ -14,5 +14,8 @@
 		},
 		"missing_message": "Le channel ou le message n'existe pas. Utilisez `/game-selector create` dans un channel pour le configurer.",
 		"roles-update": "Vos rôles sont à jours !"
+	},
+	"commands": {
+		"no_perms": "Vous n'avez pas les permissions suffisantes pour exécuter la commande %command%. (%perms%)."
 	}
 }
