@@ -3,37 +3,45 @@ const { ButtonStyle } = require("discord.js");
 const mTxServUtil = require("./mTxServUtil");
 
 
-const paginationEmbed = async (msg, interaction, pages, timeout = 120000) => {
-	if (!msg && !msg.channel) throw new Error('Channel is inaccessible.');
+const paginationEmbed = async (interaction, pages, timeout = 120000) => {
+	if (!interaction && !interaction.channel) throw new Error('Channel is inaccessible.');
 	if (!pages) throw new Error('Pages are not given.');
-	
-    const lang = require(`../languages/${await mTxServUtil.resolveLangOfMessage(msg)}.json`)
 
 	const row = new ActionRowBuilder()
 		.addComponents(
 			new ButtonBuilder()
 				.setCustomId('prev')
-				.setLabel(lang["pages"]["previous"])
+				.setLabel(mTxServUtil.translate(interaction, ["pagination", "previous"]))
 				.setStyle(ButtonStyle.Secondary)
 		)
 		.addComponents(
 			new ButtonBuilder()
 				.setCustomId('next')
-				.setLabel(lang["pages"]["next"])
+				.setLabel(mTxServUtil.translate(interaction, ["pagination", "next"]))
 				.setStyle(ButtonStyle.Secondary)
 		)
 
 	let page = 0;
-	const curPage = await msg.reply({
-		embeds: [pages[page].setFooter(`Page ${page + 1} / ${pages.length}`)],
-		components: [row]
-	});
 
-	const filter = (btnInt) => {
-		return true
+	const options = {
+		embeds: [pages[page].setFooter({ text: mTxServUtil.translate(interaction, ["pagination", "footer"], { "curPage": page+1, "maxPage": pages.length}) })],
+		components: [row]
+	};
+
+	if ( interaction.deferred )
+	{
+		response = await interaction.editReply(options);
+	}
+	else
+	{
+		response = await interaction.reply(options);
 	}
 
-	const collector = msg.channel.createMessageComponentCollector({
+	const filter = (i) => {
+		return i.user.id === interaction.user.id;
+	}
+
+	const collector = response.createMessageComponentCollector({
 		filter,
 		time: timeout
 	})
@@ -51,18 +59,25 @@ const paginationEmbed = async (msg, interaction, pages, timeout = 120000) => {
 		}
 
 		i.update({
-			embeds: [pages[page].setFooter(`Page ${page + 1} / ${pages.length}`)]
+			embeds: [pages[page].setFooter({ text: mTxServUtil.translate(interaction, ["pagination", "footer"], { "curPage": page+1, "maxPage": pages.length}) })]
+		});
+	})
+
+	collector.on('ignore', (i) => {
+		i.reply({ 
+			content: mTxServUtil.translate(interaction, ["pagination", "no_authorization"]),
+			ephemeral: true
 		});
 	})
 
 	collector.on('end', () => {
-		if (interaction || !curPage.deleted) {
-			interaction.update({
+		if (interaction || !response.deleted) {
+			interaction.editReply({
 				components: []
 			});
 		}
 	});
 
-	return curPage;
+	return response;
 };
 module.exports = paginationEmbed;

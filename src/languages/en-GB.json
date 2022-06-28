@@ -36,5 +36,16 @@
 		"confirm": ":up: Updating the bot...",
 		"success": "The bot is up to date.",
 		"fail": "Failed to update the bot."
+	},
+	"pagination": {
+		"previous": "Previous",
+		"next": "Next",
+		"footer": "Page %curPage% / %maxPage%",
+		"no_authorization": "You are not the author of the command"
+	},
+	"search": {
+		"failed": "The connection can't be established",
+		"success": ":mag: Search *%query%*",
+		"no_result": ":no_entry_sign: No result found"
 	}
 }

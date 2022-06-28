@@ -36,5 +36,16 @@
 		"confirm": ":up: Mise à jour du bot...",
 		"success": "Le bot est à jour.",
 		"fail": "Echec de la mise à jour."
+	},
+	"pagination": {
+		"previous": "Précédent",
+		"next": "Suivant",
+		"footer": "Page %curPage% / %maxPage%",
+		"no_authorization": "Vous n'êtes pas l'auteur de la commande"
+	},
+	"search": {
+		"failed": "La connexion n'a pas pu être établi",
+		"success": ":mag: Search *%query%*",
+		"no_result": ":no_entry_sign: No result found"
 	}
 }
