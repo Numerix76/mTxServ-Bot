@@ -51,7 +51,7 @@ const client = global.client = new mTxServClient({
 			directory: "./inhibitors",
 		},
 	},
-	mode : "development" //isDev ? "development" : "production", // Change to production for production bot
+	mode : isDev ? "development" : "production",
 });
 
 client.login(config.BOT_TOKEN);
