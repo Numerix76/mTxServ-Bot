@@ -12,6 +12,6 @@ module.exports = class UserMissingPermissionsEvent extends Event {
 	}
 
 	async execute(interaction, userMissingPerms, command) {
-		await interaction.reply(mTxServUtil.translate(interaction, ["commands", "no_perms"], {"%command%": command.name, "%perms%": userMissingPerms.join(", ")}));
+		await interaction.reply(mTxServUtil.translate(interaction, ["commands", "no_perms"], {"command": command.name, "perms": userMissingPerms.join(", ")}));
 	}
 };

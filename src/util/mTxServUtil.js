@@ -47,7 +47,7 @@ module.exports = class mTxServUtil {
 			return phrase;
 
 		for (const [key, value] of Object.entries(replace)) {
-			phrase = phrase.replace(key, value);
+			phrase = phrase.replace(`%${key}%`, value);
 		}
 
 		return phrase;

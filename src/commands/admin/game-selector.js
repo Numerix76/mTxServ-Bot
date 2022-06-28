@@ -181,7 +181,7 @@ module.exports = class GameSelectorCommand extends Command {
 		
 		if ( this.updateSelection(interaction, options) )
 		{
-			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","add","success"], {"%game%": name, "%emoji%": emoji}));
+			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","add","success"], {"game": name, "emoji": emoji}));
 			
 			await interaction.reply({ embeds: [response] });
 			
@@ -227,7 +227,7 @@ module.exports = class GameSelectorCommand extends Command {
 		
 		if ( await this.updateSelection(interaction, options) )
 		{
-			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","remove","success"], {"%game%": game}));
+			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","remove","success"], {"game": game}));
 
 			await interaction.reply({ embeds: [response] });
 			await client.provider.set(interaction.guild.id, 'games', newGames);
