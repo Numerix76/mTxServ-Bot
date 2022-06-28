@@ -215,7 +215,7 @@ module.exports = class SearchCommand extends Command {
 			articles = await api.search(query, language);
 		} catch(e)
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["search", "failed"]))
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["search", "failed"]))
 			await interaction.editReply({ embeds: [response] });
 
 			return;
@@ -223,7 +223,7 @@ module.exports = class SearchCommand extends Command {
 
 		if ( articles.length === 0 )
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["search", "no_result"]))
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["search", "no_result"]))
 			await interaction.editReply({ embeds: [response] });
 			
 			return;

@@ -41,7 +41,7 @@ module.exports = class ImportEmojisCommand extends Command {
 			});
 		});
 
-		const reponse = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["import-emojis","success"]))
+		const reponse = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["import-emojis","success"]))
 
 		await interaction.reply({
 			embeds: [reponse]

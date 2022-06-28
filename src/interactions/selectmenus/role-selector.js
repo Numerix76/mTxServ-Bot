@@ -22,7 +22,7 @@ module.exports = class SelectTest extends SelectMenu {
 			member.roles.add(id)
 		}
 
-		const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["role-selector", "success"]));
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["role-selector", "success"]));
 		await interaction.reply({
 			embeds: [response],
 			ephemeral: true

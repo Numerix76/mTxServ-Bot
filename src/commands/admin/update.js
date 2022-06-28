@@ -22,7 +22,7 @@ module.exports = class LangSelectorCommand extends Command {
 	}
 
 	async execute(interaction) {
-		const response = mTxServUtil.sayWarning(interaction, mTxServUtil.translate(interaction, ["update-bot", "confirm"]));
+		const response = mTxServUtil.sayWarning(mTxServUtil.translate(interaction, ["update-bot", "confirm"]));
 		
 		await interaction.reply({ embeds: [response] });
 

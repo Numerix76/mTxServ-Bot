@@ -84,7 +84,7 @@ module.exports = class mTxServUtil {
 			return await client.provider.get(member.guild.id, 'language', client.language)
 	}*/
 
-	static sayMessage(msg, content) {
+	static sayMessage(content) {
 		const embed = new EmbedBuilder()
 			.setDescription(content)
 			.setColor(Colors.Blue)
@@ -93,7 +93,7 @@ module.exports = class mTxServUtil {
 		return embed;
 	}
 
-	static sayWarning(msg, content) {
+	static sayWarning(content) {
 		const embed = new EmbedBuilder()
 			.setDescription(content)
 			.setColor(Colors.Orange)
@@ -102,7 +102,7 @@ module.exports = class mTxServUtil {
 		return embed;
 	}
 
-	static saySuccess(msg, content) {
+	static saySuccess(content) {
 		const embed = new EmbedBuilder()
 			.setDescription(content)
 			.setColor(Colors.Green)
@@ -111,7 +111,7 @@ module.exports = class mTxServUtil {
 		return embed;
 	}
 
-	static sayError(msg, content) {
+	static sayError(content) {
 		const embed = new EmbedBuilder()
 			.setDescription(content)
 			.setColor(Colors.Red)
@@ -120,7 +120,7 @@ module.exports = class mTxServUtil {
 		return embed;
 	}
 
-	/*static askConfirmation(msg, content) {
+	/*static askConfirmation(content) {
 		const embed = new Discord.MessageEmbed()
 			.setDescription(content)
 			.setColor('ORANGE')
@@ -129,7 +129,7 @@ module.exports = class mTxServUtil {
 		return embed;
 	}*/
 
-	/*static ask(msg, content) {
+	/*static ask(content) {
 		const embed = new Discord.MessageEmbed()
 			.setDescription(content)
 			.setColor('ORANGE')

@@ -135,7 +135,7 @@ module.exports = class GameSelectorCommand extends Command {
 		const regexCustomEmoji = /^<:.+?:\d+>$/g;
 		if ( !emoji.match(regexDefaultEmoji) && (!emoji.match(regexCustomEmoji) || client.emojis.cache.get( emoji.match(/\d+/g) )) )
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","add","invalid_emoji"]));
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","add","invalid_emoji"]));
 			await interaction.reply({ embeds: [response] });
 
 			return;
@@ -147,7 +147,7 @@ module.exports = class GameSelectorCommand extends Command {
 		{
 			if (game.role === role)
 			{
-				const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","add","role_already_exist"]));
+				const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","add","role_already_exist"]));
 				await interaction.reply({ embeds: [response] });
 
 				return;
@@ -155,7 +155,7 @@ module.exports = class GameSelectorCommand extends Command {
 
 			if (game.name === name)
 			{
-				const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","add","name_already_exist"]));
+				const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","add","name_already_exist"]));
 				await interaction.reply({ embeds: [response] });
 
 				return;
@@ -181,7 +181,7 @@ module.exports = class GameSelectorCommand extends Command {
 		
 		if ( this.updateSelection(interaction, options) )
 		{
-			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","add","success"], {"game": name, "emoji": emoji}));
+			const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["game-selector","add","success"], {"game": name, "emoji": emoji}));
 			
 			await interaction.reply({ embeds: [response] });
 			
@@ -189,7 +189,7 @@ module.exports = class GameSelectorCommand extends Command {
 		}
 		else
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","missing_message"])); 
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","missing_message"])); 
 			
 			await interaction.reply({ embeds: [response] });
 		}
@@ -207,7 +207,7 @@ module.exports = class GameSelectorCommand extends Command {
 
 		if ( oldGames.length === newGames.length )
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","remove", "invalid_name"])); 
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","remove", "invalid_name"])); 
 			
 			await interaction.reply({ embeds: [response] });
 
@@ -227,14 +227,14 @@ module.exports = class GameSelectorCommand extends Command {
 		
 		if ( await this.updateSelection(interaction, options) )
 		{
-			const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","remove","success"], {"game": game}));
+			const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["game-selector","remove","success"], {"game": game}));
 
 			await interaction.reply({ embeds: [response] });
 			await client.provider.set(interaction.guild.id, 'games', newGames);
 		}
 		else
 		{
-			const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["game-selector","missing_message"]));
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["game-selector","missing_message"]));
 			
 			await interaction.reply({ embeds: [response] });
 		}
@@ -310,7 +310,7 @@ module.exports = class GameSelectorCommand extends Command {
 
 		await this.updateSelection(interaction, options);
 
-		const response = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["game-selector","create","success"]));
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["game-selector","create","success"]));
 
 		await interaction.reply({
 			embeds: [response],

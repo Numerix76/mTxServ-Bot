@@ -64,7 +64,7 @@ module.exports = class LangSelectorCommand extends Command {
 			components: [row]
 		})
 
-		const reponse = mTxServUtil.saySuccess(interaction, mTxServUtil.translate(interaction, ["lang-selector","success"]))
+		const reponse = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["lang-selector","success"]))
 
 		await interaction.reply({
 			embeds: [reponse],

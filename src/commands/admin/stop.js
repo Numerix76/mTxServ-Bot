@@ -31,7 +31,7 @@ module.exports = class LangSelectorCommand extends Command {
 			embeds: [embed]
 		});
 
-		const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["stop-bot","success"]))
+		const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["stop-bot","success"]))
 
 		await interaction.reply({
 			embeds: [response]

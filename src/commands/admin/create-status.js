@@ -27,7 +27,7 @@ module.exports = class CreateStatusCommand extends Command {
 
 		client.statusMonitor.process();
 
-		const response = mTxServUtil.sayError(interaction, mTxServUtil.translate(interaction, ["create-status","success"]));
+		const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["create-status","success"]));
 
 		await interaction.reply({
 			embeds: [response],
