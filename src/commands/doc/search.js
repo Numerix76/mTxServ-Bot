@@ -2,7 +2,6 @@ const { ApplicationCommandOptionType, EmbedBuilder, Colors } = require("discord.
 const { Command, Constants } = require("sheweny");
 const SearchAPI = require("../../api/SeachAPI");
 const mTxServUtil = require("../../util/mTxServUtil");
-const paginationEmbed = require("../../util/pagination");
 
 module.exports = class SearchCommand extends Command {
 	constructor(client) {
@@ -244,6 +243,6 @@ module.exports = class SearchCommand extends Command {
 			pages.push(embed);
 		}
 
-		await paginationEmbed(interaction, pages);
+		await mTxServUtil.paginationEmbed(interaction, pages);
 	}
 }

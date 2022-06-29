@@ -3,7 +3,6 @@ const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 const { EmbedBuilder, Colors } = require("discord.js");
 const GameServerApi = require('../../api/GameServerApi')
-const paginationEmbed = require('../../util/pagination');
 
 module.exports = class ServersCommand extends Command {
 	constructor(client) {
@@ -47,6 +46,6 @@ module.exports = class ServersCommand extends Command {
 			pages.push(embed)
 		}
 
-		await paginationEmbed(interaction, pages);
+		await mTxServUtil.paginationEmbed(interaction, pages);
 	}
 }
