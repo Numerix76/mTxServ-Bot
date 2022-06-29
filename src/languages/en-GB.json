@@ -85,5 +85,42 @@
 		"members": "❯ Members Discord",
 		"commands": "%numberCommands% commands - by mTxServ.com",
 		"dependencies": "❯ Dependencies"
+	},
+	"servers": {
+		"config": {
+			"add": {
+				"not_logged": "To add your server, \n__you must have connected your__ mTxServ account with `/login`, to verify use `/me`.",
+				"cant_fetch": "Can't connect to your mTxServ account.",
+				"no_result": "You didn't have any game server on your account.",
+				"title_select": "Add server(s) you want",
+				"description_select": "Selected server(s) will be available with the `/servers` command.",
+				"select": "Select server(s) to add",
+				"interaction_end": "If you want to add an other server please, use the command again.",
+				"success": "Game(s) server(s) added, use `/servers` to view server status!"
+			},
+			"remove": {
+				"no_result": "You didn't have any game server registered on this server.",
+				"title_select": "Remove server(s) you want",
+				"description_select": "Selected server(s) will be removed from the `/servers` command.",
+				"select": "Select server(s) to remove",
+				"interaction_end": "If you want to remove an other server please, use the command again.",
+				"success": "Game(s) server(s) removed!"
+			},
+			"no_authorization": "You are not the author of the command",
+			"timeout": "Delay for input exceeded."
+		},
+		"consult": {
+			"invalid_format": "The format you entered is not supported.",
+			"offline": ":red_circle: This game server is offline.",
+			"unknow": "Unknow",
+			"address": "Address",
+			"players": "Players",
+			"map": "Map",
+			"game": "Game",
+			"footer": "By mTxServ.com",
+			"plugins": "Plugins",
+			"no_result": "You didn't have any game server registered on this server.",
+			"no_result_description": "__To add your server__, use the command `/server add`.\n__You must have connected your__ mTxServ account with `/login`, to verify use `/me`."
+		}
 	}
 }

@@ -7,6 +7,23 @@ const paginationEmbed = async (interaction, pages, timeout = 120000) => {
 	if (!interaction && !interaction.channel) throw new Error('Channel is inaccessible.');
 	if (!pages) throw new Error('Pages are not given.');
 
+	let response;
+	if ( pages.length === 1 )
+	{
+		const options = { embeds: pages };
+	
+		if ( interaction.deferred )
+		{
+			response = await interaction.editReply(options);
+		}
+		else
+		{
+			response = await interaction.reply(options);
+		}
+
+		return response;
+	}
+
 	const row = new ActionRowBuilder()
 		.addComponents(
 			new ButtonBuilder()

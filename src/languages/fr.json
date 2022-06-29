@@ -85,5 +85,42 @@
 		"members": "❯ Membres Discord",
 		"commands": "%numberCommands% commandes - par mTxServ.com",
 		"dependencies": "❯ Dépendences"
+	},
+	"servers": {
+		"config": {
+			"add": {
+				"not_logged": "Pour ajouter votre serveur, __vous devez avoir relié votre compte__ mTxServ avec `/login`, pour vérifier utilisez `/me`.",
+				"cant_fetch": "Impossible de se connecter à votre compte mTxServ.",
+				"no_result": "Vous n'avez aucun serveur de jeu sur votre compte.",
+				"title_select": "Ajouter le(s) serveur(s) que vous voulez",
+				"description_select": "Le(s) serveur(s) sélectionné seront disponible dans la commande `/servers`.",
+				"select": "Selectionner le(s) serveur(s) à ajouter",
+				"interaction_end": "Si vous voulez ajouter un autre serveur, utilisez à nouveau la commande.",
+				"success": "Le(s) serveur(s) a/ont été ajouté, utilisez `/servers` pour voir le statut!"
+			},
+			"remove": {
+				"no_result": "Vous n'avez aucun serveur de jeu enregistré sur ce serveur.",
+				"title_select": "Retirez le(s) serveur(s) que vous voulez",
+				"description_select": "Le(s) serveur(s) sélectionné seront retiré de `/servers`.",
+				"select": "Selectionner le(s) serveur(s) à retirer",
+				"interaction_end": "Si vous voulez retirer un autre serveur, utilisez à nouveau la commande.",
+				"success": "Le(s) serveur(s) ont été retirés !"
+			},
+			"no_authorization": "Vous n'êtes pas l'auteur de la commande",
+			"timeout": "Temps de saisie dépassé"
+		},
+		"consult": {
+			"invalid_format": ":no_entry_sign: Adresse invalide, le port est probablement manquant.",
+			"offline": ":red_circle: Ce serveur est offline.",
+			"unknow": "Inconnu",
+			"address": "Adresse",
+			"players": "Joueurs",
+			"map": "Map",
+			"game": "Jeu",
+			"footer": "Par mTxServ.com",
+			"plugins": "Plugins",
+			"no_result": "Vous n'avez aucun serveur de jeu enregistré sur ce serveur.",
+			"no_result_description": "__Pour ajouter votre serveur__, utilisez la commande `/servers add`.\n__Vous devez avoir relié votre compte__ mTxServ avec `/login`, pour vérifier utilisez `/me`."
+		}
 	}
 }
