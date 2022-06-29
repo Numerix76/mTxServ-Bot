@@ -140,14 +140,12 @@ module.exports = class mTxServUtil {
 
 	static async sendLogMessage(options)
 	{
-		if (client.channels.cache.has(client.logChannel)) {
-			client.channels.cache.get(client.logChannel)
-				.send(options)
-		}
+		const logChannel = await client.channels.fetch(client.logChannel);
+		
+		if (logChannel)
+			logChannel.send(options);
 		else
-		{
 			console.log("Log channel invalid");
-		}
 	}
 
 	/*static async editResponse(message, interaction, options)
