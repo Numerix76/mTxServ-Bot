@@ -47,5 +47,43 @@
 		"failed": "The connection can't be established",
 		"success": ":mag: Search *%query%*",
 		"no_result": ":no_entry_sign: No result found"
+	},
+	"bot_infos": {
+		"feedback": {
+			"title": "❯ Feedback",
+			"description": "`m!suggest-config` to configure.\n・%suggest%",
+			"not_configured": "__not configured__"
+		},
+		"configure": {
+			"title": "How to configure?",
+			"description": "To enable the command `/servers consult` on your discord server, use `/servers add` to configure it, in a channel.\n\nThe bot can post new articles in english or/and french, about your favorites games, in a specified channel. To configure it, use `/feeds add` in a channel."
+		},
+		"how_to_fork": {
+			"title": "How to contribute?",
+			"description": "The source code for this bot is available on our GitHub account. You can contribute freely to add new features to the mTxServ bot."
+		},
+		"discord": {
+			"title": "❯ Discord",
+			"description": "Join us"
+		},
+		"invite": {
+			"title": "❯ Invite Bot",
+			"description": "Invite the bot"
+		},
+		"source": {
+			"title": "❯ Source Code",
+			"description": "Github"
+		},
+		"credits": {
+			"title": "❯ Credits",
+			"description": "・Seb\n・Numerix"
+		},
+		"home": "❯ Home",
+		"uptime": "❯ Uptime",
+		"memory": "❯ Memory Usage",
+		"servers": "❯ Servers Discord",
+		"members": "❯ Members Discord",
+		"commands": "%numberCommands% commands - by mTxServ.com",
+		"dependencies": "❯ Dependencies"
 	}
 }

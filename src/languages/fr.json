@@ -47,5 +47,43 @@
 		"failed": "La connexion n'a pas pu être établi",
 		"success": ":mag: Search *%query%*",
 		"no_result": ":no_entry_sign: No result found"
+	},
+	"bot_infos": {
+		"feedback": {
+			"title": "❯ Feedback",
+			"description": "`/suggest config` pour le configurer.\n・%suggest%",
+			"not_configured": "__non configuré__"
+		},
+		"configure": {
+			"title": "Comment configurer le bot ?",
+			"description": "Pour activer la commande `/servers consult` sur votre serveur Discord, utilisez `/servers add` pour la configurer.\n\nLe bot peut envoyer des articles en français/anglais, sur vos jeux préferés, dans un channel spécifique. Pour le configurer, utilisez `/feeds add`."
+		},
+		"how_to_fork": {
+			"title": "Comment contribuer ?",
+			"description": "Le code source du bot est disponible sur Github. Vous pouvez contribuer librement pour ajouter de nouvelle fonctionnalités."
+		},
+		"discord": {
+			"title": "❯ Discord",
+			"description": "Rejoignez-nous"
+		},
+		"invite": {
+			"title": "❯ Invite Bot",
+			"description": "Ajoutez le bot à votre serveur Discord"
+		},
+		"source": {
+			"title": "❯ Source Code",
+			"description": "Github"
+		},
+		"credits": {
+			"title": "❯ Crédits",
+			"description": "・Seb\n・Numerix"
+		},
+		"home": "❯ Site web",
+		"uptime": "❯ Temps de fonctionnement",
+		"memory": "❯ Mémoire utilisé",
+		"servers": "❯ Serveurs Discord",
+		"members": "❯ Membres Discord",
+		"commands": "%numberCommands% commandes - par mTxServ.com",
+		"dependencies": "❯ Dépendences"
 	}
 }

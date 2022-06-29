@@ -12,6 +12,9 @@ const client = global.client = new mTxServClient({
 		IntentsBitField.Flags.DirectMessageReactions
 	],
 	defaultLanguage: config.DEFAULT_LANG,
+	guildInvite: config.GUILD_INVITE_URL,
+	botInvite: config.BOT_INVITE_URL,
+	sourceURL: config.SOURCE_URL,
 	admins: config.BOT_OWNER_ID,
 	logChannel: config.LOG_CHANNEL_ID,
 	feeds: require("../feeds.json"),

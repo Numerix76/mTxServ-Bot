@@ -7,6 +7,8 @@
   "BOT_COMMAND_PREFIX": "m!", 
   "DEFAULT_LANG": "en",
   "BOT_INVITE_URL": "",
+  "GUILD_INVITE_URL": "",
+  "SOURCE_URL": "",
   "PLACID_TOKEN": "",
   "STEAM_WEB_API_KEY": "",
   "LOG_CHANNEL_ID": "",

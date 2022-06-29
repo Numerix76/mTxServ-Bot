@@ -18,6 +18,9 @@ class mTxServClient extends ShewenyClient {
 		super(options, clientOptions);
 
 		this.defaultLanguage = options.defaultLanguage || "en-GB";
+		this.guildInvite = options.guildInvite || "";
+		this.botInvite = options.botInvite || "";
+		this.sourceURL = options.sourceURL || "";
 
 		this.feedMonitor = new FeedMonitor(options.feeds);
 		this.statusMonitor = new StatusMonitor(options.statusURL);
