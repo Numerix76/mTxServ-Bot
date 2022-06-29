@@ -22,7 +22,7 @@ module.exports = class ReadyEvent extends Event {
 		setInterval(async () => {
 			this.client.statusMonitor.process()
 			this.client.feedMonitor.process()
-		}, 1000 * 60 * 10);
+		}, 1000 * 60 * 1);
 	
 		const embed = new EmbedBuilder()
 			.setAuthor({

@@ -1,6 +1,6 @@
 const RssFeederApi = require('../api/RssFeederApi')
 const striptags = require('striptags')
-const Grabity = require("grabity")
+const LinkPreview = require('link-preview-js');
 const { Colors, PermissionsBitField } = require('discord.js')
 const { EmbedBuilder } = require('@discordjs/builders')
 
@@ -57,22 +57,21 @@ module.exports = class FeedMonitor {
 					.setColor(Colors.Blue)
 					.setTimestamp()
 
-				let it = await Grabity.grabIt(article.link)
-				let content = ''
+				const dataURL = await LinkPreview.getLinkPreview(article.link);
+				let content = '';
 
-				if (it.content || it.description) {
-					content = it.content || it.description
-					if (it.image) {
-						embed.setImage(it.image)
-					}
-				} else {
-					content = article['contentSnippet'] || article['content'] || article['content:encodedSnippet']
-				}
+				if (dataURL.description)
+					content = dataURL.description;
+				else
+					content = article['contentSnippet'] || article['content'] || article['content:encodedSnippet'];
+				
+				if (dataURL.images?.length > 0)
+					embed.setImage(dataURL.images[0]);
 
 				content = striptags(content).replace(/(?:https?|ftp):\/\/[\n\S]+/g, '').trim();
-				content = content.length > 300 ? content.substr(0, 300) : content
+				content = content.length > 300 ? content.substr(0, 300) : content;
 
-				embed.setDescription(`${content}\n${article.link}`)
+				embed.setDescription(`${content}\n${article.link}`);
 
 				const primaryTag = feed.tags instanceof Array ? feed.tags[0] : feed.tags
 
@@ -100,20 +99,21 @@ module.exports = class FeedMonitor {
 		}
 	}
 
-	static sendArticle(guild, channel, article)
+	static async sendArticle(guild, channelID, article)
 	{
-		if (!client.channels.cache.has(channel)) {
-			console.error(`Channel ${channel} not found`)
-			return
+		const channel = await guild.channels.fetch(channelID);
+		
+		if (!channel) {
+			console.log(`Channel ${channel} not found`)
+			return;
 		}
 		
 		if( !guild.members.me.permissionsIn(channel).has(PermissionsBitField.Flags.SendMessages) ) {
 			console.log("No permission to send the article")
-			return
+			return;
 		}
 
-		if ( typeof client.channels.cache.get(channel).send === "function" )
-			client.channels.cache.get(channel).send({ embeds: [article] })	
+		channel.send({ embeds: [article] });
 	}
 
 	static async isFollowing(guildId, game, language, defaultValue) {
