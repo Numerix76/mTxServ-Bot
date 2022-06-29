@@ -7,37 +7,37 @@
 	},
 	{
 	  "url":"https://minecraft.fr/feed/",
-	  "icon":"https://mtxserv.com/assets/img/icon/game/minecraft.png?w=64&h=64&fm=png&q=90&s=a99ea37b3e62c874f50db5c76a240dc4",
+	  "icon":"https://mtxserv.com/build/img/icon/game/minecraft.png",
 	  "tags":["minecraft"],
 	  "language": "fr"
 	},
 	{
 	  "url":"https://gmod.facepunch.com/rss/blog",
-	  "icon":"https://mtxserv.com/assets/img/icon/game/gmod.png?w=64&h=64&fm=png&q=90&s=e9b6c469852787b70f26e4476e1691ab",
+	  "icon":"https://mtxserv.com/build/img/icon/game/gmod.png",
 	  "tags":["gmod"],
 	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://rust.facepunch.com/rss/blog",
-	  "icon":"https://mtxserv.com/assets/img/icon/game/rust.png?w=64&h=64&fm=png&q=90&s=83bbdac7220a8783f43231974855dd5b",
+	  "icon":"https://mtxserv.com/build/img/icon/game/rust.png",
 	  "tags":["rust"],
 	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://sandbox.facepunch.com/rss/news",
-	  "icon":null,
+	  "icon":"https://mtxserv.com/build/img/icon/game/sandbox.png",
 	  "tags":["sandbox"],
 	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://survivetheark.com/index.php?/rss/3-ark-news.xml/",
-	  "icon":"https://mtxserv.com/assets/img/icon/game/ark.png?w=64&h=64&fm=png&q=90&s=53452e459725e172fd620c7366d285d2",
+	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
 	  "language": "en"
 	},
 	{
 	  "url":"https://ark-france.fr/rss/",
-	  "icon":"https://mtxserv.com/assets/img/icon/game/ark.png?w=64&h=64&fm=png&q=90&s=53452e459725e172fd620c7366d285d2",
+	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
 	  "language": "fr"
 	},
