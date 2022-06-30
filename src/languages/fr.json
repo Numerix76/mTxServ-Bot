@@ -125,5 +125,10 @@
 			"no_result": "Vous n'avez aucun serveur de jeu enregistré sur ce serveur.",
 			"no_result_description": "__Pour ajouter votre serveur__, utilisez la commande `/servers add`.\n__Vous devez avoir relié votre compte__ mTxServ avec `/login`, pour vérifier utilisez `/me`."
 		}
+	},
+	"mc-achievement": {
+		"success": "Achievement généré avec succès.",
+		"failed": "Une erreur est survenue :\n`%errMessage%`.",
+		"invalid_icon": "L'icone que vous avez saisie n'existe pas."
 	}
 }
