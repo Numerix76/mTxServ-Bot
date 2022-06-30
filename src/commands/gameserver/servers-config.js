@@ -41,6 +41,17 @@ module.exports = class ServersConfigCommand extends Command {
 						'fr': 'Retirer un serveur'
 					},
 				},
+				{
+					type: ApplicationCommandOptionType.Subcommand,
+					name: "reset",
+					nameLocalizations: {
+						'fr': 'reinitialiser'
+					},
+					description: "Remove all registered servers on the Discord server",
+					descriptionLocalizations: {
+						'fr': 'Retire tous les serveurs enregistré sur le serveur Discord'
+					},
+				},
 			]
 		});
 	}
@@ -50,6 +61,7 @@ module.exports = class ServersConfigCommand extends Command {
 		{
 			case 'add'   : this.addServer(interaction); break;
 			case 'remove': this.removeServer(interaction); break;
+			case 'reset': this.resetServer(interaction); break;
 		}
 	}
 
@@ -295,5 +307,13 @@ module.exports = class ServersConfigCommand extends Command {
 				})
 			}
 		})	
+	}
+
+	async resetServer(interaction) {
+		await client.provider.set(interaction.guild.id, 'servers', [])
+
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["servers", "config", "reset", "success"]));
+
+		await interaction.reply({ embeds: [response] });
 	}
 };

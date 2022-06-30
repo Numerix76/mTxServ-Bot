@@ -106,8 +106,11 @@
 				"interaction_end": "Si vous voulez retirer un autre serveur, utilisez à nouveau la commande.",
 				"success": "Le(s) serveur(s) ont été retirés !"
 			},
-			"no_authorization": "Vous n'êtes pas l'auteur de la commande",
-			"timeout": "Temps de saisie dépassé"
+			"reset": {
+				"success": "Suppression de tous les serveurs avec succès."
+			},
+			"no_authorization": "Vous n'êtes pas l'auteur de la commande.",
+			"timeout": "Temps de saisie dépassé."
 		},
 		"consult": {
 			"invalid_format": ":no_entry_sign: Adresse invalide, le port est probablement manquant.",

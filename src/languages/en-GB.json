@@ -106,7 +106,10 @@
 				"interaction_end": "If you want to remove an other server please, use the command again.",
 				"success": "Game(s) server(s) removed!"
 			},
-			"no_authorization": "You are not the author of the command",
+			"reset": {
+				"success": "Successfully removed all servers."
+			},
+			"no_authorization": "You are not the author of the command.",
 			"timeout": "Delay for input exceeded."
 		},
 		"consult": {
