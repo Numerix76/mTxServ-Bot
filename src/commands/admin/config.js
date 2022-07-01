@@ -367,6 +367,32 @@ module.exports = class ConfigCommand extends Command {
 							required: true,
 						},
 					],
+				},
+				{
+					type: ApplicationCommandOptionType.Subcommand,
+					name: "lang-selector",
+					nameLocalizations: {
+						'fr': 'select-lang'
+					},
+					description: "Create a language selector.",
+					descriptionLocalizations: {
+						'fr': 'Créer un message pour sélectionner une langue.',
+					},
+					options: [
+						{
+							type: ApplicationCommandOptionType.Channel,
+							channelTypes: [ChannelType.GuildText],
+							name: 'channel',
+							nameLocalizations: {
+								'fr': 'salon'
+							},
+							description: 'Which channel for selecting language?',
+							descriptionLocalizations: {
+								'fr': 'Quel channel pour choisir la langue ?'
+							},
+							required: true,
+						},
+					],
 				}
 			]
 		});
@@ -388,6 +414,7 @@ module.exports = class ConfigCommand extends Command {
 			{
 				case 'create-status': this.createStatus(interaction); break;
 				case 'suggest': this.configSuggest(interaction); break;
+				case 'lang-selector': this.configLangSelector(interaction); break;
 			}
 		}
 	}
@@ -627,7 +654,7 @@ module.exports = class ConfigCommand extends Command {
 					continue
 				}
 
-				let gameServers = await client.provider.get(interaction.guild.id, 'servers', [])        
+				let gameServers = await client.provider.get(interaction.guild.id, 'servers', [])
 				gameServers = gameServers.filter(gs => gs.address !== list[serverKey].invoice.address)
 
 				await client.provider.set(interaction.guild.id, 'servers', gameServers)
@@ -892,13 +919,13 @@ module.exports = class ConfigCommand extends Command {
 		const locale = interaction.options.get("locale").value
 
 		await client.provider.rootRef
-            .child(interaction.guild.id)
-            .child('feeds_suscribed')
-            .child(game)
-            .child(locale)
-            .set(channel.id)
+			.child(interaction.guild.id)
+			.child('feeds_suscribed')
+			.child(game)
+			.child(locale)
+			.set(channel.id)
 
-        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "add", "success"], {
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "add", "success"], {
 			"game": game.toUpperCase(),
 			"locale": locale === 'all' ? 'all languages' : locale.toUpperCase(),
 			"channel": channel.name
@@ -911,12 +938,12 @@ module.exports = class ConfigCommand extends Command {
 		const game = interaction.options.get("game").value
 
 		await client.provider.rootRef
-            .child(interaction.guild.id)
-            .child('feeds_suscribed')
-            .child(game)
-            .remove()
+			.child(interaction.guild.id)
+			.child('feeds_suscribed')
+			.child(game)
+			.remove()
 
-        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "remove", "success"], { "game": game.toUpperCase() }))
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "remove", "success"], { "game": game.toUpperCase() }))
 		
 		await interaction.reply({ embeds: [response] });
 	}
@@ -949,10 +976,68 @@ module.exports = class ConfigCommand extends Command {
 	async configSuggest(interaction) {
 		const channel = interaction.options.getChannel("channel")
 
-        await client.provider.set(interaction.guild.id, 'suggest-config', channel.id)
+		await client.provider.set(interaction.guild.id, 'suggest-config', channel.id)
 
-        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["suggest", "config", "success"], { "channel": channel.name }))
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["suggest", "config", "success"], { "channel": channel.name }))
 
 		await interaction.reply({ embeds: [response] });
+	}
+
+	/*-----------------------------*/
+	/*      Suggest Config         */
+	/*-----------------------------*/
+	async configLangSelector(interaction) {
+		const channel = interaction.options.getChannel("channel");
+
+		const embed = new EmbedBuilder()
+			.setAuthor({ name: client.user.tag, iconURL: client.user.displayAvatarURL() })
+			.setColor(Colors.Orange)
+			.addFields([
+				{
+					name: ":flag_fr: Bienvenue sur mTxServ!",
+					value: "Vous parlez Français? **Cliquez sur :flag_fr:** pour activer les sections françaises."
+				},
+				{
+					name: ":flag_us: Welcome on mTxServ!",
+					value: "Do you speak English? **Click :flag_us:** to see english sections."
+				}
+			])
+			.setFooter({ text: 'Choose your language / Choisissez votre langue - mTxServ.com' });
+
+		let row = new ActionRowBuilder()
+
+		const option = [
+			{
+				label: 'Français',
+				value: interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "fr").id,
+				emoji: '🇫🇷'
+			},
+			{
+				label: 'English',
+				value: interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "en").id,
+				emoji: '🇺🇸'
+			}
+		]
+
+		row.addComponents(
+			new SelectMenuBuilder()
+			.setCustomId('lang-selector')
+			.setMinValues(0)
+			.setMaxValues(option.length)
+			.setPlaceholder('Choose your language / Choisissez votre langue')
+			.addOptions(option)
+		)
+
+		await channel.send({
+			embeds: [embed],
+			components: [row]
+		})
+
+		const reponse = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["lang-selector","success"]))
+
+		await interaction.reply({
+			embeds: [reponse],
+			ephemeral: true
+		});
 	}
 };
