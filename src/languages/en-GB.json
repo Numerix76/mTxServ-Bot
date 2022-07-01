@@ -207,5 +207,23 @@
 			"description": "To receive **news from your favorite games __in a specified channel__**, subscribe to the lists with `/config feeds add` (__admin only__).",
 			"unfollow": "Unfollowed"
 		}
+	},
+	"suggest": {
+		"config": {
+			"success": "The suggestion channel has been set to `%channel.name%`."
+		},
+		"create": {
+			"title": "Create a suggestion",
+			"tsTitle": "The title of your suggestion",
+			"tsDescription": "The description of your suggestion",
+			"not_configured": "The feedback channel doesn't exist. Use `/config suggest` to configure it.",
+			"success": "Thank you for your suggestion %name%! We appreciates all feedback."
+		},
+		"update": {
+			"no_access": "You are not authorized to do that.",
+			"success": "Successfully updated status of the suggestion.",
+			"title": "Refuse suggestion",
+			"tsReason": "Enter a reason"
+		}
 	}
 }

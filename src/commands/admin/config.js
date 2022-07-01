@@ -341,6 +341,32 @@ module.exports = class ConfigCommand extends Command {
 					descriptionLocalizations: {
 						'fr': 'Ajoute le statut de l\'infrastruture mTxServ dans le channel'
 					},
+				},
+				{
+					type: ApplicationCommandOptionType.Subcommand,
+					name: "suggest",
+					nameLocalizations: {
+						'fr': 'suggestion'
+					},
+					description: "Set the suggestion channel",
+					descriptionLocalizations: {
+						'fr': 'Change le channel de suggestion'
+					},
+					options: [
+						{
+							type: ApplicationCommandOptionType.Channel,
+							channelTypes: [ChannelType.GuildText],
+							name: 'channel',
+							nameLocalizations: {
+								'fr': 'salon'
+							},
+							description: 'Which channel used to post suggestion?',
+							descriptionLocalizations: {
+								'fr': 'Quel channel utilisez pour les suggestions ?'
+							},
+							required: true,
+						},
+					],
 				}
 			]
 		});
@@ -361,6 +387,7 @@ module.exports = class ConfigCommand extends Command {
 			switch(interaction.options.getSubcommand())
 			{
 				case 'create-status': this.createStatus(interaction); break;
+				case 'suggest': this.configSuggest(interaction); break;
 			}
 		}
 	}
@@ -907,11 +934,25 @@ module.exports = class ConfigCommand extends Command {
 
 		client.statusMonitor.process();
 
-		const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["create-status","success"]));
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["create-status","success"]));
 
 		await interaction.reply({
 			embeds: [response],
 			ephemeral: true
 		});
+	}
+
+
+	/*-----------------------------*/
+	/*      Suggest Config         */
+	/*-----------------------------*/
+	async configSuggest(interaction) {
+		const channel = interaction.options.getChannel("channel")
+
+        await client.provider.set(interaction.guild.id, 'suggest-config', channel.id)
+
+        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["suggest", "config", "success"], { "channel": channel.name }))
+
+		await interaction.reply({ embeds: [response] });
 	}
 };
