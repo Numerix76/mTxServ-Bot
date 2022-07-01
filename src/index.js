@@ -1,6 +1,7 @@
 const { mTxServClient } = require("./client.js");
 const config = require("../config.json");
 const { IntentsBitField } = require("discord.js");
+const { Constants } = require("sheweny");
 
 global.isDev = process.argv.includes('-dev')
 
@@ -29,12 +30,10 @@ const client = global.client = new mTxServClient({
 			default: {
 					adminOnly: false,
 					category: 'Default category',
-					channel: 'GUILD',
+					channel: Constants.COMMAND_CHANNEL.global,
 					clientPermissions: ["SendMessages"],
 					cooldown: 0,
-					examples: ['Example 1', 'Example 2'],
 					type: 'SLASH_COMMAND',
-					usage: config.BOT_COMMAND_PREFIX + 'command',
 					userPermissions: ["SendMessages"],
 			},
 		},
