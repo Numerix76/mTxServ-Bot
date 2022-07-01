@@ -130,5 +130,67 @@
 		"success": "Achievement successfully generated.",
 		"failed": "An error occured:\n`%errMessage%`.",
 		"invalid_icon": "The icon you entered doesn't exist."
+	},
+	"mtxserv": {
+		"link": {
+			"help": "https://mtxserv.com/help",
+			"support": "https://mtxserv.com/support/list",
+			"support_create": "https://mtxserv.com/support/new",
+			"oauth": "https://mtxserv.com/account/oauth",
+			"api_key": "https://mtxserv.com/account/api",
+			"create_tutorial": "https://mtxserv.com/account/howto/add",
+			"profile": "https://mtxserv.com/account/profile"
+		}
+	},
+	"support": {
+		"title": ":question: How to contact support",
+		"description": "Our staff is at your disposal if need help or have a question.",
+		"report": "Report a message",
+		"create": "Create a ticket",
+		"support": "View my tickets",
+		"before": "Before contacting us, check the help center!"
+	},
+	"account": {
+		"login": {
+			"title": ":lock: Link this account with mTxServ.com account",
+			"description": "To link your *Discord* account with your *mTxServ.com* account in order to be able to benefit from all functionalities, you must enter your API settings.\n\nGet your `client_id`, `client_secret` and `api_key`:",
+			"client_id_secret": "client_id & client_secret",
+			"api_key": "api key",
+			"button": "Login",
+			"success": "Succesfully login.",
+			"failed": "Your credentials are not correct, we can't log you on mTxServ.",
+			"already_connected": "You are already logged to your mTxServ account. Logout with `/account logout`.",
+			"title_modal": "Link mTxServ.com account",
+			"client_id_modal": "What is your client_id ?",
+			"client_secret_modal": "What is your client_secret ?",
+			"api_key_modal": "What is your api_key ?"
+		},
+		"logout": {
+			"success": "Successfully disconnect."
+		},
+		"profile": {
+			"author": "%username% profile",
+			"points": ":star: Points",
+			"level": ":chart_with_upwards_trend: Level",
+			"rank": ":medal: Rank",
+			"linked": ":paperclips: Linked",
+			"game_servers": ":video_game: Game Servers",
+			"voice_servers": ":speaking_head: Voice Servers",
+			"web_hosting": ":globe_with_meridians: Web Hosting",
+			"vps": ":desktop: VPS",
+			"latest_tutos": "Latest tutos by %username%",
+			"how_to_tutorial": "how to write a tuto",
+			"edit": "Edit my profile",
+			"is_admin": ":dizzy: %username% is admin",
+			"website": "Website",
+			"visit_website": "Visit website",
+			"join_discord": "Join server"
+		},
+		"not_logged": "Your discord account isn't linked with your mTxServ account."
+	},
+	"ranks": {
+		"points": "Points",
+		"level": "Level",
+		"rank": "Rank"
 	}
 }

@@ -130,5 +130,63 @@
 		"success": "Achievement généré avec succès.",
 		"failed": "Une erreur est survenue :\n`%errMessage%`.",
 		"invalid_icon": "L'icone que vous avez saisie n'existe pas."
+	},
+	"mtxserv": {
+		"link": {
+			"help": "https://mtxserv.com/fr/help",
+			"support": "https://mtxserv.com/fr/support/list",
+			"support_create": "https://mtxserv.com/fr/support/new"
+		}
+	},
+	"support": {
+		"title": ":question: Contacter le support",
+		"description": "Notre équipe est à votre disposition pour toute demande d'aide ou de renseignement.",
+		"report": "Signaler un message",
+		"create": "Ouvrir un ticket",
+		"support": "Mes tickets",
+		"before": "Avant de nous contacter, consultez le centre d'aide!"
+	},
+	"account": {
+		"login": {
+			"title": ":lock: Lier son compte avec mTxServ.com",
+			"description": "Pour lier votre compte *Discord* avec votre compte *mTxServ.com* afin de pouvoir bénéficier de toutes les fonctionnalitées, vous devez entrer vos paramètres API.\n\nPour récupérer votre `client_id`, `client_secret` et `api_key`, rendez-vous sur:",
+			"client_id_secret": "client_id & client_secret",
+			"api_key": "api key",
+			"button": "Connexion",
+			"success": "Connexion avec succès !",
+			"failed": "Vos accès sont invalides, impossible d'authentifier votre compte mTxServ.",
+			"already_connected": "Votre compte est déjà relié à votre compte mTxServ. Déconnectez-vous avec `/account logout`.",
+			"title_modal": "Lier son compte avec mTxServ.com",
+			"client_id_modal": "Quel est votre client_id ?",
+			"client_secret_modal": "Quel est votre client_secret ?",
+			"api_key_modal": "Quel est votre api_key ?"
+		},
+		"logout": {
+			"success": "Déconnexion avec succès !"
+		},
+		"profile": {
+			"author": "Profile de %username%",
+			"points": ":star: Points",
+			"level": ":chart_with_upwards_trend: Niveau",
+			"rank": ":medal: Rang",
+			"linked": ":paperclips: Lié",
+			"game_servers": ":video_game: Serveurs de jeux",
+			"voice_servers": ":speaking_head: Serveurs vocaux",
+			"web_hosting": ":globe_with_meridians: Site web",
+			"vps": ":desktop: VPS",
+			"latest_tutos": "Les derniers tutoriels de %username%",
+			"how_to_tutorial": "comment écrite un tutoriel",
+			"edit": "Editer mon profile",
+			"is_admin": ":dizzy: %username% est un admin",
+			"website": "Site web",
+			"visit_website": "Accéder au site",
+			"join_discord": "Rejoindre le serveur"
+		},
+		"not_logged": "Votre compte n'est pas relié à mTxServ."
+	},
+	"ranks": {
+		"points": "Points",
+		"level": "Niveau",
+		"rank": "Rang"
 	}
 }

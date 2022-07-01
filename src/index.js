@@ -31,7 +31,7 @@ const client = global.client = new mTxServClient({
 					category: 'Default category',
 					channel: 'GUILD',
 					clientPermissions: ["SendMessages"],
-					cooldown: 3.5,
+					cooldown: 0,
 					examples: ['Example 1', 'Example 2'],
 					type: 'SLASH_COMMAND',
 					usage: config.BOT_COMMAND_PREFIX + 'command',
