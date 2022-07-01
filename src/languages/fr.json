@@ -188,5 +188,20 @@
 		"points": "Points",
 		"level": "Niveau",
 		"rank": "Rang"
+	},
+	"feeds": {
+		"config":{
+			"add": {
+				"success": "Les nouveaux articles à propos de **%game%** en **%locale%** seront envoyés dans **%channel%**."
+			},
+			"remove": {
+				"success": "Le jeu **%game%** n'est plus suivie."
+			}
+		},
+		"list": {
+			"title": "Vos feeds",
+			"description": "Pour recevoir **les news de vos jeux favoris __dans un channel spécifié__**, abonnez-vous aux listes avec `/config feeds add` (__admin uniquement__).",
+			"unfollow": "Non suivi"
+		}
 	}
 }

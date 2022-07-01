@@ -1,8 +1,71 @@
 const { Command, Constants } = require("sheweny");
-const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder, EmbedBuilder, Colors } = require("discord.js");
+const { ApplicationCommandOptionType, ActionRowBuilder, SelectMenuBuilder, EmbedBuilder, Colors, ChannelType } = require("discord.js");
 const mTxServUtil = require("../../util/mTxServUtil");
 const mTxServApi = require("../../api/mTxServApi");
 const GameServerApi = require("../../api/GameServerApi");
+
+const gamesChoice = [
+	{
+		name: "Minecraft",
+		value: "minecraft"
+	},
+	{
+		name: "Ark",
+		value: "ark"
+	},
+	{
+		name: "Rust",
+		value: "rust"
+	},
+	{
+		name: "Garry's Mod",
+		value: "gmod"
+	},
+	{
+		name: "S&box",
+		value: "sandbox"
+	},
+	{
+		name: "Hytale",
+		value: "hytale"
+	},
+	{
+		name: "CS:GO",
+		value: "csgo"
+	},
+	{
+		name: "Valorant",
+		value: "valorant"
+	},
+	{
+		name: "League Of Legends",
+		value: "lol"
+	},
+	{
+		name: "Overwatch",
+		value: "overwatch"
+	},
+	{
+		name: "Fortnite",
+		value: "fortnite"
+	},
+	{
+		name: "Rocket League",
+		value: "rocketleague"
+	},
+	{
+		name: "Web",
+		value: "web"
+	},
+	{
+		name: "Film",
+		value: "film"
+	},
+	{
+		name: "Science",
+		value: "science"
+	},
+];
 
 module.exports = class ConfigCommand extends Command {
 	constructor(client) {
@@ -165,6 +228,110 @@ module.exports = class ConfigCommand extends Command {
 					]
 				},
 				{
+					type: ApplicationCommandOptionType.SubcommandGroup,
+					name: "feeds",
+					nameLocalizations: {
+						'fr': 'feeds'
+					},
+					description: "Add or Remove a feed",
+					descriptionLocalizations: {
+						'fr': 'Ajoute ou Retire un feed'
+					},
+					options: [
+						{
+							type: ApplicationCommandOptionType.Subcommand,
+							name: "add",
+							nameLocalizations: {
+								'fr': 'ajouter'
+							},
+							description: "Add a feed",
+							descriptionLocalizations: {
+								'fr': 'Ajoute un feed'
+							},
+							options: [
+								{
+									type: ApplicationCommandOptionType.String,
+									name: 'game',
+									nameLocalizations: {
+										'fr': 'jeu'
+									},
+									description: 'Which game do you want to follow?',
+									descriptionLocalizations: {
+										'fr': 'Quel jeu voulez-vous suivre ?'
+									},
+									required: true,
+									choices: gamesChoice
+								},
+								{
+									type: ApplicationCommandOptionType.Channel,
+									channelTypes: [ChannelType.GuildText, ChannelType.GuildNews],
+									name: 'channel',
+									nameLocalizations: {
+										'fr': 'salon'
+									},
+									description: 'In which channel do you want to post new articles?',
+									descriptionLocalizations: {
+										'fr': 'Dans quel salon voulez-vous afficher les articles ?'
+									},
+									required: true,
+								},
+								{
+									type: ApplicationCommandOptionType.String,
+									name: 'locale',
+									nameLocalizations: {
+										'fr': 'langue'
+									},
+									description: 'Which language?',
+									descriptionLocalizations: {
+										'fr': 'Quel langage ?'
+									},
+									required: true,
+									choices: [
+										{
+											name: "Français",
+											value: "fr"
+										},
+										{
+											name: "English",
+											value: "en"
+										},
+										{
+											name: "All",
+											value: "all"
+										},
+									]
+								},
+							]
+						},
+						{
+							type: ApplicationCommandOptionType.Subcommand,
+							name: "remove",
+							nameLocalizations: {
+								'fr': 'retirer'
+							},
+							description: "Unsubscribe to a feed.",
+							descriptionLocalizations: {
+								'fr': 'Se désabonner d\'un feed'
+							},
+							options: [
+								{
+									type: ApplicationCommandOptionType.String,
+									name: 'game',
+									nameLocalizations: {
+										'fr': 'jeu'
+									},
+									description: 'Which game do you want to unfollow?',
+									descriptionLocalizations: {
+										'fr': 'Quel jeu ne voulez-vous plus suivre ?'
+									},
+									required: true,
+									choices: gamesChoice
+								}
+							]
+						}
+					]
+				},
+				{
 					type: ApplicationCommandOptionType.Subcommand,
 					name: "create-status",
 					nameLocalizations: {
@@ -186,6 +353,7 @@ module.exports = class ConfigCommand extends Command {
 			{
 				case 'servers': this.configServers(interaction); break;
 				case 'game-selector': this.configGameSelector(interaction); break;
+				case 'feeds': this.configFeeds(interaction); break;
 			}
 		}
 		else
@@ -677,6 +845,53 @@ module.exports = class ConfigCommand extends Command {
 			embeds: [response],
 			ephemeral: true,
 		})
+	}
+
+
+	/*-----------------------------*/
+	/*        Feeds Config         */
+	/*-----------------------------*/
+	configFeeds(interaction) {
+		switch(interaction.options.getSubcommand())
+		{
+			case 'add'   : this.addFeed(interaction); break;
+			case 'remove': this.removeFeed(interaction); break;
+		}
+	}
+
+	async addFeed(interaction) {
+		const game = interaction.options.get("game").value
+		const channel = interaction.options.getChannel("channel")
+		const locale = interaction.options.get("locale").value
+
+		await client.provider.rootRef
+            .child(interaction.guild.id)
+            .child('feeds_suscribed')
+            .child(game)
+            .child(locale)
+            .set(channel.id)
+
+        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "add", "success"], {
+			"game": game.toUpperCase(),
+			"locale": locale === 'all' ? 'all languages' : locale.toUpperCase(),
+			"channel": channel.name
+		}))
+
+		await interaction.reply({ embeds: [response] });
+	}
+
+	async removeFeed(interaction) {
+		const game = interaction.options.get("game").value
+
+		await client.provider.rootRef
+            .child(interaction.guild.id)
+            .child('feeds_suscribed')
+            .child(game)
+            .remove()
+
+        const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["feeds", "config", "remove", "success"], { "game": game.toUpperCase() }))
+		
+		await interaction.reply({ embeds: [response] });
 	}
 
 

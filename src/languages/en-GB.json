@@ -192,5 +192,20 @@
 		"points": "Points",
 		"level": "Level",
 		"rank": "Rank"
+	},
+	"feeds": {
+		"config":{
+			"add": {
+				"success": "New articles about **%game%** in **%locale%** will be post in channel **%channel%**."
+			},
+			"remove": {
+				"success": "Game **%game%** unfollowed."
+			}
+		},
+		"list": {
+			"title": "Your feeds",
+			"description": "To receive **news from your favorite games __in a specified channel__**, subscribe to the lists with `/config feeds add` (__admin only__).",
+			"unfollow": "Unfollowed"
+		}
 	}
 }
