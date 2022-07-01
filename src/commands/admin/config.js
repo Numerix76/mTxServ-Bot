@@ -341,6 +341,21 @@ module.exports = class ConfigCommand extends Command {
 					descriptionLocalizations: {
 						'fr': 'Ajoute le statut de l\'infrastruture mTxServ dans le channel'
 					},
+					options: [
+						{
+							type: ApplicationCommandOptionType.Channel,
+							channelTypes: [ChannelType.GuildText],
+							name: 'channel',
+							nameLocalizations: {
+								'fr': 'salon'
+							},
+							description: 'Which channel for the status?',
+							descriptionLocalizations: {
+								'fr': 'Quel channel pour le statut ?'
+							},
+							required: true,
+						},
+					],
 				},
 				{
 					type: ApplicationCommandOptionType.Subcommand,
@@ -412,7 +427,7 @@ module.exports = class ConfigCommand extends Command {
 		{
 			switch(interaction.options.getSubcommand())
 			{
-				case 'create-status': this.createStatus(interaction); break;
+				case 'create-status': this.configStatus(interaction); break;
 				case 'suggest': this.configSuggest(interaction); break;
 				case 'lang-selector': this.configLangSelector(interaction); break;
 			}
@@ -952,8 +967,10 @@ module.exports = class ConfigCommand extends Command {
 	/*-----------------------------*/
 	/*       Status Config         */
 	/*-----------------------------*/
-	async createStatus(interaction) {
-		const statusMsg = await interaction.channel.send({
+	async configStatus(interaction) {
+		const channel = interaction.options.getChannel("channel");
+
+		const statusMsg = await channel.send({
 			content: "Waiting a refresh"
 		});
 

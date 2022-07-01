@@ -26,7 +26,7 @@ module.exports = class StatusMonitor {
 		{	
 			const currentConfig = await client.provider.get('status', guild.id, "")
 			const statusChannel = await guild.channels.fetch(currentConfig.channel)
-			const statusMessage = await statusChannel?.messages.fetch({ message: currentConfig.message })
+			const statusMessage = await statusChannel?.messages?.fetch({ message: currentConfig.message })
 
 			if (!statusMessage) continue;
 
