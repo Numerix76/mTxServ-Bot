@@ -1,5 +1,3 @@
-//const {SettingProvider} = require('discord.js-commando');
-
 /**
  * Provider using the `firebase` api.
  */

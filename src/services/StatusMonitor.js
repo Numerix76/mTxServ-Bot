@@ -55,8 +55,8 @@ module.exports = class StatusMonitor {
 		}
 
 		Object.values(res.body.data)
-            .map(server => {
+			.map(server => {
 				embed.addFields({name: server.name, value: server.status_name})
-            })
+			})
 	}
 }

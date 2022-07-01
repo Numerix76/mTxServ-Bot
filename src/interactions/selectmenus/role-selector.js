@@ -1,7 +1,7 @@
 const { SelectMenu } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 	
-module.exports = class SelectTest extends SelectMenu {
+module.exports = class RoleSelectMenu extends SelectMenu {
 	constructor(client) {
 		super(client, ["game-selector", "lang-selector"]);
 	}

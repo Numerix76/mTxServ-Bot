@@ -3,7 +3,7 @@ const mTxServUtil = require("../../util/mTxServUtil");
 const { EmbedBuilder, Colors } = require("discord.js");
 const { execSync } = require('child_process');
 
-module.exports = class LangSelectorCommand extends Command {
+module.exports = class UpdateCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: "update-bot",
@@ -16,7 +16,7 @@ module.exports = class LangSelectorCommand extends Command {
 			},
 			category: "Admin",
 			userPermissions: ["SendMessages"],
-			channel: Constants.COMMAND_CHANNEL.guild,
+			channel: Constants.COMMAND_CHANNEL.global,
 			adminsOnly: true
 		});
 	}

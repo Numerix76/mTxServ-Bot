@@ -1,4 +1,3 @@
-
 const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 const { EmbedBuilder, Colors, ApplicationCommandOptionType, AttachmentBuilder } = require("discord.js");
@@ -6,7 +5,7 @@ const { ICONS, AchievementCreator } = require("mc-achievements");
 
 const listIcons = Object.values(ICONS).filter(icon => typeof icon !== 'function');
 
-module.exports = class ServersCommand extends Command {
+module.exports = class AchievementCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: "mc-achievement",
@@ -75,12 +74,12 @@ module.exports = class ServersCommand extends Command {
 		const description = interaction.options.get("description").value;
 
 		if (listIcons.indexOf(icon) === -1) {
-            const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["mc-achievement", "invalid_icon"]))
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["mc-achievement", "invalid_icon"]))
 
 			await interaction.reply({ embeds: [response] });
 
 			return;
-        }
+		}
 
 		try {
 			const binary = await AchievementCreator.create(icon, title, description);

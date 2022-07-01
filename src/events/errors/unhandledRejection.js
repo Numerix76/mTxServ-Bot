@@ -3,7 +3,7 @@ const { Colors } = require("discord.js");
 const { Event } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 
-module.exports = class unhandledRejectionEvent extends Event {
+module.exports = class UnhandledRejectionEvent extends Event {
 	constructor(client) {
 		super(client, 'unhandledRejection', {
 			emitter: process,

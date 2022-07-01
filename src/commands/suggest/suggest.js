@@ -1,6 +1,6 @@
 const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
-const { EmbedBuilder, Colors, TextInputStyle, ModalBuilder, TextInputBuilder, ActionRowBuilder } = require("discord.js");
+const { TextInputStyle, ModalBuilder, TextInputBuilder, ActionRowBuilder } = require("discord.js");
 
 module.exports = class SuggestCommand extends Command {
 	constructor(client) {
@@ -23,7 +23,7 @@ module.exports = class SuggestCommand extends Command {
 		const currentConfig = await client.provider.get(interaction.guild.id, 'suggest-config', "")
 
 		if (!await interaction.guild.channels.fetch(currentConfig)) {
-            const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["suggest", "create", "not_configured"]))
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["suggest", "create", "not_configured"]))
 
 			await interaction.reply({ embeds: [response] });
 			

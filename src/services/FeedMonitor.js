@@ -93,7 +93,7 @@ module.exports = class FeedMonitor {
 								FeedMonitor.sendArticle(guild, followLocalized, embed)
 							}
 						}
-					}								
+					}
 				}
 			}
 		}

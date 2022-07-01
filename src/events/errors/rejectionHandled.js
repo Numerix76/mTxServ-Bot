@@ -3,15 +3,15 @@ const { Colors } = require("discord.js");
 const { Event } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 
-module.exports = class warningEvent extends Event {
+module.exports = class RejectionHandledEvent extends Event {
 	constructor(client) {
-		super(client, 'warning', {
+		super(client, 'rejectionHandled', {
 			emitter: process,
 		});
 	}
 	execute(error) {
 		if (!error) return;
-	
+
 		console.error(error.stack ? error.stack : error.toString());
 
 		const embed = new EmbedBuilder()

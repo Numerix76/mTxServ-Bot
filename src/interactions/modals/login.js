@@ -2,7 +2,7 @@ const { Modal } = require("sheweny");
 const mTxServApi = require("../../api/mTxServApi");
 const mTxServUtil = require("../../util/mTxServUtil");
 
-module.exports = class Mod extends Modal {
+module.exports = class LoginModal extends Modal {
 	constructor(client) {
 		super(client, ['login_account']);
 	}

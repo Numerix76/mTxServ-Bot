@@ -2,7 +2,7 @@ const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 const { EmbedBuilder, Colors } = require("discord.js");
 
-module.exports = class LangSelectorCommand extends Command {
+module.exports = class StopCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: "stop-bot",
@@ -15,7 +15,7 @@ module.exports = class LangSelectorCommand extends Command {
 			},
 			category: "Admin",
 			userPermissions: ["SendMessages"],
-			channel: Constants.COMMAND_CHANNEL.guild,
+			channel: Constants.COMMAND_CHANNEL.global,
 			adminsOnly: true
 		});
 	}

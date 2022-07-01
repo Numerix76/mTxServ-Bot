@@ -122,7 +122,7 @@ module.exports = class AccountCommand extends Command {
 
 		await api.logout(interaction.user.id);
 
-	   	const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["account", "logout", "success"]));
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["account", "logout", "success"]));
 
 		await interaction.reply({ embeds: [response] });
 	}
@@ -232,7 +232,7 @@ module.exports = class AccountCommand extends Command {
 			let description = profile.about || ''
 	
 			if (profile.tutorials?.length) {
-				description += `\n\n${mTxServUtil.translate(interaction, ["account", "profile", "latest_tutos"], { "username": user.username})} ([${mTxServUtil.translate(interaction, ["account", "profile", "how_to_tutorial"])}](${mTxServUtil.translate(interaction, ["mtxserv", "link", "create_tutorial"])}))`
+				description += `\n\n${mTxServUtil.translate(interaction, ["account", "profile", "latest_tutos"], { "username": user.username })} ([${mTxServUtil.translate(interaction, ["account", "profile", "how_to_tutorial"])}](${mTxServUtil.translate(interaction, ["mtxserv", "link", "create_tutorial"])}))`
 	
 				for (const tutorial of profile.tutorials) {
 					description += `\n✓ [${tutorial.title}](${tutorial.link})`

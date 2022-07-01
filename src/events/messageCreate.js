@@ -2,7 +2,7 @@ const { ChannelType } = require("discord.js");
 const { Event } = require("sheweny");
 const mTxServApi = require("../api/mTxServApi.js");
 
-module.exports = class messageCreateEvent extends Event {
+module.exports = class MessageCreateEvent extends Event {
 	constructor(client) {
 		super(client, "messageCreate", {
 			description: "Mesage created",

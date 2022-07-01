@@ -133,6 +133,7 @@
 	},
 	"mtxserv": {
 		"link": {
+			"home": "https://mtxserv.com",
 			"help": "https://mtxserv.com/help",
 			"support": "https://mtxserv.com/support/list",
 			"support_create": "https://mtxserv.com/support/new",

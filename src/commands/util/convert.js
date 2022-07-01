@@ -1,10 +1,9 @@
-
 const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 const { EmbedBuilder, Colors, ApplicationCommandOptionType, AttachmentBuilder } = require("discord.js");
 const ConverterApi = require("../../api/ConverterApi");
 
-module.exports = class ServersCommand extends Command {
+module.exports = class ConvertCommand extends Command {
 	constructor(client) {
 		super(client, {
 			name: "convert",
@@ -66,13 +65,13 @@ module.exports = class ServersCommand extends Command {
 		const format = interaction.options.get("format").value;
 
 		const embed = new EmbedBuilder()
-            .setTitle(mTxServUtil.translate(interaction, ["convert", "conversion_of"], { "url": url })) //lang["convert"]["conversion_of"].replace("%url%", url))
-            .setColor(Colors.Blue)
-            .setTimestamp();
+			.setTitle(mTxServUtil.translate(interaction, ["convert", "conversion_of"], { "url": url }))
+			.setColor(Colors.Blue)
+			.setTimestamp();
 
 		await interaction.reply({ embeds: [embed] })
 
-        const api = new ConverterApi(url, format, interaction)
+		const api = new ConverterApi(url, format, interaction)
 		api.convert()
 	}
 }

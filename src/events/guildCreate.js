@@ -2,7 +2,7 @@ const { EmbedBuilder, Colors } = require("discord.js");
 const { Event } = require("sheweny");
 const mTxServUtil = require("../util/mTxServUtil");
 
-module.exports = class guildCreateEvent extends Event {
+module.exports = class GuildCreateEvent extends Event {
 	constructor(client) {
 		super(client, "guildCreate", {
 			description: "Guild joined",

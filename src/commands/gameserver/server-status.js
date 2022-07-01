@@ -1,7 +1,5 @@
-
 const { Command, Constants } = require("sheweny");
-const mTxServUtil = require("../../util/mTxServUtil");
-const { EmbedBuilder, Colors, ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType } = require("discord.js");
 const GameServerApi = require('../../api/GameServerApi')
 
 module.exports = class ServerStatusCommand extends Command {
@@ -84,7 +82,7 @@ module.exports = class ServerStatusCommand extends Command {
 		const address = interaction.options.get("address").value;
 
 		const api = new GameServerApi()
-        const embed = await api.generateEmbed(interaction, game, address)
+		const embed = await api.generateEmbed(interaction, game, address)
 
 		await interaction.editReply({ embeds: [embed] });
 	}
