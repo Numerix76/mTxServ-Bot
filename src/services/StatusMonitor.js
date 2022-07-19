@@ -19,7 +19,7 @@ module.exports = class StatusMonitor {
 		await this.addDataFrom(urlPartialOutage, embed)
 		await this.addDataFrom(urlMajorOutage, embed)
 
-		if (embed.data.fields.length === 0)
+		if (!embed.data.fields || embed.data.fields.length === 0)
 			embed.setDescription("No servers have problems")
 
 		for (const guild of client.guilds.cache.map(guild => guild))
