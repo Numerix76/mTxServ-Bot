@@ -7,55 +7,55 @@
 	},
 	{
 	  "url":"https://minecraft.fr/feed/",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/minecraft.png",
+	  "icon":"https://mtxserv.com/build/img/icon/game/minecraft.png",
 	  "tags":["minecraft"],
 	  "language": "fr"
 	},
 	{
 	  "url":"https://gmod.facepunch.com/rss/blog",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/garry-s-mod.png",
+	  "icon":"https://mtxserv.com/build/img/icon/game/gmod.png",
 	  "tags":["gmod"],
-	  "language": "en"
+	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://rust.facepunch.com/rss/blog",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/rust.png",
+	  "icon":"https://mtxserv.com/build/img/icon/game/rust.png",
 	  "tags":["rust"],
-	  "language": "en"
+	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://sandbox.facepunch.com/rss/news",
-	  "icon":null,
+	  "icon":"https://mtxserv.com/build/img/icon/game/sandbox.png",
 	  "tags":["sandbox"],
-	  "language": "en"
+	  "language": ["en", "fr"]
 	},
 	{
 	  "url":"https://survivetheark.com/index.php?/rss/3-ark-news.xml/",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/ark.png",
+	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
 	  "language": "en"
 	},
 	{
 	  "url":"https://ark-france.fr/rss/",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/ark.png",
+	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
 	  "language": "fr"
 	},
 	{
 	  "url":"http://feeds2.feedburner.com/vakarm",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "icon":null,
 	  "tags":["csgo"],
 	  "language": "fr"
 	},
 	{
 	  "url":"https://blog.counter-strike.net/fr/index.php/feed/",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "icon":null,
 	  "tags":["csgo"],
 	  "language": "fr"
 	},
 	{
 	  "url":"https://blog.counter-strike.net/index.php/feed/",
-	  "icon":"https://mtxserv.com/build/manager-game/img/game/counter-strike-global-offensive.png",
+	  "icon":null,
 	  "tags":["csgo"],
 	  "language": "en"
 	},
@@ -75,12 +75,6 @@
 	  "url":"https://www.over.gg/rss",
 	  "icon":null,
 	  "tags":["overwatch"],
-	  "language": "en"
-	},
-	{
-	  "url":"https://fortniteinsider.com/feed/",
-	  "icon":null,
-	  "tags":["fortnite"],
 	  "language": "en"
 	},
 	{

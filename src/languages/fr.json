@@ -1,0 +1,248 @@
+{
+	"game-selector": {
+		"add": {
+			"success": "`%game%` %emoji% role ajouté avec succès.",
+			"role_already_exist": "Un des rôles existe déjà.",
+			"invalid_emoji": "Vous avez saisie un emoji non valide."
+		},
+		"remove": {
+			"success": "Suppression avec succès de `%game%`. Vous pouvez maintenant supprimer les channels et les roles en lien avec le jeu.",
+			"invalid_name": "Le nom que vous avez saisie n'existe pas."
+		},
+		"create": {
+			"success": "Création de la sélection de jeu réussi."
+		},
+		"missing_message": "Le channel ou le message n'existe pas. Utilisez `/game-selector create` dans un channel pour le configurer."
+	},
+	"commands": {
+		"no_perms": "Vous n'avez pas les permissions suffisantes pour exécuter la commande %command%. (%perms%)."
+	},
+	"create-status": {
+		"success": "Ajout du statut avec succès"
+	},
+	"import-emojis": {
+		"success": "Les émojis ont été importés et synchronisés."
+	},
+	"lang-selector": {
+		"success": "Création de la sélection de langue réussi."
+	},
+	"role-selector": {
+		"success": "Vos rôles sont à jours !"
+	},
+	"stop-bot": {
+		"success": ":octagonal_sign: Arrêt du bot..."
+	},
+	"update-bot": {
+		"confirm": ":up: Mise à jour du bot...",
+		"success": "Le bot est à jour.",
+		"fail": "Echec de la mise à jour."
+	},
+	"pagination": {
+		"previous": "Précédent",
+		"next": "Suivant",
+		"footer": "Page %curPage% / %maxPage%",
+		"no_authorization": "Vous n'êtes pas l'auteur de la commande"
+	},
+	"search": {
+		"failed": "La connexion n'a pas pu être établi",
+		"success": ":mag: Search *%query%*",
+		"no_result": ":no_entry_sign: No result found"
+	},
+	"bot_infos": {
+		"feedback": {
+			"title": "❯ Feedback",
+			"description": "`/suggest config` pour le configurer.\n・%suggest%",
+			"not_configured": "__non configuré__"
+		},
+		"configure": {
+			"title": "Comment configurer le bot ?",
+			"description": "Pour activer la commande `/servers consult` sur votre serveur Discord, utilisez `/servers add` pour la configurer.\n\nLe bot peut envoyer des articles en français/anglais, sur vos jeux préferés, dans un channel spécifique. Pour le configurer, utilisez `/feeds add`."
+		},
+		"how_to_fork": {
+			"title": "Comment contribuer ?",
+			"description": "Le code source du bot est disponible sur Github. Vous pouvez contribuer librement pour ajouter de nouvelle fonctionnalités."
+		},
+		"discord": {
+			"title": "❯ Discord",
+			"description": "Rejoignez-nous"
+		},
+		"invite": {
+			"title": "❯ Invite Bot",
+			"description": "Ajoutez le bot à votre serveur Discord"
+		},
+		"source": {
+			"title": "❯ Source Code",
+			"description": "Github"
+		},
+		"credits": {
+			"title": "❯ Crédits",
+			"description": "・Seb\n・Numerix"
+		},
+		"home": "❯ Site web",
+		"uptime": "❯ Temps de fonctionnement",
+		"memory": "❯ Mémoire utilisé",
+		"servers": "❯ Serveurs Discord",
+		"members": "❯ Membres Discord",
+		"commands": "%numberCommands% commandes - par mTxServ.com",
+		"dependencies": "❯ Dépendences"
+	},
+	"servers": {
+		"config": {
+			"add": {
+				"not_logged": "Pour ajouter votre serveur, __vous devez avoir relié votre compte__ mTxServ avec `/login`, pour vérifier utilisez `/me`.",
+				"cant_fetch": "Impossible de se connecter à votre compte mTxServ.",
+				"no_result": "Vous n'avez aucun serveur de jeu sur votre compte.",
+				"title_select": "Ajouter le(s) serveur(s) que vous voulez",
+				"description_select": "Le(s) serveur(s) sélectionné seront disponible dans la commande `/servers`.",
+				"select": "Selectionner le(s) serveur(s) à ajouter",
+				"interaction_end": "Si vous voulez ajouter un autre serveur, utilisez à nouveau la commande.",
+				"success": "Le(s) serveur(s) a/ont été ajouté, utilisez `/servers` pour voir le statut!"
+			},
+			"remove": {
+				"no_result": "Vous n'avez aucun serveur de jeu enregistré sur ce serveur.",
+				"title_select": "Retirez le(s) serveur(s) que vous voulez",
+				"description_select": "Le(s) serveur(s) sélectionné seront retiré de `/servers`.",
+				"select": "Selectionner le(s) serveur(s) à retirer",
+				"interaction_end": "Si vous voulez retirer un autre serveur, utilisez à nouveau la commande.",
+				"success": "Le(s) serveur(s) ont été retirés !"
+			},
+			"reset": {
+				"success": "Suppression de tous les serveurs avec succès."
+			},
+			"no_authorization": "Vous n'êtes pas l'auteur de la commande.",
+			"timeout": "Temps de saisie dépassé."
+		},
+		"consult": {
+			"invalid_format": ":no_entry_sign: Adresse invalide, le port est probablement manquant.",
+			"offline": ":red_circle: Ce serveur est offline.",
+			"unknow": "Inconnu",
+			"address": "Adresse",
+			"players": "Joueurs",
+			"map": "Map",
+			"game": "Jeu",
+			"footer": "Par mTxServ.com",
+			"plugins": "Plugins",
+			"no_result": "Vous n'avez aucun serveur de jeu enregistré sur ce serveur.",
+			"no_result_description": "__Pour ajouter votre serveur__, utilisez la commande `/servers add`.\n__Vous devez avoir relié votre compte__ mTxServ avec `/login`, pour vérifier utilisez `/me`."
+		}
+	},
+	"mc-achievement": {
+		"success": "Achievement généré avec succès.",
+		"failed": "Une erreur est survenue :\n`%errMessage%`.",
+		"invalid_icon": "L'icone que vous avez saisie n'existe pas."
+	},
+	"mtxserv": {
+		"link": {
+			"home": "https://mtxserv.com/fr",
+			"help": "https://mtxserv.com/fr/help",
+			"support": "https://mtxserv.com/fr/support/list",
+			"support_create": "https://mtxserv.com/fr/support/new",
+			"oauth": "https://mtxserv.com/fr/mon-compte/oauth",
+			"api_key": "https://mtxserv.com/fr/mon-compte/api",
+			"create_tutorial": "https://mtxserv.com/fr/mon-compte/howto/add",
+			"profile": "https://mtxserv.com/fr/mon-compte/profil"
+		}
+	},
+	"support": {
+		"title": ":question: Contacter le support",
+		"description": "Notre équipe est à votre disposition pour toute demande d'aide ou de renseignement.",
+		"report": "Signaler un message",
+		"create": "Ouvrir un ticket",
+		"support": "Mes tickets",
+		"before": "Avant de nous contacter, consultez le centre d'aide!"
+	},
+	"account": {
+		"login": {
+			"title": ":lock: Lier son compte avec mTxServ.com",
+			"description": "Pour lier votre compte *Discord* avec votre compte *mTxServ.com* afin de pouvoir bénéficier de toutes les fonctionnalitées, vous devez entrer vos paramètres API.\n\nPour récupérer votre `client_id`, `client_secret` et `api_key`, rendez-vous sur:",
+			"client_id_secret": "client_id & client_secret",
+			"api_key": "api key",
+			"button": "Connexion",
+			"success": "Connexion avec succès !",
+			"failed": "Vos accès sont invalides, impossible d'authentifier votre compte mTxServ.",
+			"already_connected": "Votre compte est déjà relié à votre compte mTxServ. Déconnectez-vous avec `/account logout`.",
+			"title_modal": "Lier son compte avec mTxServ.com",
+			"client_id_modal": "Quel est votre client_id ?",
+			"client_secret_modal": "Quel est votre client_secret ?",
+			"api_key_modal": "Quel est votre api_key ?"
+		},
+		"logout": {
+			"success": "Déconnexion avec succès !"
+		},
+		"profile": {
+			"author": "Profile de %username%",
+			"points": ":star: Points",
+			"level": ":chart_with_upwards_trend: Niveau",
+			"rank": ":medal: Rang",
+			"linked": ":paperclips: Lié",
+			"game_servers": ":video_game: Serveurs de jeux",
+			"voice_servers": ":speaking_head: Serveurs vocaux",
+			"web_hosting": ":globe_with_meridians: Site web",
+			"vps": ":desktop: VPS",
+			"latest_tutos": "Les derniers tutoriels de %username%",
+			"how_to_tutorial": "comment écrite un tutoriel",
+			"edit": "Editer mon profile",
+			"is_admin": ":dizzy: %username% est un admin",
+			"website": "Site web",
+			"visit_website": "Accéder au site",
+			"join_discord": "Rejoindre le serveur"
+		},
+		"not_logged": "Votre compte n'est pas relié à mTxServ."
+	},
+	"ranks": {
+		"points": "Points",
+		"level": "Niveau",
+		"rank": "Rang"
+	},
+	"feeds": {
+		"config":{
+			"add": {
+				"success": "Les nouveaux articles à propos de **%game%** en **%locale%** seront envoyés dans **%channel%**."
+			},
+			"remove": {
+				"success": "Le jeu **%game%** n'est plus suivie."
+			}
+		},
+		"list": {
+			"title": "Vos feeds",
+			"description": "Pour recevoir **les news de vos jeux favoris __dans un channel spécifié__**, abonnez-vous aux listes avec `/config feeds add` (__admin uniquement__).",
+			"unfollow": "Non suivi"
+		}
+	},
+	"suggest": {
+		"config": {
+			"success": "Le channel de suggestion a bien été configuré sur `%channel.name%`."
+		},
+		"create": {
+			"title": "Créer une suggestion",
+			"tsTitle": "Le titre de votre suggestion",
+			"tsDescription": "La description de votre suggestion",
+			"not_configured": "Le channel de suggestion n'existe pas. Utiliser `/config suggest` pour le configurer.",
+			"success": "Merci pour votre suggestion %name% ! Nous apprécions tous les feedbacks."
+		},
+		"update": {
+			"no_access": "Vous n'êtes pas autorisé à faire cela.",
+			"success": "Changement du statut de la suggestion avec succès.",
+			"title": "Rejet d'une suggestion",
+			"tsReason": "Entrer une raison"
+		}
+	},
+	"convert": {
+		"invalid_format": "Le format saisie n'est pas pris en charge.",
+		"conversion_of": "Conversion de : %url%",
+		"cant_connect": "Impossible de se connecter au serveur. Merci de réessayer plus tard.",
+		"lost_connection": "Connexion perdu avec le serveur. Merci de réessayer plus tard.",
+		"no_live": "Impossible de convertir un fichier en direct.",
+		"title": "Titre",
+		"created_by": "Créé par",
+		"duration": "Durée",
+		"download": "Téléchargement",
+		"conversion": "Conversion",
+		"download_link": "Lien de téléchargement",
+		"error": "Erreur",
+		"logs": "Logs"
+	},
+	"reload": {
+		"success": "Toutes les commandes ont été rechargé."
+	}
+}
