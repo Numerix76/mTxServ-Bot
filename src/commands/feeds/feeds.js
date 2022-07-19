@@ -21,6 +21,8 @@ module.exports = class FeedsCommand extends Command {
 	}
 
 	async execute(interaction) {
+		await interaction.deferReply();
+
 		const games = [
 			{
 				name: 'Minecraft',
@@ -116,6 +118,6 @@ module.exports = class FeedsCommand extends Command {
 			embed.addFields({ name: `❯ ${game.name}`, value: description, inline: true });
 		}
 
-		await interaction.reply({ embeds: [embed] });
+		await interaction.editReply({ embeds: [embed] });
 	}
 }
