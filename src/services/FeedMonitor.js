@@ -101,19 +101,21 @@ module.exports = class FeedMonitor {
 
 	static async sendArticle(guild, channelID, article)
 	{
-		const channel = await guild.channels.fetch(channelID);
-		
-		if (!channel) {
-			console.log(`Channel ${channel} not found`)
-			return;
-		}
-		
-		if( !guild.members.me.permissionsIn(channel).has(PermissionsBitField.Flags.SendMessages) ) {
-			console.log("No permission to send the article")
-			return;
-		}
+		try
+		{
+			const channel = await guild.channels.fetch(channelID);
+			
+			if( !guild.members.me.permissionsIn(channel).has(PermissionsBitField.Flags.SendMessages) ) {
+				console.log("No permission to send the article")
+				return;
+			}
+	
+			channel.send({ embeds: [article] });
 
-		channel.send({ embeds: [article] });
+		}catch(e)
+		{
+			console.log(`Channel ${channelID} not found or can't send in it`)
+		}
 	}
 
 	static async isFollowing(guildId, game, language, defaultValue) {
