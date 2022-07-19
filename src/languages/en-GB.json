@@ -241,5 +241,8 @@
 		"download_link": "Link to download",
 		"error": "Error",
 		"logs": "Logs"
+	},
+	"reload": {
+		"success": "All commands have been reloaded."
 	}
 }
