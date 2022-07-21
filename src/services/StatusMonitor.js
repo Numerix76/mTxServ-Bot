@@ -23,7 +23,7 @@ module.exports = class StatusMonitor {
 			embed.setDescription("No servers have problems")
 
 		const guilds = await client.guilds.fetch();
-		for (const guild of guilds.map(guild => guild))
+		for (const guild of guilds.map(guild => await guild.fetch()))
 		{	
 			const currentConfig = await client.provider.get('status', guild.id, "")
 			const statusChannel = await guild?.channels.fetch(currentConfig.channel)
