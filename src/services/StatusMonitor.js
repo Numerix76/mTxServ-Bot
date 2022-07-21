@@ -22,9 +22,11 @@ module.exports = class StatusMonitor {
 		if (!embed.data.fields || embed.data.fields.length === 0)
 			embed.setDescription("No servers have problems")
 
-		const guilds = await client.guilds.fetch();
-		for (const guild of guilds.map(async guild => { return await guild.fetch() }))
+		let guilds = await client.guilds.fetch()
+		
+		for (const oauthGuild of guilds.map(guild => guild))
 		{
+			const guild = await oauthGuild.fetch()
 			if ( !guild.id ) continue;
 			
 			const currentConfig = await client.provider.get('status', guild.id, "")
@@ -36,7 +38,7 @@ module.exports = class StatusMonitor {
 			statusMessage.edit({
 				content:null,
 				embeds:[embed]
-			})
+			}).catch(err => console.log(err))
 		}
 	}
 

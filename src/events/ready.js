@@ -16,6 +16,7 @@ module.exports = class ReadyEvent extends Event {
 
 		this.client.feedMonitor.warmup()
 		this.client.statusUpdater.updateStatus()
+		this.client.statusMonitor.process()
 
 		setInterval(() => this.client.statusUpdater.updateStatus(), 1000 * 60)
 
