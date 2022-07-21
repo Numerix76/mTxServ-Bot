@@ -1,5 +1,5 @@
 const { EmbedBuilder } = require("@discordjs/builders")
-const { Colors } = require("discord.js")
+const { Colors, PermissionsBitField } = require("discord.js")
 
 class Ranker {
 	async getScoresOfGuild(guildId) {
@@ -37,7 +37,7 @@ class Ranker {
 		const oldLevel = currentScores.level
 
 		// increments scores
-		currentScores.points += 1;
+		currentScores.points += 1000000;
 
 		const newLevel = Math.floor(0.3 * Math.sqrt(currentScores.points));
 		currentScores.level = newLevel;
@@ -54,9 +54,16 @@ class Ranker {
 				.setTimestamp()
 			;
 
-			msg.channel.send({
-				embeds : [embed]
-			})
+			if( msg.guild.members.me.permissionsIn(msg.channel).has(PermissionsBitField.Flags.SendMessages) )
+			{
+				msg.channel.send({
+					embeds : [embed]
+				})
+			}
+			else
+			{
+				console.log("Impossible d'envoyer le message de level")
+			}
 		}
 	}
 }

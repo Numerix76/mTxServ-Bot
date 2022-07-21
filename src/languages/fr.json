@@ -218,7 +218,8 @@
 			"tsTitle": "Le titre de votre suggestion",
 			"tsDescription": "La description de votre suggestion",
 			"not_configured": "Le channel de suggestion n'existe pas. Utiliser `/config suggest` pour le configurer.",
-			"success": "Merci pour votre suggestion %name% ! Nous apprécions tous les feedbacks."
+			"success": "Merci pour votre suggestion %name% ! Nous apprécions tous les feedbacks.",
+			"failed": "Impossible d'envoyer votre suggestion car le bot ne peut pas envoyer de message dans <#%channelID%> !"
 		},
 		"update": {
 			"no_access": "Vous n'êtes pas autorisé à faire cela.",

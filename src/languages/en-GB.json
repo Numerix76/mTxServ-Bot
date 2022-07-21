@@ -218,7 +218,8 @@
 			"tsTitle": "The title of your suggestion",
 			"tsDescription": "The description of your suggestion",
 			"not_configured": "The feedback channel doesn't exist. Use `/config suggest` to configure it.",
-			"success": "Thank you for your suggestion %name%! We appreciates all feedback."
+			"success": "Thank you for your suggestion %name%! We appreciates all feedback.",
+			"failed": "Can't send the feedback because the bot doesn't have access to send message in <#%channelID%> !"
 		},
 		"update": {
 			"no_access": "You are not authorized to do that.",

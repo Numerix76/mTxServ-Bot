@@ -1,4 +1,4 @@
-const { EmbedBuilder, Colors, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { EmbedBuilder, Colors, ActionRowBuilder, ButtonBuilder, ButtonStyle, PermissionsBitField } = require("discord.js");
 const { Modal } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
 
@@ -43,16 +43,25 @@ module.exports = class SuggestModal extends Modal {
 
 		const suggestChannel = await modal.guild.channels.fetch(currentConfig);
 		
-		const resMes = await suggestChannel.send({ 
+		if( modal.guild.members.me.permissionsIn(suggestChannel).has(PermissionsBitField.Flags.SendMessages) )
+		{
+			const resMes = await suggestChannel.send({ 
 				embeds: [embed],
 				components: [row]
 			})
-		;
+			
+			resMes.startThread({ name: `Suggestion of ${modal.user.tag}` })
 
-		resMes.startThread({ name: `Suggestion of ${modal.user.tag}` })
+			const response = mTxServUtil.saySuccess(mTxServUtil.translate(modal, ["suggest", "create", "success"], { "name": modal.user.username }));
+	
+			await modal.reply({ embeds: [response] });
+		}
+		else
+		{
+			const response = mTxServUtil.sayError(mTxServUtil.translate(modal, ["suggest", "create", "failed"], { "channelID": suggestChannel.id }));
+	
+			await modal.reply({ embeds: [response] });
+		}
 
-		const response = mTxServUtil.saySuccess(mTxServUtil.translate(modal, ["suggest", "create", "success"], { "name": modal.user.username }));
-
-		await modal.reply({ embeds: [response] });
 	}
 }
