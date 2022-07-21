@@ -35,7 +35,7 @@ module.exports = class StatusMonitor {
 				content:null,
 				embeds:[embed]
 			})
-		};
+		}
 	}
 
 	async addDataFrom(url, embed)

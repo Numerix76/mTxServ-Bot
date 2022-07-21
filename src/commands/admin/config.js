@@ -766,7 +766,7 @@ module.exports = class ConfigCommand extends Command {
 			role: role
 		})
 
-		const options = new Array();
+		const options = [];
 
 		for(const game of games)
 		{
@@ -812,7 +812,7 @@ module.exports = class ConfigCommand extends Command {
 			return;
 		}
 
-		const options = new Array();
+		const options = [];
 
 		for(const game of newGames)
 		{
@@ -891,7 +891,7 @@ module.exports = class ConfigCommand extends Command {
 
 		const games = await client.provider.get(interaction.guild.id, 'games', [])
 
-		const options = new Array();
+		const options = [];
 
 		for(const game of games)
 		{
