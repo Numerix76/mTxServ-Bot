@@ -22,10 +22,11 @@ module.exports = class StatusMonitor {
 		if (!embed.data.fields || embed.data.fields.length === 0)
 			embed.setDescription("No servers have problems")
 
-		for (const guild of client.guilds.cache.map(guild => guild))
+		const guilds = await client.guilds.fetch();
+		for (const guild of guilds.map(guild => guild))
 		{	
 			const currentConfig = await client.provider.get('status', guild.id, "")
-			const statusChannel = await guild.channels.fetch(currentConfig.channel)
+			const statusChannel = await guild?.channels.fetch(currentConfig.channel)
 			const statusMessage = await statusChannel?.messages?.fetch({ message: currentConfig.message })
 
 			if (!statusMessage) continue;
