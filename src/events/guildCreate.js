@@ -38,6 +38,8 @@ module.exports = class GuildCreateEvent extends Event {
 				if (defaultChannel) {
 					defaultChannel.send({
 						embeds: [embedWelcome]
+					}).catch((err) => {
+						console.log(err);
 					})
 				}
 			});

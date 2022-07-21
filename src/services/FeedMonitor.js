@@ -110,7 +110,7 @@ module.exports = class FeedMonitor {
 				return;
 			}
 	
-			channel.send({ embeds: [article] });
+			channel.send({ embeds: [article] }).catch((err) =>console.log(err));
 
 		}catch(e)
 		{
