@@ -8,6 +8,7 @@ module.exports = class SuggestButton extends Button {
 	}
 	
 	async execute(button) {
+		// eslint-disable-next-line
 		const { customId, values, member, message } = button
 
 		if (!member.permissions.has(PermissionFlagsBits.Administrator))

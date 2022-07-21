@@ -7,6 +7,7 @@ module.exports = class RoleSelectMenu extends SelectMenu {
 	}
 	
 	async execute(interaction) {
+		// eslint-disable-next-line
 		const { customId, values, member } = interaction
 
 		const component = interaction.component

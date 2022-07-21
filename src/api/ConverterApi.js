@@ -28,12 +28,12 @@ class ConverterApi {
 			switch(data.type)
 			{
 				case "infos_music": this.infos_music(data); break;
-				case "download_started": this.download_started(data); break;
+				case "download_started": this.download_started(); break;
 				case "download_progress": this.download_progress(data); break;
-				case "download_finished": this.download_finished(data); break;
-				case "conversion_started": this.conversion_started(data); break;
+				case "download_finished": this.download_finished(); break;
+				case "conversion_started": this.conversion_started(); break;
 				case "conversion_progress": this.conversion_progress(data); break;
-				case "conversion_finished": this.conversion_finished(data); break;
+				case "conversion_finished": this.conversion_finished(); break;
 				case "finished": this.finished(data); break;
 				case "error": this.error(data); break;
 			}
@@ -88,7 +88,7 @@ class ConverterApi {
 		});
 	}
 
-	download_started(data)
+	download_started()
 	{
 		const embed = EmbedBuilder.from(this.embed)
 		embed.addFields({ name: mTxServUtil.translate(this.interaction, ["convert", "download"]), value: `0%`, inline: true })
@@ -108,7 +108,7 @@ class ConverterApi {
 		});
 	}
 
-	download_finished(data)
+	download_finished()
 	{
 		this.embed.addFields({ name: mTxServUtil.translate(this.interaction, ["convert", "download"]), value: `100%`, inline: true })
 
@@ -117,7 +117,7 @@ class ConverterApi {
 		});
 	}
 
-	conversion_started(data)
+	conversion_started()
 	{
 		const embed = EmbedBuilder.from(this.embed)
 		embed.addFields({ name: mTxServUtil.translate(this.interaction, ["convert", "conversion"]), value:`0%`, inline:true })
@@ -137,7 +137,7 @@ class ConverterApi {
 		});
 	}
 
-	conversion_finished(data)
+	conversion_finished()
 	{
 		this.embed.addFields({ name: mTxServUtil.translate(this.interaction, ["convert", "conversion"]), value:`100%`, inline:true })
 

@@ -56,7 +56,7 @@ module.exports = class SearchCommand extends Command {
 									name: "French",
 									value: "fr"
 								},
-								 {
+								{
 									name: "English",
 									value: "en"
 								},

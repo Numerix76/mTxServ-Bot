@@ -8,6 +8,7 @@ module.exports = class SuggestUpdateModal extends Modal {
 	}
 
 	async execute(modal) {
+		// eslint-disable-next-line
 		const { customId, values, member, message } = modal;
 
 		const reason = modal.fields.getTextInputValue("tsReason");

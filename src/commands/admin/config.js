@@ -849,7 +849,9 @@ module.exports = class ConfigCommand extends Command {
 			currentConfig = await client.provider.get(interaction.guild.id, 'select-games', {});
 			gamesChannel = await interaction.guild.channels.fetch(currentConfig.channel);
 			gamesMessage = await gamesChannel?.messages.fetch({ message: currentConfig.message });
-		} catch(error) {}
+		} catch(error) {
+			console.log(error)
+		}
 
 		if ( !gamesMessage )
 			return false;

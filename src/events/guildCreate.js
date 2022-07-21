@@ -32,6 +32,8 @@ module.exports = class GuildCreateEvent extends Event {
 				embeds: [embedWelcome]
 			})
 			.catch((err) => {
+				console.log(err);
+				
 				const defaultChannel = Util.getDefaultChannel(guild);
 				if (defaultChannel) {
 					defaultChannel.send({

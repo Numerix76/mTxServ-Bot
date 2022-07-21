@@ -1,6 +1,6 @@
 const { Command, Constants } = require("sheweny");
 const mTxServUtil = require("../../util/mTxServUtil");
-const { EmbedBuilder, Colors, ApplicationCommandOptionType, AttachmentBuilder } = require("discord.js");
+const { EmbedBuilder, Colors, ApplicationCommandOptionType } = require("discord.js");
 const ConverterApi = require("../../api/ConverterApi");
 
 module.exports = class ConvertCommand extends Command {
