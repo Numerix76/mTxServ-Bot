@@ -1025,15 +1025,30 @@ module.exports = class ConfigCommand extends Command {
 
 		let row = new ActionRowBuilder()
 
+		const roleFR = interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "fr");
+		const roleEN = interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "en");
+
+		if ( !roleFR || !roleEN )
+		{
+			const response = mTxServUtil.sayError(mTxServUtil.translate(interaction, ["lang-selector", "no_role"]));
+
+			await interaction.reply({
+				embeds: [response],
+				ephemeral: true
+			});
+
+			return;
+		}
+
 		const option = [
 			{
 				label: 'Français',
-				value: interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "fr").id,
+				value: roleFR.id,
 				emoji: '🇫🇷'
 			},
 			{
 				label: 'English',
-				value: interaction.guild.roles.cache.find(r => r.name.toLowerCase() === "en").id,
+				value: roleEN.id,
 				emoji: '🇺🇸'
 			}
 		]
@@ -1052,10 +1067,10 @@ module.exports = class ConfigCommand extends Command {
 			components: [row]
 		})
 
-		const reponse = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["lang-selector","success"]))
+		const response = mTxServUtil.saySuccess(mTxServUtil.translate(interaction, ["lang-selector","success"]))
 
 		await interaction.reply({
-			embeds: [reponse],
+			embeds: [response],
 			ephemeral: true
 		});
 	}

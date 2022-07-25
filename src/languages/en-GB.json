@@ -24,7 +24,8 @@
 		"success": "The emojis have been imported and synchronised."
 	},
 	"lang-selector": {
-		"success": "Successfuly created the language selector."
+		"success": "Successfuly created the language selector.",
+		"no_role": "You need to have a role named 'fr' and another named 'en'."
 	},
 	"role-selector": {
 		"success": "Your roles has been updated!"
