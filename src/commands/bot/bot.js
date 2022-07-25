@@ -21,7 +21,7 @@ module.exports = class BotCommand extends Command {
 			},
 			category: "Bot",
 			userPermissions: ["SendMessages"],
-			channel: Constants.COMMAND_CHANNEL.global,
+			channel: Constants.COMMAND_CHANNEL.guild,
 		});
 	}
 
