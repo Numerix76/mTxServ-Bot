@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 
 const websiteURL = {
 	darkrp: "https://darkrp.miraheze.org/w/api.php?action=query&list=search&srsearch=%query%&srwhat=title&format=json",
-	mtxserv: "https://mtxser.com/api/v1/articles/?query=%query%",
+	mtxserv: "https://mtxserv.com/api/v1/articles/?query=%query%",
 	system: "https://www.hostinger.com/tutorials/?s=%query%",
 	glua: "https://wiki.facepunch.com/gmod/~pagelist?format=json",
 	bukkit: "https://mtxserv.com/api/v1/bukkit/search?query=%query%",
