@@ -193,7 +193,8 @@
 	"ranks": {
 		"points": "Points",
 		"level": "Level",
-		"rank": "Rank"
+		"rank": "Rank",
+		"no_data": "Can't find any data for the ranks."
 	},
 	"feeds": {
 		"config":{

@@ -193,7 +193,8 @@
 	"ranks": {
 		"points": "Points",
 		"level": "Niveau",
-		"rank": "Rang"
+		"rank": "Rang",
+		"no_data": "Aucune donnée de rang."
 	},
 	"feeds": {
 		"config":{

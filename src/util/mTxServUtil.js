@@ -85,7 +85,7 @@ module.exports = class mTxServUtil {
 
 	static async paginationEmbed(interaction, pages, timeout = 120000) {
 		if (!interaction && !interaction.channel) throw new Error('Channel is inaccessible.');
-		if (!pages) throw new Error('Pages are not given.');
+		if (!pages || pages.length == 0) throw new Error('Pages are not given.');
 
 		let response;
 		if ( pages.length === 1 )

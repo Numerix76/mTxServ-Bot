@@ -62,6 +62,16 @@ module.exports = class RanksCommand extends Command {
 			pages.push(embed)
 		}
 
-		await mTxServUtil.paginationEmbed(interaction, pages);
+		if ( pages.length == 0 )
+		{
+			const response = mTxServUtil.sayError( mTxServUtil.translate(interaction, ["ranks", "no_data"]));
+
+			await interaction.reply({ embeds: [response] });
+		}
+		else
+		{
+			await mTxServUtil.paginationEmbed(interaction, pages);
+		}
+
 	}
 }
