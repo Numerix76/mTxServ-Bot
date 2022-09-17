@@ -21,6 +21,7 @@ const client = global.client = new mTxServClient({
 	feeds: require("../feeds.json"),
 	mainGuilds: config.MAIN_GUILDS,
 	statusURL: config.STATUS_URL,
+	joinThreadsOnCreate: true,
 	managers: {
 		commands: {
 			directory: "./commands",
