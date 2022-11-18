@@ -28,26 +28,24 @@ module.exports = class StatusMonitor {
 		{
 			const guild = await oauthGuild.fetch()
 			if ( !guild.id ) continue;
-
 			
-
-			//mTxServUtil.sendLogMessage(`guild : ${guild.id}`);
-			
-			const currentConfig = await client.provider.get('status', guild.id, "")
-			
-			if (guild.id === '529605510219956233')
-				mTxServUtil.sendLogMessage( `message : ${currentConfig.message}, channel ${currentConfig.channel}`);
-
-
-			const statusChannel = await guild?.channels.fetch(currentConfig.channel)
-			const statusMessage = await statusChannel?.messages?.fetch({ message: currentConfig.message })
-
-			if (!statusMessage) continue;
-
-			statusMessage.edit({
-				content:null,
-				embeds:[embed]
-			}).catch(err => console.log(err))
+			try
+			{
+				const currentConfig = await client.provider.get('status', guild.id, "")	
+				const statusChannel = await guild?.channels.fetch(currentConfig.channel)
+				const statusMessage = await statusChannel?.messages?.fetch({ message: currentConfig.message })
+	
+				if (!statusMessage) continue;
+	
+				statusMessage.edit({
+					content:null,
+					embeds:[embed]
+				}).catch(err => console.log(err))
+			} catch(error)
+			{
+				if (error.code == 10008)
+					console.log(`[StatusMonitor] Can't find the message in the guild ${guild.id}`)
+			}
 		}
 	}
 
