@@ -29,11 +29,14 @@ module.exports = class StatusMonitor {
 			const guild = await oauthGuild.fetch()
 			if ( !guild.id ) continue;
 
-			mTxServUtil.sendLogMessage(`guild : ${guild.id}`);
+			
+
+			//mTxServUtil.sendLogMessage(`guild : ${guild.id}`);
 			
 			const currentConfig = await client.provider.get('status', guild.id, "")
 			
-			mTxServUtil.sendLogMessage( `message : ${currentConfig.message}, channel ${currentConfig.channel}`);
+			if (guild.id === '529605510219956233')
+				mTxServUtil.sendLogMessage( `message : ${currentConfig.message}, channel ${currentConfig.channel}`);
 
 
 			const statusChannel = await guild?.channels.fetch(currentConfig.channel)
