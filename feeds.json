@@ -24,7 +24,7 @@
 	  "language": ["en", "fr"]
 	},
 	{
-	  "url":"https://sandbox.facepunch.com/rss/news",
+	  "url":"https://sbox.facepunch.com/rss/news",
 	  "icon":"https://mtxserv.com/build/img/icon/game/sandbox.png",
 	  "tags":["sandbox"],
 	  "language": ["en", "fr"]
