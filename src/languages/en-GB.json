@@ -136,7 +136,7 @@
 		"link": {
 			"home": "https://mtxserv.com",
 			"help": "https://mtxserv.com/help",
-			"support": "https://mtxserv.com/support/list",
+			"support": "https://mtxserv.com/support",
 			"support_create": "https://mtxserv.com/support/new",
 			"oauth": "https://mtxserv.com/account/oauth",
 			"api_key": "https://mtxserv.com/account/api",

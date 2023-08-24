@@ -135,8 +135,8 @@
 	"mtxserv": {
 		"link": {
 			"home": "https://mtxserv.com/fr",
-			"help": "https://mtxserv.com/fr/help",
-			"support": "https://mtxserv.com/fr/support/list",
+			"help": "https://mtxserv.com/fr/aide",
+			"support": "https://mtxserv.com/fr/support",
 			"support_create": "https://mtxserv.com/fr/support/new",
 			"oauth": "https://mtxserv.com/fr/mon-compte/oauth",
 			"api_key": "https://mtxserv.com/fr/mon-compte/api",
