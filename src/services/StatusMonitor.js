@@ -66,7 +66,7 @@ module.exports = class StatusMonitor {
 			return;
 		}
 
-		Object.values(res.body.data)
+		Object.values(res.body.data).slice(0, 24-(embed.data.fields?.length ?? 0))
 			.map(server => {
 				embed.addFields({name: server.name, value: server.status_name})
 			})
