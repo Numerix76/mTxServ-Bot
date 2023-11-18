@@ -31,13 +31,13 @@ module.exports = class RanksCommand extends Command {
 			const embed = new EmbedBuilder()
 				.setColor(Colors.Navy);
 
-			const user = (await interaction.guild.members.fetch(userScores.userId))?.user
-			if (user) {
+			try {
+				const user = (await interaction.guild.members.fetch(userScores.userId))?.user
+			
 				embed
 					.setAuthor({ name: `#${i}. ${user.username}` })
 					.setThumbnail(user.avatarURL())
-
-			} else {
+			} catch (error) {
 				embed.setTitle(`#${i}. ${userScores.username}`)
 			}
 
