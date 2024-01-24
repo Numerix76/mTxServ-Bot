@@ -84,6 +84,10 @@ module.exports = class FeedsCommand extends Command {
 				name: 'Film & Series',
 				key: 'film'
 			},
+			{
+				name: 'Palworld',
+				key: 'palworld'
+			}
 		]
 
 		const embed = new EmbedBuilder()
