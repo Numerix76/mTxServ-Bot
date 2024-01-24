@@ -65,6 +65,10 @@ const gamesChoice = [
 		name: "Science",
 		value: "science"
 	},
+	{
+		name: "Palworld",
+		value: "palworld"
+	}
 ];
 
 module.exports = class ConfigCommand extends Command {
