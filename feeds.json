@@ -118,5 +118,11 @@
 	  "icon":null,
 	  "tags":["science"],
 	  "language": "fr"
+	},
+	{
+	  "url": "https://store.steampowered.com/feeds/news/app/1623730/?cc=FR&l=english&snr=1_2108_9__2107",
+	  "icon": null,
+	  "tags": ["palworld"],
+	  "language": "en"
 	}
 ]
