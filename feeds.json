@@ -3,13 +3,13 @@
 	  "url":"https://hytale.game/feed",
 	  "icon":"https://hytale.com/favicon.ico",
 	  "tags":["hytale"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://minecraft.fr/feed/",
 	  "icon":"https://mtxserv.com/build/img/icon/game/minecraft.png",
 	  "tags":["minecraft"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://gmod.facepunch.com/rss/blog",
@@ -33,96 +33,96 @@
 	  "url":"https://survivetheark.com/index.php?/rss/3-ark-news.xml/",
 	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
-	  "language": "en"
+	  "language": ["en"]
 	},
 	{
 	  "url":"https://ark-france.fr/rss/",
 	  "icon":"https://mtxserv.com/build/img/icon/game/ark.png",
 	  "tags":["ark"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"http://feeds2.feedburner.com/vakarm",
 	  "icon":null,
 	  "tags":["csgo"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://blog.counter-strike.net/fr/index.php/feed/",
 	  "icon":null,
 	  "tags":["csgo"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://blog.counter-strike.net/index.php/feed/",
 	  "icon":null,
 	  "tags":["csgo"],
-	  "language": "en"
+	  "language": ["en"]
 	},
 	{
 	  "url":"https://www.mandatory.gg/news/feed/",
 	  "icon":null,
 	  "tags":["valorant"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.mandatory.gg/en/news/feed/",
 	  "icon":null,
 	  "tags":["valorant"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.over.gg/rss",
 	  "icon":null,
 	  "tags":["overwatch"],
-	  "language": "en"
+	  "language": ["en"]
 	},
 	{
 	  "url":"https://fortnite.jeuxonline.info/rss/actualites/rss.xml",
 	  "icon":null,
 	  "tags":["fortnite"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://rocketbaguette.com/feed/",
 	  "icon":null,
 	  "tags":["rocketleague"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.abondance.com/feed",
 	  "icon":null,
 	  "tags":["web"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.commitstrip.com/fr/feed/",
 	  "icon":null,
 	  "tags":["web"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.commitstrip.com/feed/",
 	  "icon":null,
 	  "tags":["web"],
-	  "language": "en"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.ecranlarge.com/rss",
 	  "icon":null,
 	  "tags":["film"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url":"https://www.futura-sciences.com/rss/actualites.xml",
 	  "icon":null,
 	  "tags":["science"],
-	  "language": "fr"
+	  "language": ["fr"]
 	},
 	{
 	  "url": "https://store.steampowered.com/feeds/news/app/1623730/?cc=FR&l=english&snr=1_2108_9__2107",
 	  "icon": null,
 	  "tags": ["palworld"],
-	  "language": "en"
+	  "language": ["en"]
 	}
 ]
