@@ -52,21 +52,20 @@ class GameServerApi {
 
 		
 		let gameName
-		if (results.params.type === null || results.params.type === "") {
+		if (results.params.game == null || results.params.game === "") {
 			gameName = mTxServUtil.translate(interaction, ["servers", "consult", "unknow"])
 		} 
 		else {
-			gameName = results.params.type
+			gameName = results.params.game
 		}
 		
 		let mapName
-		if (results.params.map === null || results.params.map === "") {
+		if (results.params.map == null || results.params.map === "") {
 			mapName = mTxServUtil.translate(interaction, ["servers", "consult", "unknow"])
 		} 
 		else {
 			mapName = results.params.map
 		}
-			
 			
 		embed
 			.setColor(Colors.Green)
