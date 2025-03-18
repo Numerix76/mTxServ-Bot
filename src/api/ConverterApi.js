@@ -16,7 +16,7 @@ class ConverterApi {
 	async convert()
 	{
 		let isError = false;
-		this.socket = new WebSocket('ws://92.222.234.121:3000/get/' + this.format);
+		this.socket = new WebSocket('ws://81.16.177.58:3000/get/' + this.format);
 
 		this.socket.on('open', () => {
 			this.socket.send(this.url);
