@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('@discordjs/builders');
 const { Colors } = require('discord.js');
-const got = require('got');
+const {got} = require('got');
 const mTxServUtil = require('../util/mTxServUtil');
 
 module.exports = class StatusMonitor {
@@ -51,7 +51,7 @@ module.exports = class StatusMonitor {
 
 	async addDataFrom(url, embed)
 	{
-		let res = await got(url, {
+		let res = await got.get(url, {
 			responseType: 'json'
 		})
 
