@@ -13,8 +13,8 @@ module.exports = class StatusMonitor {
 			.setTitle("All servers that seem to have a problem")
 			.setTimestamp()
 
-		const urlPartialOutage = `${this.url}components?sort=status&order=desc&status=3`;
-		const urlMajorOutage = `${this.url}components?sort=status&order=desc&status=4`;
+		const urlPartialOutage = `${this.url}components?sort=name&order=desc&filter[status]=3`;
+		const urlMajorOutage = `${this.url}components?sort=name&order=desc&filter[status]=4`;
 
 		await this.addDataFrom(urlPartialOutage, embed)
 		await this.addDataFrom(urlMajorOutage, embed)
