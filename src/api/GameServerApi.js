@@ -1,5 +1,5 @@
 const { EmbedBuilder, Colors } = require('discord.js');
-const got = require('got');
+const {got} = require('got');
 const mTxServUtil = require('../util/mTxServUtil');
 
 const makeURL = (game, host, port) => `https://mtxserv.com/api/v1/viewers/game?ip=${encodeURIComponent(host)}&port=${encodeURIComponent(port)}&type=${encodeURIComponent(game)}`;
