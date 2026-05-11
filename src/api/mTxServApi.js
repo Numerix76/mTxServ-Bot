@@ -1,11 +1,11 @@
-const got = require('got');
+const {got} = require('got');
 
 const makeAuthURL = (clientId, clientSecret, apiKey) => `https://mtxserv.com/oauth/v2/token?grant_type=${encodeURIComponent('https://mtxserv.com/grants/api_key')}&client_id=${encodeURIComponent(clientId)}&client_secret=${encodeURIComponent(clientSecret)}&api_key=${encodeURIComponent(apiKey)}`;
 const makeApiURL = (accessToken, uri) => `https://mtxserv.com/api/v1/${uri}?access_token=${encodeURIComponent(accessToken)}`;
 
 class mTxServApi {
 	async login(clientId, clientSecret, apiKey) {
-		const res = await got(makeAuthURL(clientId, clientSecret, apiKey), {
+		const res = await got.get(makeAuthURL(clientId, clientSecret, apiKey), {
 			responseType: 'json'
 		})
 
@@ -46,7 +46,7 @@ class mTxServApi {
 	}
 
 	async call(accessToken, uri) {
-		const res = await got(makeApiURL(accessToken, uri), {
+		const res = await got.get(makeApiURL(accessToken, uri), {
 			responseType: 'json'
 		})
 

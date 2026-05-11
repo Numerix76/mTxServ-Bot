@@ -6,7 +6,7 @@ const makeURL = (game, host, port) => `https://mtxserv.com/api/v1/viewers/game?i
 
 class GameServerApi {
 	async status(game, host, port) {
-		const res = await got(makeURL(game, host, port), {
+		const res = await got.get(makeURL(game, host, port), {
 			responseType: 'json'
 		})
 

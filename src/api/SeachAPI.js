@@ -1,4 +1,4 @@
-const got = require('got');
+const {got} = require('got');
 const cheerio = require('cheerio');
 
 const websiteURL = {
@@ -22,7 +22,7 @@ module.exports = class SearchAPI {
 	}
 
 	async search(query, language) {
-		const res = await got(this.makeURL(query), {
+		const res = await got.get(this.makeURL(query), {
 			responseType: this.website === "system" ? 'text' : 'json'
 		})
 
