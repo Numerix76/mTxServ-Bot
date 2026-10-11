@@ -1,13 +1,13 @@
 [
 	{
 		"url":"https://hytale.game/feed/",
-		"icon":"https://hytale.com/favicon.ico",
+		"icon":"https://mtxserv.com/build/img/icon/game/hytale.png",
 		"tags":["hytale"],
 		"language": ["fr"]
 	},
 	{
 		"url":"https://hytale.game/en/feed/",
-		"icon":"https://hytale.com/favicon.ico",
+		"icon":"https://mtxserv.com/build/img/icon/game/hytale.png",
 		"tags":["hytale"],
 		"language": ["en"]
 	},
@@ -58,18 +58,6 @@
 		"icon":null,
 		"tags":["csgo"],
 		"language": ["en"]
-	},
-	{
-		"url":"https://www.mandatory.gg/news/feed/",
-		"icon":null,
-		"tags":["valorant"],
-		"language": ["fr"]
-	},
-	{
-		"url":"https://www.mandatory.gg/en/news/feed/",
-		"icon":null,
-		"tags":["valorant"],
-		"language": ["fr"]
 	},
 	{
 		"url":"https://www.over.gg/rss",
