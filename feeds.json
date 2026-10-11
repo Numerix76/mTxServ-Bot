@@ -42,12 +42,6 @@
 		"language": ["en"]
 	},
 	{
-		"url":"https://ark-france.fr/rss/",
-		"icon":"https://mtxserv.com/build/img/icon/game/ark.png",
-		"tags":["ark"],
-		"language": ["fr"]
-	},
-	{
 		"url":"http://feeds2.feedburner.com/vakarm",
 		"icon":null,
 		"tags":["csgo"],
@@ -87,12 +81,6 @@
 		"url":"https://fortnite.jeuxonline.info/rss/actualites/rss.xml",
 		"icon":null,
 		"tags":["fortnite"],
-		"language": ["fr"]
-	},
-	{
-		"url":"https://rocketbaguette.com/feed/",
-		"icon":null,
-		"tags":["rocketleague"],
 		"language": ["fr"]
 	},
 	{
